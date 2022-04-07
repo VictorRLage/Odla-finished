@@ -1,34 +1,38 @@
 /*header*/
-.corpo{
+.corpo {
   font-family: monospace;
   margin: 0px;
   background-image: url("https://i.imgur.com/gyPnQLb.jpg");
 }
-.header{
+
+.header {
   width: 100%;
   height: 85px;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.700);
 }
-.logo_header{
+
+.logo_header {
   height: 43px;
   width: 150px;
   margin-top: 20px;
   margin-left: 40px;
   margin-bottom: 20px;
 }
-.container{
+
+.container {
   width: 100%;
   display: flex;
 }
 
-.header .container{
+.header .container {
   height: 100%;
   width: 95%;
   align-items: center;
   justify-content: space-between;
 }
-.navbar{
+
+.navbar {
   margin-top: 14px;
   width: 500px;
   color: rgb(255, 255, 255);
@@ -39,15 +43,18 @@
   justify-content: space-between;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.entrarheader{
+
+.entrarheader {
   color: rgb(78 178 101);
   margin-top: 5px;
 }
-.logo_entar{
+
+.logo_entar {
   height: 30px;
   width: 30px;
 }
-.btn_simulador{
+
+.btn_simulador {
   color: white;
   margin-left: 50px;
   background-color: rgb(78 178 101);
@@ -58,9 +65,57 @@
   justify-content: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-radius: 30px;
-}     
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:link {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:visited {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:hover {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:active {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
 /*banner*/
-.pai{
+.pai {
   background-color: #504eb2;
   margin: auto;
   margin-top: 80px;
@@ -68,26 +123,31 @@
   height: 550px;
   width: 830px;
 }
-.bemvindo{
+
+.bemvindo {
   float: left;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.textoh3{
+
+.textoh3 {
   color: white;
   font-size: 40px;
   padding-left: 140px;
   padding-top: 0px;
 }
-.logo{
+
+.logo {
   padding-right: 100px;
   width: 300px;
   padding-left: 80px;
 }
-.inputgod{
+
+.inputgod {
   margin-top: 71.5px;
   margin-left: 90px;
 }
-.input1{
+
+.input1 {
   width: 280px;
   padding: 12px 20px;
   background: transparent;
@@ -95,7 +155,8 @@
   border: none;
   border-bottom: 2px solid rgb(0, 0, 0);
 }
-.input2{
+
+.input2 {
   margin-top: 40px;
   width: 280px;
   padding: 12px 20px;
@@ -105,54 +166,62 @@
   border-bottom: 2px solid rgb(0, 0, 0);
   color: white;
 }
-.entrar{
+
+.entrar {
   color: white;
   background: transparent;
-  border: none;   
+  border: none;
   transition-duration: 0.4s;
-  cursor: pointer;           
+  cursor: pointer;
   margin-left: 22.5%;
   margin-top: 10%;
   font-size: 30px;
   font-weight: bold;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-::placeholder{
+
+::placeholder {
   color: white;
   font-size: 15px;
   font-style: oblique;
   font-weight: bold;
 }
-input[type="text"]{
+
+input[type="text"] {
   color: white;
   font-size: 15px;
   font-style: oblique;
   font-weight: bold;
 }
-input[type="password"]{
+
+input[type="password"] {
   color: white;
   font-size: 15px;
   font-style: oblique;
   font-weight: bold;
 }
-input[type="tel"]{
+
+input[type="tel"] {
   color: white;
   font-size: 15px;
   font-style: oblique;
   font-weight: bold;
 }
-input[type="email"]{
+
+input[type="email"] {
   color: white;
   font-size: 15px;
   font-style: oblique;
   font-weight: bold;
 }
-.inputladodireito{
+
+.inputladodireito {
   float: right;
   margin-right: 70px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
- .input3{
+
+.input3 {
   margin-top: 40px;
   width: 280px;
   padding: 12px 20px;
@@ -162,7 +231,8 @@ input[type="email"]{
   border-bottom: 2px solid rgb(0, 0, 0);
   color: white;
 }
-.input4{   
+
+.input4 {
   margin-top: 40px;
   width: 280px;
   padding: 12px 20px;
@@ -172,7 +242,8 @@ input[type="email"]{
   border-bottom: 2px solid rgb(0, 0, 0);
   color: white;
 }
-.input5{           
+
+.input5 {
   margin-top: 40px;
   width: 280px;
   padding: 12px 20px;
@@ -182,17 +253,8 @@ input[type="email"]{
   border-bottom: 2px solid rgb(0, 0, 0);
   color: white;
 }
-.input6{           
-  margin-top: 40px;
-  width: 280px;
-  padding: 12px 20px;
-  background: transparent;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid rgb(0, 0, 0);
-  color: white;  
-}
-.input7{            
+
+.input6 {
   margin-top: 40px;
   width: 280px;
   padding: 12px 20px;
@@ -202,37 +264,27 @@ input[type="email"]{
   border-bottom: 2px solid rgb(0, 0, 0);
   color: white;
 }
-.registrar{
+
+.input7 {
+  margin-top: 40px;
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;
+}
+
+.registrar {
   color: white;
   background: transparent;
-  border: none;   
+  border: none;
   transition-duration: 0.4s;
-  cursor: pointer;           
+  cursor: pointer;
   margin-left: 23.5%;
   margin-top: 13.5%;
   font-size: 30px;
   font-weight: bold;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:visited {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
-}
-a:active {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
- 

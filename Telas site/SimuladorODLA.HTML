@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Simulador Financeiro | ODLA</title>
     <link rel="stylesheet" href="SimuladorODLA.css">
 </head>
+
 <body>
     <!-- Header -->
     <div class="header">
@@ -20,7 +22,8 @@
                 <li>Sobre nós</li>
                 <li>Serviços</li>
                 <li>Contato</li>
-                <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center"> <a class="link_a" href="login.html"> Entrar</a></li>
+                <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
+                    <a class="link_a" href="login.html"> Entrar</a></li>
             </ul>
 
             <div class="btn_simulador">
@@ -45,7 +48,7 @@
                     </select>
                     <br>
                     <br>
-                    Area da sua fazenda (área total do piso em  m²): <input id="inp_area_piso">
+                    Area da sua fazenda (área total do piso em m²): <input id="inp_area_piso">
                     <br>
                     <br>
                     Altura disponivel (em metros): <input id="inp_altura">
@@ -65,44 +68,50 @@
                     <button onclick="consumo()">Verificar Consumo de energia</button>
                 </div>
                 <div class="checks">
-                    <h3><img class="check1" src="https://i.imgur.com/aKQCcmW.png" align="center"> Fortalece seu negócio</h3>
-                    <h3><img class="check2" src="https://i.imgur.com/aKQCcmW.png" align="center"> Reduza desperdicios</h3>
-                    <h3><img class="check3" src="https://i.imgur.com/aKQCcmW.png" align="center"> Reduza gastos com manutenção</h3>
-                    <h3><img class="check4" src="https://i.imgur.com/aKQCcmW.png" align="center"> Tenha menos esquipamentos parados</h3>
+                    <h3><img class="check1" src="https://i.imgur.com/aKQCcmW.png" align="center"> Fortalece seu negócio
+                    </h3>
+                    <h3><img class="check2" src="https://i.imgur.com/aKQCcmW.png" align="center"> Reduza desperdicios
+                    </h3>
+                    <h3><img class="check3" src="https://i.imgur.com/aKQCcmW.png" align="center"> Reduza gastos com
+                        manutenção</h3>
+                    <h3><img class="check4" src="https://i.imgur.com/aKQCcmW.png" align="center"> Tenha menos
+                        esquipamentos parados</h3>
                 </div>
             </div>
             <div class="card2">
                 <div class="texto2">
-                    <div id="div_resultado_consumo"><img class="logo_branca" src="https://i.imgur.com/GHeZ9BM.png"></div>
+                    <div id="div_resultado_consumo"><img class="logo_branca" src="https://i.imgur.com/GHeZ9BM.png">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
 <script>
-    function consumo(){
-               
-               var colunas = Number(inp_area_piso.value) / 6
-               var prateleira = Number(inp_altura.value) * 2
-               var area_plantada = (prateleira * 0.80) * colunas
-               var consumo_energia = Number((area_plantada * sel_hortalicas.value) / 1000)
-               var economia_energia = Number((consumo_energia * 10) * sel_janelas.value) + Number((consumo_energia * 14) * 0.10)
-               var energia_anual = Number((consumo_energia.toFixed(0)*24 * 30 * 12))
-               var custo = energia_anual * 0.594
-               var energia_anual_economia = Number(economia_energia.toFixed(0) * 30 *12)
-               var custo_economia = energia_anual_economia * 0.594
-               var formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
-               
-               div_resultado_consumo.innerHTML =`
+    function consumo() {
+
+        var colunas = Number(inp_area_piso.value) / 6
+        var prateleira = Number(inp_altura.value) * 2
+        var area_plantada = (prateleira * 0.80) * colunas
+        var consumo_energia = Number((area_plantada * sel_hortalicas.value) / 1000)
+        var economia_energia = Number((consumo_energia * 10) * sel_janelas.value) + Number((consumo_energia * 14) * 0.10)
+        var energia_anual = Number((consumo_energia.toFixed(0) * 24 * 30 * 12))
+        var custo = energia_anual * 0.594
+        var energia_anual_economia = Number(economia_energia.toFixed(0) * 30 * 12)
+        var custo_economia = energia_anual_economia * 0.594
+        var formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
+
+        div_resultado_consumo.innerHTML = `
                A sua fazenda com ${inp_area_piso.value} m² consegue comportar ${colunas.toFixed(0)} colunas porque a cada 2 m² cabem 3 colunas e a cada 1 metro de altura cabem 2 prateleiras de 1 m² logo em cada uma de suas colunas você terá ${prateleira} prateleiras!
                <br>
                Como em cada prateleira você tem somente 80% da area dela disponivel para plantio, a area total disponivel pra plantio que você possui é de ${area_plantada.toFixed(0)} m² totalizando um consumo de ${consumo_energia.toFixed(0)} kWh com lampadas LED para iluminação artificial.
                <br>
                <br>
-               Em 1 ano a sua fazenda consome cerca de ${(energia_anual  / 1000).toFixed(0)} MW, que em são paulo representa ${custo.toLocaleString('pt-BR', formato)}
+               Em 1 ano a sua fazenda consome cerca de ${(energia_anual / 1000).toFixed(0)} MW, que em são paulo representa ${custo.toLocaleString('pt-BR', formato)}
                <br>    
                Com os nossos serviços você deixará de produzir ${(energia_anual_economia / 1000).toFixed(0)} MW ao ano, resultando em uma economia de ${custo_economia.toLocaleString('pt-BR', formato)}
                `
-           }
+    }
 </script>
