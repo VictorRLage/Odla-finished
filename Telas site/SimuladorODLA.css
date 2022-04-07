@@ -6,7 +6,7 @@ body {
 }
 .header{
     width: 100%;
-    height: 85px;
+    height: 93px;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.700);
 }
@@ -29,7 +29,9 @@ body {
     justify-content: space-between;
 }
 .navbar{
-    margin-top: 14px;
+    margin-left: 20px;
+    font-size: 18px;
+    margin-top: 20px;
     width: 500px;
     color: rgb(255, 255, 255);
     list-style: none;
@@ -51,8 +53,8 @@ body {
     color: white;
     margin-left: 50px;
     background-color: rgb(78 178 101);
-    height: 40px;
-    width: 200px;
+    height: 43px;
+    width: 210px;
     display: flex;
     align-items: center;
     justify-content: center;

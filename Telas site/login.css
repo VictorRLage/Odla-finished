@@ -1,30 +1,10 @@
+/*header*/
 .corpo{
-    font-family: monospace;
-    margin: 0px;
-      background-image: url("https://i.imgur.com/gyPnQLb.jpg");
- 
-  
-       }
-      .pai{
-          background-color: #504eb2;
-         
-          margin-left: 25%;
-          margin-top: 3.7%;
-      border-radius: 28px;
-          height: 550px;
-          width: 830px;
-      }
-      .bemvindo{
-          float: left;
-
-      }
-      .textoh3{
-          color: white;
-          font-size: 40px;
-          padding-left: 140px;
-          padding-top: 0px;
-      }
-      .header{
+  font-family: monospace;
+  margin: 0px;
+  background-image: url("https://i.imgur.com/gyPnQLb.jpg");
+}
+.header{
   width: 100%;
   height: 85px;
   align-items: center;
@@ -78,146 +58,161 @@
   justify-content: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-radius: 30px;
-}
+}     
 /*banner*/
-      .logo{
-padding-right: 100px;
-width: 300px;
-padding-left: 80px;
-      }
-      .inputgod{
-        margin-top: 71.5px;
-        margin-left: 90px;
-        
-        
-      }
-      .input1{
-          width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-      }
-      .input2{
-margin-top: 40px;
-width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-color: white;
-      }
-      .entrar{
-          color: white;
-          background: transparent;
-          border: none;   
-          transition-duration: 0.4s;
-cursor: pointer;           
-margin-left: 22.5%;
-margin-top: 10%;
-font-size: 30px;
-font-weight: bold;
-
-      }
-      ::placeholder{
-          color: white;
-          font-size: 15px;
- font-style: oblique;
- font-weight: bold;
-      }
-      input[type="text"]{
-          color: white;
-          font-size: 15px;
- font-style: oblique;
- font-weight: bold;
-      }
-      input[type="password"]{
-          color: white;
-          font-size: 15px;
- font-style: oblique;
- font-weight: bold;
- }
- input[type="tel"]{
-          color: white;
-          font-size: 15px;
- font-style: oblique;
- font-weight: bold;
- }
- input[type="email"]{
-          color: white;
-          font-size: 15px;
- font-style: oblique;
- font-weight: bold;
- }
- .inputladodireito{
-     float: right;
-     margin-right: 70px;
-  
-     
- }
+.pai{
+  background-color: #504eb2;
+  margin-left: 25%;
+  margin-top: 3.7%;
+  border-radius: 28px;
+  height: 550px;
+  width: 830px;
+}
+.bemvindo{
+  float: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.textoh3{
+  color: white;
+  font-size: 40px;
+  padding-left: 140px;
+  padding-top: 0px;
+}
+.logo{
+  padding-right: 100px;
+  width: 300px;
+  padding-left: 80px;
+}
+.inputgod{
+  margin-top: 71.5px;
+  margin-left: 90px;
+}
+.input1{
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.input2{
+  margin-top: 40px;
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;
+}
+.entrar{
+  color: white;
+  background: transparent;
+  border: none;   
+  transition-duration: 0.4s;
+  cursor: pointer;           
+  margin-left: 22.5%;
+  margin-top: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+::placeholder{
+  color: white;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: bold;
+}
+input[type="text"]{
+  color: white;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: bold;
+}
+input[type="password"]{
+  color: white;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: bold;
+}
+input[type="tel"]{
+  color: white;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: bold;
+}
+input[type="email"]{
+  color: white;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: bold;
+}
+.inputladodireito{
+  float: right;
+  margin-right: 70px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+}
  .input3{
   margin-top: 40px;
-width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-color: white;
- }
- .input4{   
-      margin-top: 40px;
-width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-color: white;
-  }
-  .input5{           
-       margin-top: 40px;
-width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-color: white;
-  }
-  .input6{           
-       margin-top: 40px;
-width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-color: white;
-     
-  }
-  .input7{            
-      margin-top: 40px;
-width: 280px;
-padding: 12px 20px;
-background: transparent;
-box-sizing: border-box;
-border: none;
-border-bottom: 2px solid rgb(0, 0, 0);
-color: white;
-  }
-  .registrar{
-      color: white;
-          background: transparent;
-          border: none;   
-          transition-duration: 0.4s;
-cursor: pointer;           
-margin-left: 23.5%;
-margin-top: 13.5%;
-font-size: 30px;
-font-weight: bold
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;
+}
+.input4{   
+  margin-top: 40px;
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;
+}
+.input5{           
+  margin-top: 40px;
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;
+}
+.input6{           
+  margin-top: 40px;
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;  
+}
+.input7{            
+  margin-top: 40px;
+  width: 280px;
+  padding: 12px 20px;
+  background: transparent;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: white;
+}
+.registrar{
+  color: white;
+  background: transparent;
+  border: none;   
+  transition-duration: 0.4s;
+  cursor: pointer;           
+  margin-left: 23.5%;
+  margin-top: 13.5%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 a:link {
   color: white;
