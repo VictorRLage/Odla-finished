@@ -62,8 +62,8 @@
 /*banner*/
 .pai{
   background-color: #504eb2;
-  margin-left: 25%;
-  margin-top: 3.7%;
+  margin: auto;
+  margin-top: 80px;
   border-radius: 28px;
   height: 550px;
   width: 830px;
