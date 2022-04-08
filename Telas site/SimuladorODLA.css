@@ -170,6 +170,7 @@ button {
   border-style: hidden;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
   cursor: pointer;
+  transition-duration: 0.4s;
 }
 
 button:hover {
