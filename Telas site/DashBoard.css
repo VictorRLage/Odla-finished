@@ -2,7 +2,7 @@
 body {
     font-family: monospace;
     margin: 0px;
-    background-image: url("");
+    background-image: url("https://newsru.cgtn.com/v/BfIcA-CIA-BAA/EaHFBEA/EaHFBEA.jpg");
     background-color: darkolivegreen;
   }
   
@@ -124,7 +124,7 @@ body {
     margin-top: 80px;
     margin-bottom: 20px;
     flex-direction: column;
-    background-color: rgb(78 178 101);
+    background-color: rgba(78, 178, 101, 0.74);
     border-radius: 50px;
   }
   .containera .containerb{
