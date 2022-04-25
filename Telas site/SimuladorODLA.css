@@ -1,6 +1,8 @@
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 /*header*/
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -121,6 +123,7 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+
 /*banner*/
 .banner {
   height: 800px;
@@ -230,14 +233,17 @@ select {
   height: 100px;
   width: 100px;
 }
-.texto2{
+
+.texto2 {
   display: flex;
 }
+
 .texto2 .div_logo_b {
   margin-top: 298px;
   margin-left: 210px;
 }
-.texto2 .chart{
+
+.texto2 .chart {
   background-color: white;
   position: relative;
   height: 430px;
@@ -246,12 +252,14 @@ select {
   margin-top: 30px;
   border-radius: 10px;
 }
-.sub_cards{
+
+.sub_cards {
   display: flex;
   flex-wrap: wrap;
   padding: 10px 10px;
 }
-.sub_cards .sub_card{
+
+.sub_cards .sub_card {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 14px;
   margin-left: 10px;
@@ -264,20 +272,24 @@ select {
   border: 0px;
   cursor: pointer;
 }
-span{
+
+span {
   color: rgb(78 178 101);
   font-size: 20px;
   text-align: center;
 }
+
 h1 {
   margin: 0;
 }
+
 p {
   font-size: 17px;
   opacity: 0.7;
 }
+
 /* MODAL 0 */
-.modal-container{
+.modal-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -291,11 +303,13 @@ p {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.modal-container.show{
+
+.modal-container.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal{
+
+.modal {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -303,6 +317,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button1 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -324,8 +339,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 1 */
-.modal-container1{
+.modal-container1 {
   position: fixed;
   transition: opacity 0.3s ease;
   top: 0;
@@ -339,11 +355,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container1.show{
+
+.modal-container1.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal1{
+
+.modal1 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -351,6 +369,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button2 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -372,8 +391,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 2 */
-.modal-container2{
+.modal-container2 {
   position: fixed;
   transition: opacity 0.3s ease;
   top: 0;
@@ -387,11 +407,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container2.show{
+
+.modal-container2.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal2{
+
+.modal2 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -399,6 +421,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button3 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -420,8 +443,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 3 */
-.modal-container3{
+.modal-container3 {
   position: fixed;
   transition: opacity 0.3s ease;
   top: 0;
@@ -435,11 +459,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container3.show{
+
+.modal-container3.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal3{
+
+.modal3 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -447,6 +473,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button4 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -468,8 +495,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 4 */
-.modal-container4{
+.modal-container4 {
   position: fixed;
   transition: opacity 0.3s ease;
   top: 0;
@@ -483,11 +511,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container4.show{
+
+.modal-container4.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal4{
+
+.modal4 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -495,6 +525,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button5 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -516,8 +547,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 5 */
-.modal-container5{
+.modal-container5 {
   position: fixed;
   top: 0;
   transition: opacity 0.3s ease;
@@ -531,11 +563,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container5.show{
+
+.modal-container5.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal5{
+
+.modal5 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -543,6 +577,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button6 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -564,8 +599,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 6 */
-.modal-container6{
+.modal-container6 {
   position: fixed;
   transition: opacity 0.3s ease;
   top: 0;
@@ -579,11 +615,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container6.show{
+
+.modal-container6.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal6{
+
+.modal6 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -591,6 +629,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button7 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -612,8 +651,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 7 */
-.modal-container7{
+.modal-container7 {
   position: fixed;
   transition: opacity 0.3s ease;
   top: 0;
@@ -627,11 +667,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container7.show{
+
+.modal-container7.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal7{
+
+.modal7 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -639,6 +681,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button8 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -660,8 +703,9 @@ p {
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 /* MODAL 8 */
-.modal-container8{
+.modal-container8 {
   position: fixed;
   top: 0;
   left: 0;
@@ -675,11 +719,13 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-.modal-container8.show{
+
+.modal-container8.show {
   opacity: 1;
   pointer-events: auto;
 }
-.modal8{
+
+.modal8 {
   background-color: white;
   width: 600px;
   max-width: 100%;
@@ -687,6 +733,7 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
 .button9 {
   background-color: rgb(78 178 101);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

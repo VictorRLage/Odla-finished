@@ -25,7 +25,8 @@
                 <li>Serviços</li>
                 <li>Contato</li>
                 <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
-                    <a class="link_a" href="login.html"> Entrar</a></li>
+                    <a class="link_a" href="login.html"> Entrar</a>
+                </li>
             </ul>
 
             <div class="btn_simulador">
@@ -75,116 +76,125 @@
             <div class="card2">
                 <div class="texto2">
                     <div id="div_resultado_consumo" style="display: none;">
-                        <div class="chart" id="chart1" ><canvas id="myChart"></canvas></div>
+                        <div class="chart" id="chart1"><canvas id="myChart"></canvas></div>
                         <div class="sub_cards">
                             <!--MODAL 0-->
-                            <button onclick="spn_area_btn_F()" id="open" class="sub_card"><b>Área (m²)</b><br> <span id="spn_area"></span></button>
+                            <button onclick="spn_area_btn_F()" id="open" class="sub_card"><b>Área (m²)</b><br> <span
+                                    id="spn_area"></span></button>
                             <!--MODAL 1-->
-                            <button onclick="spn_alt_btn_F()" id="open1" class="sub_card"><b>Altura (cm)</b><br> <span id="spn_alt"></span></button>
+                            <button onclick="spn_alt_btn_F()" id="open1" class="sub_card"><b>Altura (cm)</b><br> <span
+                                    id="spn_alt"></span></button>
                             <!--MODAL 2-->
-                            <button onclick="spn_plant_btn_F()" id="open2" class="sub_card"><b>Área Plantio (m²)</b><br> <span id="spn_plant"></span></button>
+                            <button onclick="spn_plant_btn_F()" id="open2" class="sub_card"><b>Área Plantio (m²)</b><br>
+                                <span id="spn_plant"></span></button>
                             <!--MODAL 3-->
-                            <button id="open3" class="sub_card"><b>Prateleiras</b><br> <span id="spn_prat"></span></button>
+                            <button id="open3" class="sub_card"><b>Prateleiras</b><br> <span
+                                    id="spn_prat"></span></button>
                             <!--MODAL 4-->
-                            <button onclick="spn_col_btn_F()" id="open4" class="sub_card"><b>Colunas</b><br> <span id="spn_col"></span></button>
+                            <button onclick="spn_col_btn_F()" id="open4" class="sub_card"><b>Colunas</b><br> <span
+                                    id="spn_col"></span></button>
                             <!--MODAL 5-->
-                            <button onclick="spn_cons_btn_F()" id="open5" class="sub_card"><b>Consumo de Energia (kWh)</b><br> <span id="spn_cons"></span></button>
+                            <button onclick="spn_cons_btn_F()" id="open5" class="sub_card"><b>Consumo de Energia
+                                    (kWh)</b><br> <span id="spn_cons"></span></button>
                             <!--MODAL 6-->
-                            <button onclick="spn_gast_btn_F()" id="open6" class="sub_card"><b>Gasto com Energia (Anual)</b><br> <span id="spn_gast"></span></button>
+                            <button onclick="spn_gast_btn_F()" id="open6" class="sub_card"><b>Gasto com Energia
+                                    (Anual)</b><br> <span id="spn_gast"></span></button>
                             <!--MODAL 7-->
-                            <button onclick="spn_eco_btn_F()" id="open7" class="sub_card"><b>Economia de Energia (Anual) (MW) </b><br> <span id="spn_eco"></span></button>
+                            <button onclick="spn_eco_btn_F()" id="open7" class="sub_card"><b>Economia de Energia (Anual)
+                                    (MW) </b><br> <span id="spn_eco"></span></button>
                             <!--MODAL 8-->
-                            <button onclick="spn_eco_a_btn_F()" id="open8" class="sub_card"><b>Economia Anual </b><br> <span id="spn_eco_a"></span></button>
+                            <button onclick="spn_eco_a_btn_F()" id="open8" class="sub_card"><b>Economia Anual </b><br>
+                                <span id="spn_eco_a"></span></button>
 
                         </div>
                     </div>
-                    
-                    <div id="div_img" class="div_logo_b" style="display: block;"><img id="img_resultado" class="logo_branca" src="https://i.imgur.com/GHeZ9BM.png"></div>
+
+                    <div id="div_img" class="div_logo_b" style="display: block;"><img id="img_resultado"
+                            class="logo_branca" src="https://i.imgur.com/GHeZ9BM.png"></div>
                 </div>
             </div>
         </div>
     </div>
     <div>
-    <!--MODAL 0-->
-    <div class="modal-container"
-    id="modal_container">
-        <div class="modal">
-            <h1 id="titulo_M">Área (m²)</h1>
-            <p id="texto_M">A sua fazenda possui <span id="spn_area2"></span> m²!</p>
-            <button class="button1" id="close">Fechar</button>
+        <!--MODAL 0-->
+        <div class="modal-container" id="modal_container">
+            <div class="modal">
+                <h1 id="titulo_M">Área (m²)</h1>
+                <p id="texto_M">A sua fazenda possui <span id="spn_area2"></span> m²!</p>
+                <button class="button1" id="close">Fechar</button>
+            </div>
         </div>
-    </div>
-    <!--MODAL 1-->
-    <div class="modal-container1"
-    id="modal_container1">
-        <div class="modal1">
-            <h1 id="titulo_M1">Altura (cm)</h1>
-            <p id="texto_M1">A sua fazenda possui <span id="spn_alt2"></span> cm ou  <span id="spn_alt3"></span> m</p>
-            <button class="button2" id="close1">Fechar</button>
+        <!--MODAL 1-->
+        <div class="modal-container1" id="modal_container1">
+            <div class="modal1">
+                <h1 id="titulo_M1">Altura (cm)</h1>
+                <p id="texto_M1">A sua fazenda possui <span id="spn_alt2"></span> cm ou <span id="spn_alt3"></span> m
+                </p>
+                <button class="button2" id="close1">Fechar</button>
+            </div>
         </div>
-    </div>
-     <!--MODAL 2-->
-     <div class="modal-container2"
-     id="modal_container2">
-         <div class="modal2">
-             <h1 id="titulo_M2">Área Plantio (m²)</h1>
-             <p id="texto_M2">Como em cada prateleira você tem somente 80% da área dela disponível para plantio, a área total disponível para plantio que você possui é de <span id="spn_plant2"></span> m²!</p>
-             <button class="button3" id="close2">Fechar</button>
-         </div>
-     </div>
-     <!--MODAL 3-->
-     <div class="modal-container3"
-     id="modal_container3">
-         <div class="modal3">
-             <h1 id="titulo_M3">Prateleiras</h1>
-             <p id="texto_M3">A cada 1 metro de altura cabem 2 prateleiras de 1 m²</p>
-             <button class="button4" id="close3">Fechar</button>
-         </div>
+        <!--MODAL 2-->
+        <div class="modal-container2" id="modal_container2">
+            <div class="modal2">
+                <h1 id="titulo_M2">Área Plantio (m²)</h1>
+                <p id="texto_M2">Como em cada prateleira você tem somente 80% da área dela disponível para plantio, a
+                    área total disponível para plantio que você possui é de <span id="spn_plant2"></span> m²!</p>
+                <button class="button3" id="close2">Fechar</button>
+            </div>
         </div>
-            <!--MODAL 4-->
-    <div class="modal-container4"
-    id="modal_container4">
-        <div class="modal4">
-            <h1 id="titulo_M4">Colunas</h1>
-            <p id="texto_M4">A sua fazenda com <span id="spn_area3"></span> m² consegue comportar <span id="spn_col2"></span> colunas porque a cada 2 m² cabem 3 colunas!</p>
-            <button class="button5" id="close4">Fechar</button>
+        <!--MODAL 3-->
+        <div class="modal-container3" id="modal_container3">
+            <div class="modal3">
+                <h1 id="titulo_M3">Prateleiras</h1>
+                <p id="texto_M3">A cada 1 metro de altura cabem 2 prateleiras de 1 m²</p>
+                <button class="button4" id="close3">Fechar</button>
+            </div>
         </div>
-    </div>
-    <!--MODAL 5-->
-    <div class="modal-container5"
-    id="modal_container5">
-        <div class="modal5">
-            <h1 id="titulo_M5">Consumo de Energia (kWh)</h1>
-            <p id="texto_M5">Os pès de alface consomen 90 watts por m² com <span id="spn_plant3"></span> m² disponivel para plantio você tem um consumo de <span id="spn_cons2"></span> kWh por m² com lampadas LED para iluminação artificial.</p>
-            <button class="button6" id="close5">Fechar</button>
+        <!--MODAL 4-->
+        <div class="modal-container4" id="modal_container4">
+            <div class="modal4">
+                <h1 id="titulo_M4">Colunas</h1>
+                <p id="texto_M4">A sua fazenda com <span id="spn_area3"></span> m² consegue comportar <span
+                        id="spn_col2"></span> colunas porque a cada 2 m² cabem 3 colunas!</p>
+                <button class="button5" id="close4">Fechar</button>
+            </div>
         </div>
-    </div>
-     <!--MODAL 6-->
-     <div class="modal-container6"
-     id="modal_container6">
-         <div class="modal6">
-             <h1 id="titulo_M6">Gasto com Energia (Anual)</h1>
-             <p id="texto_M6">Em 1 ano a sua fazenda consome cerca de <span id="spn_gast3"></span> MW que em São Paulo representa <span id="spn_gast2"></span></p>
-             <button class="button7" id="close6">Fechar</button>
-         </div>
-     </div>
-     <!--MODAL 7-->
-     <div class="modal-container7"
-     id="modal_container7">
-         <div class="modal7">
-             <h1 id="titulo_M7">Economia de Energia (Anual) (MW)</h1>
-             <p id="texto_M7">Com os nossos serviços você deixará de produzir <span id="spn_eco2"></span> MW ao ano!</p>
-             <button class="button8" id="close7">Fechar</button>
-         </div>
+        <!--MODAL 5-->
+        <div class="modal-container5" id="modal_container5">
+            <div class="modal5">
+                <h1 id="titulo_M5">Consumo de Energia (kWh)</h1>
+                <p id="texto_M5">Os pès de alface consomen 90 watts por m² com <span id="spn_plant3"></span> m²
+                    disponivel para plantio você tem um consumo de <span id="spn_cons2"></span> kWh por m² com lampadas
+                    LED para iluminação artificial.</p>
+                <button class="button6" id="close5">Fechar</button>
+            </div>
+        </div>
+        <!--MODAL 6-->
+        <div class="modal-container6" id="modal_container6">
+            <div class="modal6">
+                <h1 id="titulo_M6">Gasto com Energia (Anual)</h1>
+                <p id="texto_M6">Em 1 ano a sua fazenda consome cerca de <span id="spn_gast3"></span> MW que em São
+                    Paulo representa <span id="spn_gast2"></span></p>
+                <button class="button7" id="close6">Fechar</button>
+            </div>
+        </div>
+        <!--MODAL 7-->
+        <div class="modal-container7" id="modal_container7">
+            <div class="modal7">
+                <h1 id="titulo_M7">Economia de Energia (Anual) (MW)</h1>
+                <p id="texto_M7">Com os nossos serviços você deixará de produzir <span id="spn_eco2"></span> MW ao ano!
+                </p>
+                <button class="button8" id="close7">Fechar</button>
+            </div>
         </div>
         <!--MODAL 8-->
-     <div class="modal-container8"
-     id="modal_container8">
-         <div class="modal8">
-             <h1 id="titulo_M8">Economia Anual</h1>
-             <p id="texto_M8">Com os nossos serviços você deixará de produzir <span id="spn_eco3"></span> MW ao ano, resultando em uma economia de <span id="spn_eco_a2"></span></p>
-             <button class="button9" id="close8">Fechar</button>
-         </div>
+        <div class="modal-container8" id="modal_container8">
+            <div class="modal8">
+                <h1 id="titulo_M8">Economia Anual</h1>
+                <p id="texto_M8">Com os nossos serviços você deixará de produzir <span id="spn_eco3"></span> MW ao ano,
+                    resultando em uma economia de <span id="spn_eco_a2"></span></p>
+                <button class="button9" id="close8">Fechar</button>
+            </div>
         </div>
     </div>
 </body>
@@ -199,46 +209,46 @@
 
 
     const data = {
-  labels: [
-    'Área (m²)',
-    'Altura (cm)',
-    'Área Plantio (m²)',
-    'Prateleiras',
-    'Colunas',
-  ],
-  datasets: [{
-    label: 'Sua Fazenda',
-    data: [0, 0, 0 , 0, 0],
-    fill: true,
-    backgroundColor: 'rgba(78,  178, 101, 0.2)',
-    borderColor: 'rgb(78,  178, 101)',
-    pointBackgroundColor: 'rgb(78,  178, 101)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(78,  178, 101)'
+        labels: [
+            'Área (m²)',
+            'Altura (cm)',
+            'Área Plantio (m²)',
+            'Prateleiras',
+            'Colunas',
+        ],
+        datasets: [{
+            label: 'Sua Fazenda',
+            data: [0, 0, 0, 0, 0],
+            fill: true,
+            backgroundColor: 'rgba(78,  178, 101, 0.2)',
+            borderColor: 'rgb(78,  178, 101)',
+            pointBackgroundColor: 'rgb(78,  178, 101)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(78,  178, 101)'
 
-  }]
-};
+        }]
+    };
 
-  
+
     const config = {
-  type: 'radar',
-  data: data,
-  options: {
-    elements: {
-      line: {
-        borderWidth: 2
-      }
-    }
-  },
-};;
+        type: 'radar',
+        data: data,
+        options: {
+            elements: {
+                line: {
+                    borderWidth: 2
+                }
+            }
+        },
+    };;
 
-  </script>
+</script>
 
-  <script>
+<script>
     const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
+        document.getElementById('myChart'),
+        config
     );
 </script>
 <script>
@@ -274,40 +284,40 @@
         spn_prat.innerHTML = `${prateleira2.toFixed(0)}`
         spn_col.innerHTML = `${colunas.toFixed(0)}`
         spn_cons.innerHTML = `${consumo_energia.toFixed(2)}`
-        spn_eco.innerHTML = `${Number(energia_anual_economia /1000).toFixed(0)}`
+        spn_eco.innerHTML = `${Number(energia_anual_economia / 1000).toFixed(0)}`
         spn_gast.innerHTML = `${custo.toLocaleString('pt-BR', formato)}`
         spn_eco_a.innerHTML = `${custo_economia.toLocaleString('pt-BR', formato)}`
 
     }
 
-    function spn_area_btn_F(){
+    function spn_area_btn_F() {
         var area = Number(inp_area_piso.value)
         spn_area2.innerHTML = `${area.toFixed(2)}`
-}
+    }
 
-    function spn_alt_btn_F(){
+    function spn_alt_btn_F() {
         var altura = Number(inp_altura.value)
         spn_alt2.innerHTML = `${altura.toFixed(2)}`
         spn_alt3.innerHTML = `${Number(altura / 100).toFixed(1)}`
-}
+    }
 
-function spn_plant_btn_F(){
-    var area = Number(inp_area_piso.value)
+    function spn_plant_btn_F() {
+        var area = Number(inp_area_piso.value)
         var altura = Number(inp_altura.value)
         var janela = Number(sel_janelas.value)
         var colunas = area / 6
         var prateleira = (altura / 100) * 2
         var area_plantada = (prateleira * 0.80) * colunas
         spn_plant2.innerHTML = `${area_plantada.toFixed(2)}`
-}
+    }
 
-function spn_col_btn_F(){
+    function spn_col_btn_F() {
         var area = Number(inp_area_piso.value)
         var colunas = area / 6
         spn_area3.innerHTML = `${area.toFixed(2)}`
         spn_col2.innerHTML = `${colunas.toFixed(0)}`
-}
-function spn_cons_btn_F(){
+    }
+    function spn_cons_btn_F() {
         var area = Number(inp_area_piso.value)
         var altura = Number(inp_altura.value)
         var janela = Number(sel_janelas.value)
@@ -317,8 +327,8 @@ function spn_cons_btn_F(){
         var consumo_energia = Number((area_plantada * 90) / 1000)
         spn_plant3.innerHTML = `${area_plantada.toFixed(2)}`
         spn_cons2.innerHTML = `${consumo_energia.toFixed(2)}`
-}
-function spn_gast_btn_F(){
+    }
+    function spn_gast_btn_F() {
         var area = Number(inp_area_piso.value)
         var altura = Number(inp_altura.value)
         var janela = Number(sel_janelas.value)
@@ -331,9 +341,9 @@ function spn_gast_btn_F(){
         var formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
         spn_gast2.innerHTML = `${custo.toLocaleString('pt-BR', formato)}`
         spn_gast3.innerHTML = `${Number(energia_anual / 1000).toFixed(0)}`
-}
-function spn_eco_btn_F(){
-    var area = Number(inp_area_piso.value)
+    }
+    function spn_eco_btn_F() {
+        var area = Number(inp_area_piso.value)
         var altura = Number(inp_altura.value)
         var janela = Number(sel_janelas.value)
         var colunas = area / 6
@@ -342,9 +352,9 @@ function spn_eco_btn_F(){
         var consumo_energia = Number((area_plantada * 90) / 1000)
         var economia_energia = Number((consumo_energia * 10) * janela) + Number((consumo_energia * 14) * 0.10)
         var energia_anual_economia = Number(economia_energia * 30 * 12)
-        spn_eco2.innerHTML = `${ Number(energia_anual_economia / 1000).toFixed(0)}`
-}
-function spn_eco_a_btn_F(){
+        spn_eco2.innerHTML = `${Number(energia_anual_economia / 1000).toFixed(0)}`
+    }
+    function spn_eco_a_btn_F() {
         var area = Number(inp_area_piso.value)
         var altura = Number(inp_altura.value)
         var janela = Number(sel_janelas.value)
@@ -358,9 +368,9 @@ function spn_eco_a_btn_F(){
         var energia_anual_economia = Number(economia_energia * 30 * 12)
         var custo_economia = energia_anual_economia * 0.594
         var formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' }
-        spn_eco3.innerHTML = `${ Number(energia_anual_economia / 1000).toFixed(0)}`
+        spn_eco3.innerHTML = `${Number(energia_anual_economia / 1000).toFixed(0)}`
         spn_eco_a2.innerHTML = `${custo_economia.toLocaleString('pt-BR', formato)}`
-}
+    }
 </script>
 <script>
 
@@ -368,11 +378,11 @@ function spn_eco_a_btn_F(){
     const modal_container = document.getElementById('modal_container');
     const close = document.getElementById('close');
 
-    open.addEventListener('click', () =>{
+    open.addEventListener('click', () => {
         modal_container.classList.add('show');
     });
 
-    close.addEventListener('click', () =>{
+    close.addEventListener('click', () => {
         modal_container.classList.remove('show');
     });
 
@@ -383,11 +393,11 @@ function spn_eco_a_btn_F(){
     const modal_container1 = document.getElementById('modal_container1');
     const close1 = document.getElementById('close1');
 
-    open1.addEventListener('click', () =>{
+    open1.addEventListener('click', () => {
         modal_container1.classList.add('show');
     });
 
-    close1.addEventListener('click', () =>{
+    close1.addEventListener('click', () => {
         modal_container1.classList.remove('show');
     });
 
@@ -398,11 +408,11 @@ function spn_eco_a_btn_F(){
     const modal_container2 = document.getElementById('modal_container2');
     const close2 = document.getElementById('close2');
 
-    open2.addEventListener('click', () =>{
+    open2.addEventListener('click', () => {
         modal_container2.classList.add('show');
     });
 
-    close2.addEventListener('click', () =>{
+    close2.addEventListener('click', () => {
         modal_container2.classList.remove('show');
     });
 
@@ -413,11 +423,11 @@ function spn_eco_a_btn_F(){
     const modal_container3 = document.getElementById('modal_container3');
     const close3 = document.getElementById('close3');
 
-    open3.addEventListener('click', () =>{
+    open3.addEventListener('click', () => {
         modal_container3.classList.add('show');
     });
 
-    close3.addEventListener('click', () =>{
+    close3.addEventListener('click', () => {
         modal_container3.classList.remove('show');
     });
 
@@ -428,11 +438,11 @@ function spn_eco_a_btn_F(){
     const modal_container4 = document.getElementById('modal_container4');
     const close4 = document.getElementById('close4');
 
-    open4.addEventListener('click', () =>{
+    open4.addEventListener('click', () => {
         modal_container4.classList.add('show');
     });
 
-    close4.addEventListener('click', () =>{
+    close4.addEventListener('click', () => {
         modal_container4.classList.remove('show');
     });
 
@@ -443,11 +453,11 @@ function spn_eco_a_btn_F(){
     const modal_container5 = document.getElementById('modal_container5');
     const close5 = document.getElementById('close5');
 
-    open5.addEventListener('click', () =>{
+    open5.addEventListener('click', () => {
         modal_container5.classList.add('show');
     });
 
-    close5.addEventListener('click', () =>{
+    close5.addEventListener('click', () => {
         modal_container5.classList.remove('show');
     });
 
@@ -458,11 +468,11 @@ function spn_eco_a_btn_F(){
     const modal_container6 = document.getElementById('modal_container6');
     const close6 = document.getElementById('close6');
 
-    open6.addEventListener('click', () =>{
+    open6.addEventListener('click', () => {
         modal_container6.classList.add('show');
     });
 
-    close6.addEventListener('click', () =>{
+    close6.addEventListener('click', () => {
         modal_container6.classList.remove('show');
     });
 
@@ -473,11 +483,11 @@ function spn_eco_a_btn_F(){
     const modal_container7 = document.getElementById('modal_container7');
     const close7 = document.getElementById('close7');
 
-    open7.addEventListener('click', () =>{
+    open7.addEventListener('click', () => {
         modal_container7.classList.add('show');
     });
 
-    close7.addEventListener('click', () =>{
+    close7.addEventListener('click', () => {
         modal_container7.classList.remove('show');
     });
 
@@ -488,11 +498,11 @@ function spn_eco_a_btn_F(){
     const modal_container8 = document.getElementById('modal_container8');
     const close8 = document.getElementById('close8');
 
-    open8.addEventListener('click', () =>{
+    open8.addEventListener('click', () => {
         modal_container8.classList.add('show');
     });
 
-    close8.addEventListener('click', () =>{
+    close8.addEventListener('click', () => {
         modal_container8.classList.remove('show');
     });
 
