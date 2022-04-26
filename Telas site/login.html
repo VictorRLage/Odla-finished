@@ -37,12 +37,12 @@
     <!-- Fim do Header -->
     <div class="pai">
         <div class="inputladodireito">
-            <input type="text" class="input3" placeholder="Seu nome completo"><br>
-            <input type="email" class="input4" placeholder="Seu Email"><br>
-            <input type="tel" class="input5" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
-            <input type="password" class="input6" placeholder="Sua Senha"><br>
-            <input type="password" class="input7" placeholder="Confirmação da Senha"><br>
-            <button class="registrar">Registrar</button>
+            <input type="text" class="input3" id="input3" placeholder="Seu nome completo"><br>
+            <input type="email" class="input4" id="input4" placeholder="Seu Email"><br>
+            <input type="tel" class="input5"  id="input5" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+            <input type="password" class="input6" id="input6" placeholder="Sua Senha"><br>
+            <input type="password" class="input7"  id="input7" placeholder="Confirmação da Senha"><br>
+            <button class="registrar" onclick="registro()">Registrar</button>
 
         </div>
 
@@ -52,9 +52,9 @@
 
 
             <div class="inputgod">
-                <input type="email" name="" class="input1" placeholder="Seu Email"><br>
-                <input type="password" name="" class="input2" placeholder="Sua Senha"> <br>
-                <button class="entrar">Entrar</button>
+                <input type="email" name="" class="input1" id="input1" placeholder="Seu Email"><br>
+                <input type="password" name="" class="input2" id="input2" placeholder="Sua Senha"> <br>
+                <button class="entrar" onclick="logar()">Entrar</button>
 
             </div>
         </div>
@@ -69,4 +69,24 @@
       document.getElementById('myChart'),
       config
     );
+    function registro(){
+        var nome = input3.value
+        var email = input4.value
+        var telefone = Number(input5.value)
+        var senha1 = input6.value
+        var senha2 = input7.value
+if (nome == 'Fernando Brandão' && email == 'fernandobrandao@sptech.school' && telefone == 943215678 && senha1 == 'sprint2' && senha2 == 'sprint2')
+   {
+       alert('Registro realizado com sucesso')
+   }
+}
+   function logar(){
+       var email2 = input1.value
+       var senha3 = input2.value
+       if (email2 == 'fernandobrandao@sptech.school' && senha3 == 'sprint2'){
+           alert('Login realizado com sucesso. Bem vindo, Fernando.')
+       }else{
+           alert ('Login ou senha inválidos')
+       }
+   }
   </script>
