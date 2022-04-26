@@ -145,7 +145,6 @@ a:active {
 .cardsH .card2 {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 65vh;
   width: 100%;
   background-color: white;
@@ -298,5 +297,6 @@ a:active {
 .linha{
   height: 80%;
   width: 80%;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  margin-left: 40px;
 }
