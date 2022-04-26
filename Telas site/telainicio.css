@@ -1,139 +1,134 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  /*header*/
-  body {
-    background-image: url("https://i.imgur.com/7emwXzT.png");
-    font-family: monospace;
-    margin: 0px;
-    height: 500px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-  }
-  
-  .header {
-    width: 100%;
-    height: 85px;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.700);
-  }
-  
-  .logo_header {
-    height: 43px;
-    width: 150px;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-bottom: 20px;
-  }
-  
-  .container {
-    width: 100%;
-    display: flex;
-  }
-  
-  .header .container {
-    height: 100%;
-    width: 95%;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navbar {
-    margin-top: 14px;
-    width: 500px;
-    color: rgb(255, 255, 255);
-    list-style: none;
-    align-items: center;
-    display: flex;
-    padding: 0;
-    justify-content: space-between;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .entrarheader {
-    color: rgb(78 178 101);
-    margin-top: 5px;
-  }
-  
-  .logo_entar {
-    height: 30px;
-    width: 30px;
-  }
-  
-  .btn_simulador {
-    color: white;
-    margin-left: 50px;
-    background-color: rgb(78 178 101);
-    height: 40px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 30px;
-  }
-  
-  a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .link_a:link {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  .link_a:visited {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  .link_a:hover {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .link_a:active {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  /* fim do header */
+.corpo {
+  font-family: monospace;
+  margin: 0px;
+  background-image: url("https://i.imgur.com/7emwXzT.png");
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 85px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.700);
+}
+
+.logo_header {
+  height: 43px;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.header .container {
+  height: 100%;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  margin-top: 14px;
+  width: 500px;
+  color: rgb(255, 255, 255);
+  list-style: none;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.entrarheader {
+  color: rgb(78 178 101);
+  margin-top: 5px;
+}
+
+.logo_entar {
+  height: 30px;
+  width: 30px;
+}
+
+.btn_simulador {
+  color: white;
+  margin-left: 50px;
+  background-color: rgb(78 178 101);
+  height: 40px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 30px;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:link {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:visited {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:hover {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:active {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 .textoinicio {
   align-items: center;
   display: flex;
   margin: auto;
   margin-top: 50px;
   line-break: auto;
-  width: 60%;
+  width: 70%;
   height: 80%;
 
+}
+.psecreto{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .p1 {
@@ -152,13 +147,14 @@
   margin: auto;
   margin-top: 50px;
   line-break: auto;
-  width: 90%;
+  width: 100%;
   height: 80%;
+  margin-right: 100px;
 }
 
 .p2 {
   margin: auto;
-  margin-left: 290px;
+
   font-size: 25px;
   color: white;
   line-break: auto;
@@ -168,9 +164,9 @@
 .containerbranco {
   margin: auto;
   background-color: white;
-  border: green solid 2px;
+  border: rgb(78 178 101) solid 2px;
   height: 320px;
-  width: 75%;
+  width: 80%;
   margin-top: 30px;
   justify-content: left;
   align-items: center;
@@ -210,19 +206,25 @@
 
   width: 300px
 }
+.imagem2{
+  width: 1348.5px;
+  height: 100%;
+  margin: 0;
 
+}
 .bannerfim {
   position: relative;
   color: white;
   text-align: center;
   margin: 0;
-  width: 100vw;
+  width: 400px;
+  height: 960px;
 }
 
 .p5 {
   position: absolute;
   top: 450px;
-  left: 500px;
+  left: 400px;
   font-size: 80px;
   font-weight: 900;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -251,7 +253,7 @@
 .p8 {
   position: absolute;
   top: 650px;
-  left: 1200px;
+  left: 1000px;
   font-size: 20px;
   font-weight: 600;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -281,7 +283,7 @@
 .p11 {
   position: absolute;
   top: 850px;
-  left: 1200px;
+  left: 1000px;
   font-size: 20px;
   font-weight: 600;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
