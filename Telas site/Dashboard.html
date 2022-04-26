@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard || ODLA</title>
-    <link rel="stylesheet" href="Dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" href="https://i.imgur.com/GHeZ9BM.png">
-</head>
-<body>
-        <!-- Header -->
-        <div class="header">
 
-            <div class="container">
-    
-                <img class="logo_header" src="https://i.imgur.com/d1sFhNj.png">
-    
-                <ul class="navbar">
-                    <li>Inicio</li>
-                    <li>Sobre nós</li>
-                    <li>Serviços</li>
-                    <li>Contato</li>
-                    <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
-                        <a class="link_a" href="Dashboard.html"> Dashboard</a></li>
-                </ul>
-    
-                <div class="btn_simulador">
-                    <a href="SimuladorODLA.HTML">Simulador financeiro</a>
-                </div>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard || ODLA</title>
+  <link rel="stylesheet" href="Dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header">
+
+    <div class="container">
+
+      <img class="logo_header" src="https://i.imgur.com/d1sFhNj.png">
+
+      <ul class="navbar">
+        <li>Inicio</li>
+        <li>Sobre nós</li>
+        <li>Serviços</li>
+        <li>Contato</li>
+        <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
+          <a class="link_a" href="Dashboard.html"> Dashboard</a>
+        </li>
+      </ul>
+
+      <div class="btn_simulador">
+        <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do Header -->
+  <!--banner-->
+  <div class="containera">
+    <div class="containerb">
+      <div class="card1"> <span class="texto_card1">Nossos sensores captam a emição de luz (em lux) das suas lampadas
+          assim podemos regular a emição de luz e calcular o seu consumo de energia.</span></div>
+      <div class="card2">
+        <div>
+          <canvas id="Chart_barra2" style="position: relative; height:40vh; width:50vw"></canvas>
         </div>
-        <!-- Fim do Header -->
-        <!--banner-->
-        <div class="containera">
-        <div class="containerb">
-            <div class="card1"> <span class="texto_card1" >TEXTO</span></div>
-            <div class="card2">
-                <div>
-                <canvas id="Chart_barra2" style="position: relative; height:40vh; width:50vw"></canvas>
-                </div>
+      </div>
+    </div>
+    <div class="containerc">
+      <div class="card3">
+        <div>
+          <canvas id="Chart_barra1" style="position: relative; height:40vh; width:40vw"></canvas>
         </div>
-        </div>
-        <div class="containerc">
-            <div class="card3">
-                  <div>
-                    <canvas id="Chart_barra1" style="position: relative; height:40vh; width:40vw"></canvas>
-                  </div>
-            </div>
-            <div class="card4">
-                <span class="outro_grafico"> OUTRO GRAFICO <BR> DE OUTRO TIPO</BR></span>
-            </div>
-        </div>
-        <div class="div_btn_sensor">
-            <button class="btn_sensor"><a class="link_ab" href="Dashboard.html">Verificar Sensores</a></button>
-        </div>
-        </div>
-        
+      </div>
+      <div class="card4">
+        <canvas id="Chart_linha" style="position: relative; height:40vh; width:40vw"></canvas>
+      </div>
+    </div>
+    <div class="div_btn_sensor">
+      <button class="btn_sensor"><a class="link_ab" href="TelaSensores.html">Verificar Sensores</a></button>
+    </div>
+  </div>
+
 </body>
 <script>
-    const labels = [
-      'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Maio',
-      'Junho',
-      'Julho',
-      'Agosto',
-      'Setembro',
-      'Outubro',
-      'Novembro',
-      'Dezembro',
-  
-    ];
-  
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'Consumo de energia mensal (kWh)',
-        backgroundColor: 'rgb(78 178 101)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [25250, 29472, 21000, 26949, 23809, 29927, 23066, 21551, 24274, 29051, 23038, 25942],
-      }]
-    };
-  
-    const config = {
-      type: 'bar',
-      data: data,
-      options: {}
-    };
-    const labels2 = [
+  const labels = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Consumo de energia mensal (kWh)',
+      backgroundColor: 'rgb(78 178 101)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [25250, 29472, 21000, 26949, 23809, 29927, 23066, 21551, 24274, 29051, 23038, 25942],
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+  const labels2 = [
     '01/04',
     '02/04',
     '03/04',
@@ -121,35 +125,85 @@
     '28/04',
     '29/04',
     '30/04',
-  
-    ];
-  
-    const data2 = {
-      labels: labels2,
-      datasets: [{
-        label: 'Consumo de energia diario (kWh)',
-        backgroundColor: 'rgb(78 178 101)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [832,798,876,756,658,674,691,732,823,915,867,813,882,746,876,780,806,808,983,880,824,962,774,754,992,869,912,830,861,701,],
-      }]
-    };
-  
-    const config2 = {
-      type: 'bar',
-      data: data2,
-      options: {}
-    };
-  
-  
-  </script>
-  <script>
-    const barra1 = new Chart(
-      document.getElementById('Chart_barra1'),
-      config
-    );
-    const barra2 = new Chart(
-      document.getElementById('Chart_barra2'),
-      config2
-    );
-  </script>
+
+  ];
+
+  const data2 = {
+    labels: labels2,
+    datasets: [{
+      label: 'Consumo de energia diario (kWh)',
+      backgroundColor: 'rgb(78 178 101)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [832, 798, 876, 756, 658, 674, 691, 732, 823, 915, 867, 813, 882, 746, 876, 780, 806, 808, 983, 880, 824, 962, 774, 754, 992, 869, 912, 830, 861, 701,],
+    }]
+  };
+
+  const config2 = {
+    type: 'bar',
+    data: data2,
+    options: {}
+  };
+
+  const labels3 = [
+    '00:00',
+    '01:00',
+    '02:00',
+    '03:00',
+    '04:00',
+    '05:00',
+    '06:00',
+    '07:00',
+    '08:00',
+    '09:00',
+    '10:00',
+    '11:00',
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+    '18:00',
+    '19:00',
+    '20:00',
+    '21:00',
+    '22:00',
+    '23:00',
+
+
+  ];
+
+  const data3 = {
+    labels: labels3,
+    datasets: [{
+      label: 'Consumo de energia (kWh)',
+      backgroundColor: 'rgb(78 178 101)',
+      borderColor: 'rgb(78 178 101)',
+      data: [7800, 7333, 6700, 6200, 5590, 5009, 4788, 4543, 4899, 4678, 4045, 3456],
+    }]
+  };
+
+  const config3 = {
+    type: 'line',
+    data: data3,
+  };
+
+
+
+</script>
+<script>
+  const barra1 = new Chart(
+    document.getElementById('Chart_barra1'),
+    config
+  );
+  const barra2 = new Chart(
+    document.getElementById('Chart_barra2'),
+    config2
+  );
+  const linha = new Chart(
+    document.getElementById('Chart_linha'),
+    config3
+  );
+</script>
+
 </html>
