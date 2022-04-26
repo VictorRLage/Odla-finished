@@ -4,14 +4,14 @@
 }
 
 /*header*/
-.corpo {
-  font-family: monospace;
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #dfdede;
   margin: 0px;
   background-image: url("https://i.imgur.com/gyPnQLb.jpg");
-  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
+
 }
 
 .header {
@@ -58,9 +58,10 @@
   margin-top: 5px;
 }
 
-.logo_entar {
-  height: 30px;
-  width: 30px;
+.logo_dashboard {
+  height: 25px;
+  width: 25px;
+  margin-bottom: 7px;
 }
 
 .btn_simulador {
@@ -123,7 +124,7 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
-
+/* fim do header */
 /*banner*/
 .pai {
   background-color: #4eb265;

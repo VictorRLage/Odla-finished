@@ -20,10 +20,10 @@
             <img class="logo_header" src="https://i.imgur.com/d1sFhNj.png">
 
             <ul class="navbar">
-                <li>Inicio</li>
-                <li>Sobre nós</li>
-                <li>Serviços</li>
-                <li>Contato</li>
+                <li><a href="telainicio.html"> Inicio</a></li>
+                <li><a href="SobreNós.html"> Sobre Nós</a></li>
+                <li><a href="">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
                 <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
                     <a class="link_a" href="login.html"> Entrar</a>
                 </li>
@@ -35,6 +35,7 @@
         </div>
     </div>
     <!-- Fim do Header -->
+    <!-- Banner -->
     <div class="container">
         <div class="card1">
             <img class="img_alface" src="https://i.imgur.com/RYeRxVL.png">
@@ -53,12 +54,16 @@
                         <li>01</li>
                     </ul>
                 </div>
-                <div>
-
+                <div class="dunut">
+                    <canvas id="dunut"></canvas>
                 </div>
         </div>
         <div class="cardsH">
-            <div class="card2"></div>
+            <div class="card2">
+                <div class="linha">
+                    <canvas id="linha"></canvas>
+                </div>
+            </div>
             <div class="cardsV">
                 <div class="card3">
                     <h2>Consumo de Energia</h2>
@@ -81,9 +86,12 @@
                     </div>
                     <div class="uls3">
                         <ul class="li">
-                            <li><img class="funcionando" align="center" src="https://i.imgur.com/GHeZ9BM.png" alt=""> Funcionando</li>
-                            <li><img class="manutençao" align="center" src="https://i.imgur.com/GHeZ9BM.png" alt=""> Em Manutenção</li>
-                            <li><img class="indisponivel" align="center" src="https://i.imgur.com/GHeZ9BM.png" alt=""> Indisponivel</li>
+                            <li><img class="funcionando" align="center" src="https://i.imgur.com/GHeZ9BM.png" alt="">
+                                Funcionando</li>
+                            <li><img class="manutençao" align="center" src="https://i.imgur.com/GHeZ9BM.png" alt=""> Em
+                                Manutenção</li>
+                            <li><img class="indisponivel" align="center" src="https://i.imgur.com/GHeZ9BM.png" alt="">
+                                Indisponivel</li>
                         </ul>
                         <ul class="li2">
                             <li>10</li>
@@ -95,3 +103,67 @@
             </div>
         </div>
     </div>
+    <!-- Fim do Banner -->
+</body>
+
+</html>
+<script>
+    const data = {
+        labels: [
+            'Emitindo 100%',
+            'Emitindo até 50%',
+            'Emitindo menos de 50%'
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [2, 7, 1],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+    };
+</script>
+<script>
+  const labels1 = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
+
+  const data1 = {
+    labels: labels1,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+
+  const config1 = {
+    type: 'line',
+    data: data1,
+    options: {}
+  };
+</script>
+<script>
+    const dunut = new Chart(
+        document.getElementById('dunut'),
+        config
+    );
+    const linha = new Chart(
+        document.getElementById('linha'),
+        config1
+    );
+</script>

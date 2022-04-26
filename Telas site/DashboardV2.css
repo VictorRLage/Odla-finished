@@ -143,6 +143,9 @@ a:active {
 }
 
 .cardsH .card2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 65vh;
   width: 100%;
   background-color: white;
@@ -288,4 +291,12 @@ a:active {
 .indisponivel{
   height: 20px;
   width: 20px;
+}
+.dunut{
+  margin-top: 50px;
+}
+.linha{
+  height: 80%;
+  width: 80%;
+  margin-bottom: 50px;
 }
