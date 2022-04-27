@@ -3,14 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    overflow-x: hidden;
-    
   }
   
   /*headers*/
   body {
     margin: 0px;
     background-color: black;
+    overflow-x: hidden;
   }
   
   .header {
@@ -219,7 +218,7 @@ footer{
 
 .footer-content > h1{
     font-size: 28px;
-    font-weight: 400x   ;
+    font-weight: 400x;
     text-transform: capitalize;
     line-height: 2rem;
 
