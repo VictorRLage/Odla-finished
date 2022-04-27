@@ -37,11 +37,11 @@
     <!-- Fim do Header -->
     <div class="pai">
         <form method="post" action="" class="inputladodireito">
-            <input type="text" name="nome" class="input3" id="input3" placeholder="Seu nome completo"><br>
-            <input type="email" name="email" class="input4" id="input4" placeholder="Seu Email"><br>
-            <input type="tel" name="telefone" class="input5"  id="input5" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
-            <input type="password" class="input6" id="input6" placeholder="Sua Senha"><br>
-            <input type="password" class="input7"  id="input7" placeholder="Confirmação da Senha"><br>
+            <input type="text" name="nome" class="input3" id="input3" placeholder="Seu nome completo" required><br>
+            <input type="email" name="email" class="input4" id="input4" placeholder="Seu email" required><br>
+            <input type="tel" name="telefone" class="input5"  id="input5" placeholder="Telefone celular (11) 91111-1111" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" maxlength="15" required><br>
+            <input type="text" class="input7"  id="input7" pattern="[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}" maxlength="15" placeholder="CNPJ 99999999/999999" required><br>
+            <input type="password" class="input6" id="input6" placeholder="Sua Senha" required><br>
             <input type="hidden" name="_captcha" value="false">
             <button class="registrar" onclick="registro()">Registrar</button>
         </form>
@@ -51,12 +51,12 @@
             <img src="https://i.imgur.com/di76X9D.png" alt="" class="logo">
 
 
-            <div class="inputgod">
-                <input type="email" name="" class="input1" id="input1" placeholder="Seu Email"><br>
-                <input type="password" name="" class="input2" id="input2" placeholder="Sua Senha"> <br>
+            <form method="post" action="" class="inputgod">
+                <input type="email" name="" class="input1" id="input1" placeholder="Seu Email" required><br>
+                <input type="password" name="" class="input2" id="input2" placeholder="Sua Senha" required> <br>
                 <button class="entrar" onclick="logar()">Entrar</button>
 
-            </div>
+            </form>
         </div>
     </div>
 
