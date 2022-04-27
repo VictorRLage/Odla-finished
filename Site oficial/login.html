@@ -36,15 +36,15 @@
     </div>
     <!-- Fim do Header -->
     <div class="pai">
-        <div class="inputladodireito">
-            <input type="text" class="input3" id="input3" placeholder="Seu nome completo"><br>
-            <input type="email" class="input4" id="input4" placeholder="Seu Email"><br>
-            <input type="tel" class="input5"  id="input5" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+        <form method="post" action="" class="inputladodireito">
+            <input type="text" name="nome" class="input3" id="input3" placeholder="Seu nome completo"><br>
+            <input type="email" name="email" class="input4" id="input4" placeholder="Seu Email"><br>
+            <input type="tel" name="telefone" class="input5"  id="input5" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
             <input type="password" class="input6" id="input6" placeholder="Sua Senha"><br>
             <input type="password" class="input7"  id="input7" placeholder="Confirmação da Senha"><br>
+            <input type="hidden" name="_captcha" value="false">
             <button class="registrar" onclick="registro()">Registrar</button>
-
-        </div>
+        </form>
 
         <div class="bemvindo">
             <h3 class="textoh3">Bem-vindo</h3>
