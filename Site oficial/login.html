@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Cadastro || ODLA</title>
+    <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
+    <link rel="stylesheet" href="login.css">
+</head>
+<!--4eb265-->
+
+<body class="corpo">
+    <!-- Header -->
+    <div class="header">
+
+        <div class="container">
+
+            <img class="logo_header" src="https://i.imgur.com/d1sFhNj.png">
+
+            <ul class="navbar">
+                <li><a href="telainicio.html"> Inicio</a></li>
+                <li><a href="SobreNós.html"> Sobre Nós</a></li>
+                <li><a href="">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/dnHe1Jk.png" align="center">
+                    <a class="link_a" href="DashboardV2.html"> Dashboard</a>
+                </li>
+            </ul>
+
+            <div class="btn_simulador">
+                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Header -->
+    <div class="pai">
+        <div class="inputladodireito">
+            <input type="text" class="input3" id="input3" placeholder="Seu nome completo"><br>
+            <input type="email" class="input4" id="input4" placeholder="Seu Email"><br>
+            <input type="tel" class="input5"  id="input5" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+            <input type="password" class="input6" id="input6" placeholder="Sua Senha"><br>
+            <input type="password" class="input7"  id="input7" placeholder="Confirmação da Senha"><br>
+            <button class="registrar" onclick="registro()">Registrar</button>
+
+        </div>
+
+        <div class="bemvindo">
+            <h3 class="textoh3">Bem-vindo</h3>
+            <img src="https://i.imgur.com/di76X9D.png" alt="" class="logo">
+
+
+            <div class="inputgod">
+                <input type="email" name="" class="input1" id="input1" placeholder="Seu Email"><br>
+                <input type="password" name="" class="input2" id="input2" placeholder="Sua Senha"> <br>
+                <button class="entrar" onclick="logar()">Entrar</button>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <div class="footer-content">
+        <h1> <a href="contato.html">CONTATE-NOS</a></h1>
+        <p>
+            Avenida Brigadeiro 487 Andar 19, Faria Lima, São Paulo, SP 04538-133 <br>
+            Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@odla.com
+        </p>
+        <ul class="sociais">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 ODLA</p>
+    </div>
+
+</footer>
+
+</html>
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    function registro(){
+        var nome = input3.value
+        var email = input4.value
+        var telefone = Number(input5.value)
+        var senha1 = input6.value
+        var senha2 = input7.value
+if (nome == 'Fernando Brandão' && email == 'fernandobrandao@sptech.school' && telefone == 943215678 && senha1 == 'sprint2' && senha2 == 'sprint2')
+   {
+       alert('Registro realizado com sucesso')
+   }
+}
+   function logar(){
+       var email2 = input1.value
+       var senha3 = input2.value
+       if (email2 == 'fernandobrandao@sptech.school' && senha3 == 'sprint2'){
+           alert('Login realizado com sucesso. Bem vindo, Fernando.')
+       }else{
+           alert ('Login ou senha inválidos')
+       }
+   }
+  </script>
