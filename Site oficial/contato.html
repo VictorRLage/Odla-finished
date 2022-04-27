@@ -42,7 +42,7 @@
             <form action="https://formsubmit.co/odlacontato@gmail.com" method="POST" class="form">
                 <input type="text" name="name" placeholder="Nome" required>
                 <input type="email" name="email" placeholder="E-mail" required>
-                <input type="tel" name="telefone" placeholder="Telefone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="tel" name="telefone" placeholder="Telefone celular (11) 91111-1111" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" maxlength="15" required>
                 <input type="text" name="assunto" placeholder="Assunto" required>
                 <textarea name="messege" id="" cols="30" rows="10" placeholder="Escreva aqui"></textarea>
                 <input type="hidden" name="_captcha" value="false">
