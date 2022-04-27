@@ -5,7 +5,6 @@
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-x: hidden;
 }
 
 .header {
@@ -13,6 +12,8 @@
   height: 85px;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.700);
+  overflow-x: hidden;
+
 }
 
 .logo_header {
