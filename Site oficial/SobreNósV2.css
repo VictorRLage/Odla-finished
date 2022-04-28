@@ -271,9 +271,8 @@ footer{
   background-color: #4EB265;
   height: auto;
   width: 100vw;
-  padding-top: 15px;
+  padding-top: 5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- 
   color: white;
 }
 
@@ -295,7 +294,7 @@ footer{
 
 .footer-content > p{
   
-  margin: 10px auto;
+  margin: 5px auto;
   line-height: 28px;
   font-size: 14px;
 }
@@ -305,7 +304,7 @@ footer{
   display:flex;
   align-items: center;
   justify-content: center;
-  margin: 16px 0 20px 0;
+  margin: 10px 0 10px 0;
 }
 
 .sociais > li{
@@ -329,7 +328,7 @@ footer{
 .footer-bottom{
   background: #2d8a43;
   width: 100vw;
-  padding: 20px 0;
+  padding: 5px 0;
   text-align: center;
 }
 

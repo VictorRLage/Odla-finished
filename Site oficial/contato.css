@@ -1,6 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -194,7 +192,7 @@ a:active {
   background-repeat: no-repeat;
 }
 
-footer {
+footer{
   position: relative;
   bottom: 0;
   left: 0;
@@ -202,12 +200,12 @@ footer {
   background-color: #4EB265;
   height: auto;
   width: 100vw;
-  padding-top: 15px;
+  padding-top: 5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
 }
 
-.footer-content {
+.footer-content{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,36 +213,36 @@ footer {
   text-align: center;
 }
 
-.footer-content>h1 {
+.footer-content > h1{
   font-size: 28px;
-  font-weight: 400x;
+  font-weight: 400x   ;
   text-transform: capitalize;
   line-height: 2rem;
 
 }
 
-.footer-content>p {
-
-  margin: 10px auto;
+.footer-content > p{
+  
+  margin: 5px auto;
   line-height: 28px;
   font-size: 14px;
 }
 
-.sociais {
+.sociais{
   list-style: none;
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
-  margin: 16px 0 20px 0;
+  margin: 10px 0 10px 0;
 }
 
-.sociais>li {
+.sociais > li{
   margin: 0px 10px;
 }
 
-.sociais>a {
+.sociais > a{
   text-decoration: none;
-  color: white
+  color:white
 }
 
 .sociais a i {
@@ -252,18 +250,18 @@ footer {
   transition: color .4s ease;
 }
 
-.sociais a:hover i {
-  color: #7FCC8E;
+.sociais a:hover i{
+  color:#7FCC8E;
 }
 
-.footer-bottom {
+.footer-bottom{
   background: #2d8a43;
   width: 100vw;
-  padding: 20px 0;
+  padding: 5px 0;
   text-align: center;
 }
 
-.footer-bottom p {
+.footer-bottom p{
   font-size: 14px;
   word-spacing: 2px;
   text-transform: capitalize;
