@@ -1,0 +1,239 @@
+/*headers*/
+body {
+  font-family: monospace;
+  margin: 0px;
+  background-image: url("https://i.imgur.com/IFCg2GA.png");
+}
+
+.header {
+  width: 100%;
+  height: 85px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.700);
+}
+
+.logo_header {
+  height: 43px;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.header .container {
+  height: 100%;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  margin-top: 14px;
+  width: 500px;
+  color: rgb(255, 255, 255);
+  list-style: none;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.entrarheader {
+  color: rgb(78 178 101);
+  margin-top: 5px;
+}
+
+.logo_entar {
+  height: 30px;
+  width: 30px;
+}
+
+.btn_simulador {
+  color: white;
+  margin-left: 50px;
+  background-color: rgb(78 178 101);
+  height: 40px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 30px;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:link {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:visited {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:hover {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:active {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+/*banner*/
+.banner {
+  height: 800px;
+  background-color: rgb(0, 0, 0);
+  background-image: url(https://i.imgur.com/IFCg2GA.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner .card1 {
+  background-color: ghostwhite;
+  height: 650px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 225px;
+  margin-top: 80px;
+  border-radius: 40px 0px 0px 40px;
+}
+
+.banner .card2 {
+  background-color: rgb(78 178 101);
+  height: 650px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.texto1 {
+  margin-left: 40px;
+  margin-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+  color: rgb(78 178 101);
+  ;
+}
+
+button {
+  background-color: rgb(78 178 101);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  border-radius: 40px;
+  height: 40px;
+  width: 300px;
+  font-size: 20px;
+  border-style: hidden;
+  box-shadow: 2px 2px 2px rgb(189, 188, 188);
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background: white;
+  color: rgb(78 178 101);
+  border: 1px solid #eee;
+  border-radius: 40px;
+  box-shadow: 2px 2px 2px rgb(189, 188, 188);
+}
+
+.checks {
+  margin-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 40px;
+}
+
+.texto2 {
+  margin-left: 40px;
+  margin-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+input {
+  height: 20px;
+  border: 2px solid rgb(78 178 101);
+  border-radius: 6px;
+}
+
+select {
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+  border-color: rgb(78 178 101);
+  border-radius: 10px;
+  border-width: 2px;
+  color: rgb(47, 119, 40);
+}
+
+.check1 {
+  height: 15px;
+  width: 20px;
+}
+
+.check2 {
+  height: 15px;
+  width: 20px;
+}
+
+.check3 {
+  height: 15px;
+  width: 20px;
+}
+
+.check4 {
+  height: 15px;
+  width: 20px;
+}
+
+.logo_branca {
+  height: 100px;
+  width: 100px;
+}
