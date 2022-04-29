@@ -57,9 +57,10 @@ body {
   margin-top: 5px;
 }
 
-.logo_entar {
-  height: 30px;
-  width: 30px;
+.logo_dashboard {
+  height: 25px;
+  width: 25px;
+  margin-bottom: 7px;
 }
 
 .btn_simulador {
