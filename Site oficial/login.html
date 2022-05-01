@@ -24,7 +24,8 @@
                 <li><a href="SobreNósV2.html">Sobre nós</a></li>
                 <li><a href="Servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/dnHe1Jk.png" align="center">
+                <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/dnHe1Jk.png"
+                        align="center">
                     <a class="link_a" href="DashboardV2.html"> Dashboard</a>
                 </li>
             </ul>
@@ -39,8 +40,10 @@
         <form method="post" action="" class="inputladodireito">
             <input type="text" name="nome" class="input3" id="input3" placeholder="Seu nome completo" required><br>
             <input type="email" name="email" class="input4" id="input4" placeholder="Seu email" required><br>
-            <input type="tel" name="telefone" class="input5"  id="input5" placeholder="Telefone celular (11) 91111-1111" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" maxlength="15" required><br>
-            <input type="text" class="input7"  id="input7" pattern="[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}" maxlength="15" placeholder="CNPJ 99999999/999999" required><br>
+            <input type="tel" name="telefone" class="input5" id="input5" placeholder="Telefone celular (11) 91111-1111"
+                pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" maxlength="15" required><br>
+            <input type="text" class="input7" id="input7" pattern="[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}"
+                maxlength="15" placeholder="CNPJ 99999999/999999" required><br>
             <input type="password" class="input6" id="input6" placeholder="Sua Senha" required><br>
             <input type="hidden" name="_captcha" value="false">
             <button class="registrar" onclick="registro()">Registrar</button>
@@ -55,7 +58,6 @@
                 <input type="email" name="" class="input1" id="input1" placeholder="Seu Email" required><br>
                 <input type="password" name="" class="input2" id="input2" placeholder="Sua Senha" required> <br>
                 <button class="entrar" onclick="logar()">Entrar</button>
-
             </form>
         </div>
     </div>
@@ -85,28 +87,21 @@
 
 </html>
 <script>
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-    function registro(){
+    function registro() {
         var nome = input3.value
         var email = input4.value
         var telefone = Number(input5.value)
         var senha1 = input6.value
         var senha2 = input7.value
-if (nome == 'Fernando Brandão' && email == 'fernandobrandao@sptech.school' && telefone == 943215678 && senha1 == 'sprint2' && senha2 == 'sprint2')
-   {
-       alert('Registro realizado com sucesso')
-   }
-}
-   function logar(){
-       var email2 = input1.value
-       var senha3 = input2.value
-       if (email2 == 'fernandobrandao@sptech.school' && senha3 == 'sprint2'){
-           alert('Login realizado com sucesso. Bem vindo, Fernando.')
-       }else{
-           alert ('Login ou senha inválidos')
-       }
-   }
-  </script>
+        if (nome == 'Fernando Brandão' && email == 'fernandobrandao@sptech.school' && telefone == 943215678 && senha1 == 'sprint2' && senha2 == 'sprint2') {
+            alert('Registro realizado com sucesso')
+        }
+    }
+    function logar() {
+        var email2 = input1.value
+        var senha3 = input2.value
+        if (email2 == 'fernandobrandao@sptech.school' && senha3 == 'sprint2') {
+            window.location.href = 'DashboardV2.html'
+        }
+    }
+</script>
