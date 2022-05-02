@@ -11,13 +11,12 @@
   height: 8px;
 }
 
-.corpo::-webkit-scrollbar-track {
-  display: none;
-}
-
 .corpo::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: inherit;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #4eb265;
 }
 * {
   box-sizing: border-box;

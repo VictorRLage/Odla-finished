@@ -19,6 +19,9 @@
   border-radius: 10px;
   background-color: inherit;
 }
+::-webkit-scrollbar-thumb:hover{
+  background-color: #4eb265;
+}
 
 .corpo {
   overflow: overlay;
