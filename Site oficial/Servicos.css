@@ -229,8 +229,6 @@ footer {
 }
 
 /* Fim do footer */
-
-
 .icone {
   margin-top: 30px;
   margin-left: 100px;
@@ -389,5 +387,5 @@ img{
   width: 300px;
 }
 .fundo{
-  background-color: rgb(250, 250, 250);
+  background-color: hotpink;
 }
