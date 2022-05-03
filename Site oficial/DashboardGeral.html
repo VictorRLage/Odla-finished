@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard || ODLA</title>
+    <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
+    <link rel="stylesheet" href="DashboardGeral.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="corpo">
+    <!-- Header -->
+    <div class="header">
+
+        <div class="container">
+
+            <a href="telainicio.html"><img src="https://i.imgur.com/d1sFhNj.png" class="logo_header"></a>
+
+            <ul class="navbar">
+                <li><a href="telainicio.html"> Inicio</a></li>
+                <li><a href="SobreNós.html"> Sobre nós</a></li>
+                <li><a href="Servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
+                    <a class="link_a" href="login.html"> Entrar</a>
+                </li>
+            </ul>
+
+            <div class="btn_simulador">
+                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Header -->
+    <!-- Banner -->
+    <div class="banner">
+        <div class="esquerda">
+            <div class="card1">
+                <canvas id="conMenBar"></canvas>
+            </div>
+            <div class="card2">
+                <canvas id="conMenLine"></canvas>
+            </div>
+        </div>
+        <div class="direita">
+            <div class="card3">
+                <canvas id="sensor1Line"></canvas>
+            </div>
+            <div class="card4">
+                <canvas id="sensor2Line"></canvas>
+            </div>
+            <div class="card5">
+                <canvas id="sensor3Line"></canvas>
+            </div>
+            <div class="card6">
+                <canvas id="sensor4Line"></canvas>
+            </div>
+            <div class="card7">
+                <canvas id="sensor5Line"></canvas>
+            </div>
+            <div class="card8">
+                <canvas id="sensor6Line"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const CHART = document.getElementById('sensor1Line');
+    console.log(CHART);
+    let sensor1Line = new Chart(CHART, {
+        type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Luminosidade',
+                        type: 'line',
+                        borderColor: ['#ffd902'],
+                        backgroundColor: ['#ffe135'],
+                        data: [0, 100000]
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Luminosidade'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+</script>
+<script>
+    const labels = Utils.months({ count: 7 });
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+    };
+    const config = {
+        type: 'line',
+        data: data,
+    };
+</script>

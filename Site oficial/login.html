@@ -26,7 +26,7 @@
                 <li><a href="contato.html">Contato</a></li>
                 <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/dnHe1Jk.png"
                         align="center">
-                    <a class="link_a" href="DashboardV2.html"> Dashboard</a>
+                    <a class="link_a" href="DashboardGeral.html"> Dashboard</a>
                 </li>
             </ul>
 
@@ -115,7 +115,7 @@
             titulo_m.innerHTML = `<br>Email inválido, verifique e tente novamente.`
             p_msg.innerHTML = ``
         }
-        else if (input5.value.length != 14) {
+        else if (input5.value.length != 15) {
             titulo_m.innerHTML = `Telefone inválido, verifique e tente novamente.`
             p_msg.innerHTML = `Deve conter ( ) e - <br> Ex: (11) 91111-1111`
         }
@@ -141,7 +141,7 @@
         var email2 = input1.value
         var senha2 = input2.value
         if (input2.value == '123' && input1.value == 'victorlage3000@gmail.com') {
-            window.location.href = "DashboardV2.html"
+            window.location.href = "DashboardGeral.html"
         }
         else{
             titulo_m2.innerHTML = `Email ou senha invalidos.`
