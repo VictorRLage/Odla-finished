@@ -14,22 +14,26 @@ idFazendaVertical int primary key,
 nome varchar(80),
 area int,
 altura int,
-fkCliente int);
+fkCliente int,
+foreign key (fkCliente) references Cliente(idCliente));
 
 create table Usuario(
-idUsuario int,
-fkUsuarioFazenda int,
-primary key (idUsuario, fkUsuarioFazenda),
+idUsuario int primary key auto_increment,
 email varchar(155) unique,
-senha varchar(155));
+senha varchar(155),
+fkFazendaVertical int,
+foreign key (fkFazendaVertical) references fazendaVertical (idFazendaVertical)
+)auto_increment = 101;
 
 create table Sensor(
 idSensor int primary key,
 nmrColuna int,
-fkFazendaVertical int);
+fkFazendaVertical int,
+foreign key (fkFazendaVertical) references fazendaVertical (idFazendaVertical));
 
 create table VerificacaoHora(
-idVerificacaoHora int,
+idVerificacaoHora int primary key,
 dataHora datetime,
 lux int,
-fkSensor int);
+fkSensor int,
+foreign key (fkSensor) references Sensor (idSensor));
