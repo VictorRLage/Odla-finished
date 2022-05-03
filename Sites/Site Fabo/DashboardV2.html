@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard || ODLA</title>
+    <link rel="stylesheet" href="DashboardV2.css">
+    <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="corpo">
+    <!-- Header -->
+    <div class="header">
+
+        <div class="container">
+
+            <a href="telainicio.html"><img src="https://i.imgur.com/d1sFhNj.png" class="logo_header"></a>
+
+            <ul class="navbar">
+                <li><a href="telainicio.html">Início</a></li>
+                <li><a href="SobreNósV2.html">Sobre nós</a></li>
+                <li><a href="Servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
+                    <a class="link_a" href="login.html"> Entrar</a>
+                </li>
+            </ul>
+
+            <div class="btn_simulador">
+                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Header -->
+    <!-- Banner -->
+    <div class="container">
+        <div class="card1">
+            <img class="img_alface" src="https://i.imgur.com/0p0Pwno.png">
+            <h1>Potência das Lâmpadas</h2>
+                <div class="uls">
+                    <ul class="ul_porcentagem">
+                        <li>&nbsp;</li>
+                        <li>Emitindo 100%</li>
+                        <li>Emitindo até 50%</li>
+                        <li>Emitindo menos de 50%</li>
+                    </ul>
+                    <ul class="ul_qtd">
+                        <li>Sensores</li>
+                        <li>02</li>
+                        <li>07</li>
+                        <li>01</li>
+                    </ul>
+                </div>
+                <div class="dunut">
+                    <canvas id="dunut"></canvas>
+                </div>
+        </div>
+        <div class="cardsH">
+            <div class="card2">
+                <div class="linha">
+                    <canvas id="linha"></canvas>
+                </div>
+                <div class="container2">
+                    <div class="DT">
+                        <p>Ultima atualização:<br>
+                            <span>2022-05-08-12:00</span>
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <button id="open" class="btn_u">Adicionar usuário</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cardsV">
+                <div class="card3">
+                    <h2>Consumo de energia</h2>
+                    <div class="blocos">
+                        <div class="bloco1">Medio por hora:<br> <span class="med_hr">809</span> kWh</div>
+                        <div class="bloco2">Diário:<br> <span class="med_hr">194.16</span> Kw</div>
+                        <div class="bloco3">Mensal:<br> <span class="med_hr">582</span> MW</div>
+                    </div>
+                </div>
+                <div class="card4">
+                    <h2>Sensores</h2>
+                    <img class="img_sensor" src="https://i.imgur.com/00X2Fp3.png">
+                    <div class="uls2">
+                        <ul class="total">
+                            <li>Total</li>
+                        </ul>
+                        <ul class="qtd">
+                            <li>10</li>
+                        </ul>
+                    </div>
+                    <div class="uls3">
+                        <ul class="li">
+                            <li><img class="funcionando" align="center" src="https://i.imgur.com/aKQCcmW.png" alt="">
+                                Funcionando</li>
+                            <li><img class="manutençao" align="center" src="https://i.imgur.com/frbLIG3.png" alt=""> Em
+                                manutenção</li>
+                            <li><img class="indisponivel" align="center" src="https://i.imgur.com/tk0UfYf.png" alt="">
+                                Indisponível</li>
+                        </ul>
+                        <ul class="li2">
+                            <li>10</li>
+                            <li>0</li>
+                            <li>0</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Banner -->
+    <!--MODAL 0-->
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+            <h1 id="titulo_M">Cadastre um usuário</h1>
+            <form method="post" action="" class="inputgod">
+                <input type="email" name="" class="input1" id="input1" placeholder="Email" required><br>
+                <input type="password" name="" class="input2" id="input2" placeholder="Senha" required> <br>
+                <button class="entrar" onclick="logar()">Entrar</button>
+
+            </form>
+        </div>
+        <button class="button1" id="close">X</button>
+    </div>
+</body>
+
+<footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <div class="footer-content">
+        <h1> <a href="contato.html">CONTATE-NOS</a></h1>
+        <p>
+            Avenida Brigadeiro 487 Andar 19, Faria Lima, São Paulo, SP 04538-133 <br>
+            Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@odla.com
+        </p>
+        <ul class="sociais">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 ODLA</p>
+    </div>
+
+</footer>
+
+</html>
+<script>
+    const CHART = document.getElementById('dunut');
+    console.log(CHART);
+    let dunut = new Chart(CHART, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Emitindo 100%',
+                'Emitindo até 50%',
+                'Emitindo menos de 50%'
+
+            ],
+
+            datasets: [{
+                label: 'Gráfico de emissão',
+                data: [2, 7, 1],
+                backgroundColor: [
+                    'rgb(8, 41, 73)',
+                    'rgb(54, 162, 235)',
+                    'rgb(59, 59, 187)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: 'rgb(255, 255, 255)'
+                    }
+                }
+            }
+        }
+    });
+</script>
+<script>
+    const labels1 = [
+    ];
+
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+            label: 'Luminosidade',
+            backgroundColor: 'rgb(24, 56, 143)',
+            borderColor: 'rgb(24, 56, 143)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    };
+
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: {}
+    };
+</script>
+<script>
+    const linha = new Chart(
+        document.getElementById('linha'),
+        config1
+    );
+</script>
+<script>
+
+    const open = document.getElementById('open');
+    const modal_container = document.getElementById('modal_container');
+    const close = document.getElementById('close');
+
+    open.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+
+</script>
