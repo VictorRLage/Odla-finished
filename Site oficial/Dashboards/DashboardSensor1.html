@@ -20,58 +20,37 @@
             <a href="telainicio.html"><img src="https://i.imgur.com/d1sFhNj.png" class="logo_header"></a>
 
             <ul class="navbar">
-                <li><a href="telainicio.html">Início</a></li>
-                <li><a href="SobreNósV2.html">Sobre nós</a></li>
-                <li><a href="Servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="../telainicio.html">Início</a></li>
+                <li><a href="../SobreNósV2.html">Sobre nós</a></li>
+                <li><a href="../Servicos.html">Serviços</a></li>
+                <li><a href="../contato.html">Contato</a></li>
                 <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
-                    <a class="link_a" href="login.html"> Entrar</a>
+                    <a class="link_a" href="../login.html"> Entrar</a>
                 </li>
             </ul>
 
             <div class="btn_simulador">
-                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+                <a href="../SimuladorODLA.HTML">Simulador financeiro</a>
             </div>
         </div>
     </div>
     <!-- Fim do Header -->
     <!-- Banner -->
-    <div class="container">
-        <div class="card1">
-            <img class="img_alface" src="https://i.imgur.com/0p0Pwno.png">
-            <h1>Potência das Lâmpadas</h2>
-                <div class="uls">
-                    <ul class="ul_porcentagem">
-                        <li>&nbsp;</li>
-                        <li>Emitindo 100%</li>
-                        <li>Emitindo até 50%</li>
-                        <li>Emitindo menos de 50%</li>
-                    </ul>
-                    <ul class="ul_qtd">
-                        <li>Sensores</li>
-                        <li>02</li>
-                        <li>07</li>
-                        <li>01</li>
-                    </ul>
-                </div>
-                <div class="dunut">
-                    <canvas id="dunut"></canvas>
-                </div>
-        </div>
+    <div class="container1">
         <div class="cardsH">
+            <div class="container2">
+                <div class="DT">
+                    <p>Ultima atualização:<br>
+                        <span>2022-05-08-12:00</span>
+                    </p>
+                </div>
+            </div>
             <div class="card2">
+                <div class="linha2">
+                    <canvas id="linha2"></canvas>
+                </div>
                 <div class="linha">
                     <canvas id="linha"></canvas>
-                </div>
-                <div class="container2">
-                    <div class="DT">
-                        <p>Ultima atualização:<br>
-                            <span>2022-05-08-12:00</span>
-                        </p>
-                    </div>
-                    <div class="btn">
-                        <button id="open" class="btn_u">Adicionar usuário</button>
-                    </div>
                 </div>
             </div>
             <div class="cardsV">
@@ -114,19 +93,6 @@
         </div>
     </div>
     <!-- Fim do Banner -->
-    <!--MODAL 0-->
-    <div class="modal-container" id="modal_container">
-        <div class="modal">
-            <h1 id="titulo_M">Cadastre um usuário</h1>
-            <form method="post" action="" class="inputgod">
-                <input type="email" name="" class="input1" id="input1" placeholder="Email" required><br>
-                <input type="password" name="" class="input2" id="input2" placeholder="Senha" required> <br>
-                <button class="entrar" onclick="logar()">Entrar</button>
-
-            </form>
-        </div>
-        <button class="button1" id="close">X</button>
-    </div>
 </body>
 
 <footer>
@@ -152,42 +118,6 @@
 
 </html>
 <script>
-    const CHART = document.getElementById('dunut');
-    console.log(CHART);
-    let dunut = new Chart(CHART, {
-        type: 'doughnut',
-        data: {
-            labels: [
-                'Emitindo 100%',
-                'Emitindo até 50%',
-                'Emitindo menos de 50%'
-
-            ],
-
-            datasets: [{
-                label: 'Gráfico de emissão',
-                data: [2, 7, 1],
-                backgroundColor: [
-                    'rgb(8, 41, 73)',
-                    'rgb(54, 162, 235)',
-                    'rgb(59, 59, 187)'
-                ],
-                hoverOffset: 4
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: true,
-                    labels: {
-                        color: 'rgb(255, 255, 255)'
-                    }
-                }
-            }
-        }
-    });
-</script>
-<script>
     const labels1 = [
     ];
 
@@ -206,25 +136,32 @@
         data: data1,
         options: {}
     };
+    const labels2 = [
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Consumo',
+            backgroundColor: 'rgb(24, 56, 143)',
+            borderColor: 'rgb(24, 56, 143)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    };
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {}
+    };
 </script>
 <script>
     const linha = new Chart(
         document.getElementById('linha'),
         config1
     );
-</script>
-<script>
-
-    const open = document.getElementById('open');
-    const modal_container = document.getElementById('modal_container');
-    const close = document.getElementById('close');
-
-    open.addEventListener('click', () => {
-        modal_container.classList.add('show');
-    });
-
-    close.addEventListener('click', () => {
-        modal_container.classList.remove('show');
-    });
-
+    const linha2 = new Chart(
+        document.getElementById('linha2'),
+        config2
+    );
 </script>

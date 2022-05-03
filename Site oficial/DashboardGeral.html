@@ -42,7 +42,7 @@
                 <canvas id="conMenBar" style="width: 200px; height: 200px;"></canvas>
             </div>
             <div class="card2">
-                <canvas id="conMenLine"></canvas>
+                <canvas id="conMenLine" style="width: 100px; height: 38px;"></canvas>
             </div>
         </div>
         <a href="Dashboards\DashboardSensor1.html">
@@ -110,10 +110,10 @@
 </script>
 <script>
     const labels2 = [
-        '1',
-        '2',
-        '3',
-        '4',
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
     ];
     const data2 = {
         labels: labels2,
@@ -145,6 +145,63 @@
         type: 'bar',
         data: data2,
     };
+    const labels3 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+    ];
+    const data3 = {
+        labels: labels3,
+        datasets: [
+        {
+            label: 'Sensor 1',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: false,
+            borderColor: 'red',
+            tension: 0.1
+        },
+        {
+            label: 'Sensor 2',
+            data: [105, 78, 50, 45, 66, 35, 57],
+            fill: false,
+            borderColor: 'blue',
+            tension: 0.1
+        },
+        {
+            label: 'Sensor 3',
+            data: [30, 48, 56, 37, 96, 85, 102],
+            fill: false,
+            borderColor: 'green',
+            tension: 0.1
+        },
+        {
+            label: 'Sensor 4',
+            data: [68, 109, 89, 76, 66, 45, 30],
+            fill: false,
+            borderColor: 'hotpink',
+            tension: 0.1
+        },
+        {
+            label: 'Sensor 5',
+            data: [25, 29, 40, 51, 66, 75, 80],
+            fill: false,
+            borderColor: 'black',
+            tension: 0.1
+        },
+        {
+            label: 'Sensor 6',
+            data: [55, 39, 70, 21, 96, 35, 90],
+            fill: false,
+            borderColor: 'orange',
+            tension: 0.1
+        },
+        ]
+    };
+    const config3 = {
+        type: 'line',
+        data: data3,
+    };
 </script>
 <script>
     const sensor1Line = new Chart(
@@ -154,5 +211,9 @@
     const conMenBar = new Chart(
         document.getElementById('conMenBar'),
         config2
+    );
+    const conMenLine = new Chart(
+        document.getElementById('conMenLine'),
+        config3
     );
 </script>
