@@ -39,6 +39,7 @@
     <div class="container1">
         <div class="cardsH">
             <div class="container2">
+                <h1 class="nome">Sensor 1</h1>
                 <div class="DT">
                     <p>Ultima atualização:<br>
                         <span>2022-05-08-12:00</span>
@@ -70,7 +71,7 @@
                             <li>Total</li>
                         </ul>
                         <ul class="qtd">
-                            <li>10</li>
+                            <li>6</li>
                         </ul>
                     </div>
                     <div class="uls3">
@@ -83,10 +84,29 @@
                                 Indisponível</li>
                         </ul>
                         <ul class="li2">
-                            <li>10</li>
-                            <li>0</li>
-                            <li>0</li>
+                            <li>4</li>
+                            <li>1</li>
+                            <li>1</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="div6">
+                    <div class="tituloL">
+                        <h2>Métricas luminosidade</h2>
+                        <b>Critico</b>
+                        <b class="ba1">Alerta</b>
+                        <b class="bi">Ideal</b>
+                        <b class="ba1">Alerta</b>
+                        <b class="bc1">Critico</b>
+                    </div>
+                    <div class="card5">
+                        <div class="metricas">
+                            <div class="bolaRed">Abaixo 15.000 <br>Lux</div>
+                            <div class="bolaAma">Abaixo 30.000 <br>Lux</div>
+                            <div class="bolaVer">Entre 40.000 50.000 <br>Lux</div>
+                            <div class="bolaAma">Acima 60.000 <br>Lux</div>
+                            <div class="bolaRed">Acima 85.000 <br>Lux</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,7 +127,8 @@
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
+                        class="fa fa-linkedin-square"></i></a></li>
         </ul>
     </div>
     <div class="footer-bottom">
@@ -119,40 +140,74 @@
 </html>
 <script>
     const labels1 = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
     ];
-
     const data1 = {
         labels: labels1,
         datasets: [{
-            label: 'Luminosidade',
-            backgroundColor: 'rgb(24, 56, 143)',
-            borderColor: 'rgb(24, 56, 143)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: 'My First Dataset',
+            data: [48.989, 52.949, 42.349, 32.389, 43.989, 48.549, 56.289, 61.989, 51.989],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.2
         }]
     };
-
+    const options1 = {
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
+                }
+            }
+        }
+    };
     const config1 = {
         type: 'line',
         data: data1,
-        options: {}
+        options: options1,
     };
     const labels2 = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
     ];
-
     const data2 = {
         labels: labels2,
         datasets: [{
-            label: 'Consumo',
-            backgroundColor: 'rgb(24, 56, 143)',
-            borderColor: 'rgb(24, 56, 143)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: 'My First Dataset',
+            data: [48.989, 52.949, 42.349, 32.389, 43.989, 48.549, 56.289, 61.989, 51.989],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.2
         }]
     };
-
+    const options2 = {
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
+                }
+            }
+        }
+    };
     const config2 = {
         type: 'line',
         data: data2,
-        options: {}
+        options: options2,
     };
 </script>
 <script>
