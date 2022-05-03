@@ -61,7 +61,7 @@
         <!--MODAL 0-->
         <div class="modal-container" id="modal_container">
             <div class="modal">
-                <h1 id="titulo_m"></h1>
+                <h2 id="titulo_m"></h2>
                 <p id="p_msg"></p>
             </div>
             <button class="button1" id="close">X</button>
@@ -69,7 +69,7 @@
         <!--MODAL 1-->
         <div class="modal-container" id="modal_container2">
             <div class="modal2">
-                <h1 id="titulo_m2"></h1>
+                <h2 id="titulo_m2"></h2>
                 <p id="p_msg2"></p>
             </div>
             <button class="button2" id="close2">X</button>
@@ -78,6 +78,7 @@
 
 </body>
 <footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <div class="footer-content">
         <h1> <a href="contato.html">CONTATE-NOS</a></h1>
         <p>
@@ -106,22 +107,28 @@
         var senha = input6.value
         var cnpj = input7.value
         if (nome == '' && email == '' && telefone == '' && senha == '' && cnpj == '') {
-            titulo_m.innerHTML = `Preencha todos os campos para prosseguir!`
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+            p_msg.innerHTML = ``
         }
         else if(email.indexOf("@") == -1 || email.indexOf(".com") == -1){
-            titulo_m.innerHTML = `Ops, e-mail inválido! Verifique e tente novamente.`
+            titulo_m.innerHTML = `<br>Email inválido, verifique e tente novamente.`
+            p_msg.innerHTML = ``
         }
         else if(input5.value.length != 14 ){
-            titulo_m.innerHTML = `Ops, telefone inválido! Verifique e tente novamente.`
+            titulo_m.innerHTML = `Telefone inválido, verifique e tente novamente.`
+            p_msg.innerHTML = `Deve conter ( ) e - <br> Ex: (11) 91111-1111`
         }
         else if(input7.value.length != 15 || input7.value.indexOf("/") == -1){
-            titulo_m.innerHTML = `Ops, CNPJ inválido! Verifique e tente novamente.`
+            titulo_m.innerHTML = `CNPJ inválido, verifique e tente novamente.`
+            p_msg.innerHTML = `Deve conter 8 digitos / 6 digitos <br> Ex: 99999999/999999`
         }
         else if (senha == '') {
-            titulo_m.innerHTML = `Ops, senha inválida! Verifique e tente novamente.`
+            titulo_m.innerHTML = `<br>Senha inválida, verifique e tente novamente.`
+            p_msg.innerHTML = ``
         }
         else{
-            titulo_m.innerHTML = `Cadastro realizado com sucesso`
+            titulo_m.innerHTML = `<br>Cadastro realizado com sucesso`
+            p_msg.innerHTML = ``
         }
         
     }
