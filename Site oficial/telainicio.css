@@ -187,7 +187,7 @@ a:active {
 .containerbranco {
   margin: auto;
   background-color: white;
-  border: rgb(78 178 101) solid 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.295);
   height: 320px;
   width: 80%;
   margin-top: 30px;
