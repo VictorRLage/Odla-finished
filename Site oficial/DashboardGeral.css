@@ -167,6 +167,7 @@
     background-color: bisque;
 }
 .card1{
+    border-radius: 10px;
     margin-top: 50px;
     margin-left: 25px;
     width: 90%;
@@ -174,6 +175,7 @@
     background-color: aliceblue;
 }
 .card2{
+    border-radius: 10px;
     margin-top: 30px;
     margin-left: 25px;
     height: 160px;
@@ -181,6 +183,7 @@
     background-color: aliceblue;
 }
 .card3{
+    border-radius: 10px;
     margin-top: 36px;
     margin-right: 30px;
     width: 450px;
@@ -188,6 +191,7 @@
     background-color: aliceblue;
 }
 .card4{
+    border-radius: 10px;
     margin-top: 36px;
     margin-right: 30px;
     width: 450px;
@@ -195,12 +199,14 @@
     background-color: aliceblue;
 }
 .card5{
+    border-radius: 10px;
     margin-right: 30px;
     width: 450px;
     height: 200px;
     background-color: aliceblue;
 }
 .card6{
+    border-radius: 10px;
     margin-right: 30px;
     width: 450px;
     height: 200px;
@@ -208,6 +214,7 @@
 }
 .card7{
     margin-right: 30px;
+    border-radius: 10px;
     width: 450px;
     height: 200px;
     background-color: aliceblue;
@@ -215,6 +222,7 @@
 .card8{
     margin-right: 30px;
     width: 450px;
+    border-radius: 10px;
     height: 200px;
     background-color: aliceblue;
 }

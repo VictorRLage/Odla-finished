@@ -39,89 +39,120 @@
     <div class="banner">
         <div class="esquerda">
             <div class="card1">
-                <canvas id="conMenBar"></canvas>
+                <canvas id="conMenBar" style="width: 200px; height: 200px;"></canvas>
             </div>
             <div class="card2">
                 <canvas id="conMenLine"></canvas>
             </div>
         </div>
-        <div class="direita">
-            <div class="card3">
-                <canvas id="sensor1Line"></canvas>
-            </div>
-            <div class="card4">
-                <canvas id="sensor2Line"></canvas>
-            </div>
-            <div class="card5">
-                <canvas id="sensor3Line"></canvas>
-            </div>
-            <div class="card6">
-                <canvas id="sensor4Line"></canvas>
-            </div>
-            <div class="card7">
-                <canvas id="sensor5Line"></canvas>
-            </div>
-            <div class="card8">
-                <canvas id="sensor6Line"></canvas>
-            </div>
+        <a href="Dashboards\DashboardSensor1.html">
+            <div class="direita">
+                <div class="card3">
+                    <canvas id="sensor1Line" style="width: 450px; height: 200px;"></canvas>
+                </div>
+        </a>
+        <div class="card4">
+            <canvas id="sensor2Line"></canvas>
         </div>
+        <div class="card5">
+            <canvas id="sensor3Line"></canvas>
+        </div>
+        <div class="card6">
+            <canvas id="sensor4Line"></canvas>
+        </div>
+        <div class="card7">
+            <canvas id="sensor5Line"></canvas>
+        </div>
+        <div class="card8">
+            <canvas id="sensor6Line"></canvas>
+        </div>
+    </div>
     </div>
 </body>
 
 </html>
 <script>
-    const CHART = document.getElementById('sensor1Line');
-    console.log(CHART);
-    let sensor1Line = new Chart(CHART, {
-        type: 'line',
-                data: {
-                    datasets: [{
-                        label: 'Luminosidade',
-                        type: 'line',
-                        borderColor: ['#ffd902'],
-                        backgroundColor: ['#ffe135'],
-                        data: [0, 100000]
-                    }]
-                },
-                options: {
-                    scales: {
-                        xAxes: [{
-                            distribution: 'series',
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }],
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Luminosidade'
-                            },
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    },
-                    animation: {
-                        duration: 0
-                    }
-                }
-            }
-        );
-</script>
-<script>
-    const labels = Utils.months({ count: 7 });
-    const data = {
-        labels: labels,
+    const labels1 = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+    ];
+    const data1 = {
+        labels: labels1,
         datasets: [{
             label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: [48.989, 52.949, 42.349, 32.389, 43.989, 48.549, 56.289, 61.989, 51.989],
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
+            tension: 0.2
         }]
     };
-    const config = {
-        type: 'line',
-        data: data,
+    const options1 = {
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'rgb(255, 255, 255)'
+                }
+            }
+        }
     };
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: options1,
+    };
+</script>
+<script>
+    const labels2 = [
+        '1',
+        '2',
+        '3',
+        '4',
+    ];
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 80, 81],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)',
+                'rgb(153, 102, 255)',
+                'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+        }]
+    };
+    const config2 = {
+        type: 'bar',
+        data: data2,
+    };
+</script>
+<script>
+    const sensor1Line = new Chart(
+        document.getElementById('sensor1Line'),
+        config1
+    );
+    const conMenBar = new Chart(
+        document.getElementById('conMenBar'),
+        config2
+    );
 </script>
