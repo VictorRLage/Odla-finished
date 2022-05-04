@@ -152,30 +152,40 @@
 
 </html>
 <script>
-    const data = {
-        labels: [
-            'Emitindo 100%',
-            'Emitindo até 50%',
-            'Emitindo menos de 50%'
-
-        ],
-
-        datasets: [{
-            label: 'Gráfico de emissão',
-            data: [2, 7, 1],
-            backgroundColor: [
-                'rgb(8, 41, 73)',
-                'rgb(54, 162, 235)',
-                'rgb(59, 59, 187)'
-            ],
-            hoverOffset: 4
-        }]
-    };
-
-    const config = {
+    const CHART = document.getElementById('dunut');
+    console.log(CHART);
+    let dunut = new Chart(CHART, {
         type: 'doughnut',
-        data: data,
-    };
+        data: {
+            labels: [
+                'Emitindo 100%',
+                'Emitindo até 50%',
+                'Emitindo menos de 50%'
+
+            ],
+
+            datasets: [{
+                label: 'Gráfico de emissão',
+                data: [2, 7, 1],
+                backgroundColor: [
+                    'rgb(8, 41, 73)',
+                    'rgb(54, 162, 235)',
+                    'rgb(59, 59, 187)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: 'rgb(255, 255, 255)'
+                    }
+                }
+            }
+        }
+    });
 </script>
 <script>
     const labels1 = [
@@ -198,10 +208,6 @@
     };
 </script>
 <script>
-    const dunut = new Chart(
-        document.getElementById('dunut'),
-        config
-    );
     const linha = new Chart(
         document.getElementById('linha'),
         config1

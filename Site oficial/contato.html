@@ -39,16 +39,23 @@
         <div class="formulario">
             <h1>FALE CONOSCO</h1>
 
-            <form action="https://formsubmit.co/odlacontato@gmail.com" method="POST" class="form">
-                <input type="text" name="name" placeholder="Nome" required>
-                <input type="email" name="email" placeholder="E-mail" required>
-                <input type="tel" name="telefone" placeholder="Telefone celular (11) 91111-1111" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" maxlength="15" required>
-                <input type="text" name="assunto" placeholder="Assunto" required>
-                <textarea name="messege" id="" cols="30" rows="10" placeholder="Escreva aqui"></textarea>
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit" class="btn-enviar">ENVIAR</button>
-            </form>
+            <div class="form">
+                <input type="text" id="input1" name="name" placeholder="Nome">
+                <input type="email" id="input2" name="email" placeholder="E-mail">
+                <input type="tel" id="input3" name="telefone" placeholder="Telefone celular (11) 91111-1111">
+                <input type="text" id="input4" name="assunto" placeholder="Assunto">
+                <textarea name="messege" id="input5" placeholder="Escreva aqui"></textarea>
+                <button type="submit" class="btn-enviar" id="open" onclick="enviar()">ENVIAR</button>
+            </div>
         </div>
+    </div>
+    <!--MODAL 0-->
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+            <h2 id="titulo_m"></h2>
+            <p id="p_msg"></p>
+        </div>
+        <button class="button1" id="close">X</button>
     </div>
 </body>
 
@@ -62,9 +69,9 @@
         </p>
         <ul class="sociais">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i class="fa fa-linkedin-square"></i></a></li>
         </ul>
     </div>
     <div class="footer-bottom">
@@ -72,5 +79,54 @@
     </div>
 
 </footer>
-
 </html>
+<script>
+    function enviar(){
+        var nome = input1.value
+        var email = input2.value 
+        var telefone = input3.value 
+        var assunto = input4.value 
+        var msg = input5.value
+        if (nome == '' && email == '' && telefone == '' && assunto == '' && msg == '') {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+            p_msg.innerHTML = ``
+        }
+        else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            titulo_m.innerHTML = `<br>Email inválido, verifique e tente novamente.`
+            p_msg.innerHTML = ``
+        }
+        else if (input3.value.length != 15) {
+            titulo_m.innerHTML = `Telefone inválido, verifique e tente novamente.`
+            p_msg.innerHTML = `Deve conter ( ) e - <br> Ex: (11) 91111-1111`
+        }
+        else if (assunto == ''){
+            titulo_m.innerHTML = `<br>Por favor informe o assunto.`
+            p_msg.innerHTML = ``
+        }
+        else if (msg == ''){
+            titulo_m.innerHTML = `<br>Por favor informe a mensagem.`
+            p_msg.innerHTML = ``
+        }
+        else if (nome == '' || email == '' || telefone == '' || assunto == '' || msg == '') {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+            p_msg.innerHTML = ``
+        }
+        else{
+            titulo_m.innerHTML = `<br>Mensagem enviada, agradecemos o contato!`
+        }
+    }
+</script>
+<script>
+    const open = document.getElementById('open');
+    const modal_container = document.getElementById('modal_container');
+    const close = document.getElementById('close');
+
+    open.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+
+</script>

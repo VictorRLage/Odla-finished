@@ -7,4 +7,5 @@
     -webkit-transition: width .6s ease;
     -o-transition: width .6s ease;
     transition: width .6s ease;
-    z-index: 99999;s
+    z-index: 99999;
+}
