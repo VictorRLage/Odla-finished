@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard || ODLA</title>
-    <link rel="stylesheet" href="DashboardSensor1.css">
+    <title>Dashboard | Sensor 2 || ODLA</title>
+    <link rel="stylesheet" href="DashboardSensor2.css">
     <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -39,10 +39,10 @@
     <div class="container1">
         <div class="cardsH">
             <div class="container2">
-                <h1 class="nome">Sensor 1</h1>
+                <h1 class="nome">Sensor 2</h1>
                 <div class="DT">
                     <p>Ultima atualização:<br>
-                        <span>2022-05-08-12:00</span>
+                        <span>2022-05-08-21:00</span>
                     </p>
                 </div>
             </div>
@@ -52,7 +52,6 @@
                 </div>
                 <div class="linha">
                     <canvas id="linha"></canvas>
-                    <button class="btn_add" onclick="addValor1()">Adicionar</button>
                 </div>
 
             </div>
@@ -146,15 +145,19 @@
         '03:00',
         '06:00',
         '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
     ];
     const data = {
         labels: labels,
         datasets: [{
             label: 'Luminosidade',
-            data: [48989, 49949, 42349, 40389],
+            data: [70989, 79949, 80349, 83389, 85362, 86789, 89097, 91946],
             fill: false,
-            borderColor: 'rgb(78 178 101)',
-            backgroundColor: 'rgb(78 178 101)',
+            borderColor: 'red',
+            backgroundColor: 'red',
             tension: 0.2,
             pointRadius: 7
         }]
@@ -190,12 +193,16 @@
         '03:00',
         '06:00',
         '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
     ];
     const data2 = {
         labels: labels2,
         datasets: [{
             label: 'Consumo energia (w)',
-            data: [91, 92, 89, 88],
+            data: [101, 110, 111, 115, 120, 123, 129, 132],
             fill: false,
             borderColor: 'rgb(8, 41, 73)',
             backgroundColor: 'rgb(8, 41, 73)',

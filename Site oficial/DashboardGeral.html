@@ -38,9 +38,11 @@
     <!-- Banner -->
     <div class="banner">
         <div class="esquerda">
+            <span class="Titulo">Consumo mensal</span>
             <div class="card1">
                 <canvas id="conMenBar" style="width: 200px; height: 200px;"></canvas>
             </div>
+            <span class="Titulo">Consumo mensal por sensor</span>
             <div class="card2">
                 <canvas id="conMenLine" style="width: 100px; height: 38px;"></canvas>
             </div>
@@ -51,53 +53,257 @@
                     <canvas id="sensor1Line" style="width: 450px; height: 200px;"></canvas>
                 </div>
         </a>
-        <div class="card4">
-            <canvas id="sensor2Line"></canvas>
-        </div>
-        <div class="card5">
-            <canvas id="sensor3Line"></canvas>
-        </div>
-        <div class="card6">
-            <canvas id="sensor4Line"></canvas>
-        </div>
-        <div class="card7">
-            <canvas id="sensor5Line"></canvas>
-        </div>
-        <div class="card8">
-            <canvas id="sensor6Line"></canvas>
-        </div>
+        <a href="Dashboards\DashboardSensor2.html">
+            <div class="card4">
+                <canvas id="sensor2Line" style="width: 450px; height: 200px;"></canvas>
+            </div>
+        </a>
+        <a href="Dashboards\DashboardSensor3.html">
+            <div class="card5">
+                <canvas id="sensor3Line" style="width: 450px; height: 200px;"></canvas>
+            </div>
+        </a>
+        <a href="Dashboards\DashboardSensor4.html">
+            <div class="card6">
+                <canvas id="sensor4Line" style="width: 450px; height: 200px;"></canvas>
+            </div>
+        </a>
+        <a href="Dashboards\DashboardSensor5.html">
+            <div class="card7">
+                <canvas class="sensor5Line" id="sensor5Line" style="width: 450px; height: 200px;"></canvas>
+                <img class="manutencao" src="https://i.imgur.com/frbLIG3.png">
+            </div>
+        </a>
+        <a href="Dashboards\DashboardSensor6.html">
+            <div class="card8">
+                <canvas class="sensor6Line" id="sensor6Line" style="width: 450px; height: 200px;"></canvas>
+                <img class="indisponivel" src="https://i.imgur.com/tk0UfYf.png">
+            </div>
+        </a>
     </div>
     </div>
 </body>
+<footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <div class="footer-content">
+        <h1> <a href="contato.html">CONTATE-NOS</a></h1>
+        <p>
+            Avenida Brigadeiro 487 Andar 19, Faria Lima, São Paulo, SP 04538-133 <br>
+            Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@odla.com
+        </p>
+        <ul class="sociais">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 ODLA</p>
+    </div>
+
+</footer>
 
 </html>
 <script>
-    const labels1 = [
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
+    const labels7 = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
     ];
-    const data1 = {
-        labels: labels1,
+    const data7 = {
+        labels: labels7,
         datasets: [{
-            label: 'My First Dataset',
-            data: [48.989, 52.949, 42.349, 32.389, 43.989, 48.549, 56.289, 61.989, 51.989],
+            label: 'Sensor 2',
+            data: [70989, 79949, 80349, 83389, 85362, 86789, 89097, 91946],
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.2
+            borderColor: 'red',
+            backgroundColor: 'red',
+            tension: 0.2,
+            pointRadius: 7
         }]
     };
-    const options1 = {
+    const options7 = {
+        scales: {
+            y: {
+                min: 0,
+                max: 100000
+            }
+        },
         plugins: {
             legend: {
                 display: true,
                 labels: {
-                    color: 'rgb(255, 255, 255)'
+                    color: 'black'
+                }
+            }
+        }
+    };
+    const config7 = {
+        type: 'line',
+        data: data7,
+        options: options7,
+    };
+</script>
+<script>
+    const labels6 = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+    ];
+    const data6 = {
+        labels: labels6,
+        datasets: [{
+            label: 'Sensor 4',
+            data: [],
+            fill: false,
+            borderColor: 'rgb(78 178 101)',
+            backgroundColor: 'rgb(78 178 101)',
+            tension: 0.2,
+            pointRadius: 7
+        }]
+    };
+    const options6 = {
+        scales: {
+            y: {
+                min: 0,
+                max: 100000
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
+                }
+            }
+        }
+    };
+    const config6 = {
+        type: 'line',
+        data: data6,
+        options: options6,
+    };
+</script>
+<script>
+    const labels5 = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+    ];
+    const data5 = {
+        labels: labels5,
+        datasets: [{
+            label: 'Sensor 5',
+            data: [],
+            fill: false,
+            borderColor: 'rgb(78 178 101)',
+            backgroundColor: 'rgb(78 178 101)',
+            tension: 0.2,
+            pointRadius: 7
+        }]
+    };
+    const options5 = {
+        scales: {
+            y: {
+                min: 0,
+                max: 100000
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
+                }
+            }
+        }
+    };
+    const config5 = {
+        type: 'line',
+        data: data5,
+        options: options5,
+    };
+</script>
+<script>
+    const labels4 = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+    ];
+    const data4 = {
+        labels: labels4,
+        datasets: [{
+            label: 'Sensor 4',
+            data: [],
+            fill: false,
+            borderColor: 'rgb(78 178 101)',
+            backgroundColor: 'rgb(78 178 101)',
+            tension: 0.2,
+            pointRadius: 7
+        }]
+    };
+    const options4 = {
+        scales: {
+            y: {
+                min: 0,
+                max: 100000
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
+                }
+            }
+        }
+    };
+    const config4 = {
+        type: 'line',
+        data: data4,
+        options: options4,
+    };
+</script>
+<script>
+    const labels1 = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+    ];
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+            label: 'Sensor 1',
+            data: [48989, 49949, 42349, 40389],
+            fill: false,
+            borderColor: 'rgb(78 178 101)',
+            backgroundColor: 'rgb(78 178 101)',
+            tension: 0.2,
+            pointRadius: 7
+        }]
+    };
+    const options1 = {
+        scales: {
+            y: {
+                min: 0,
+                max: 100000
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
                 }
             }
         }
@@ -154,59 +360,92 @@
     const data3 = {
         labels: labels3,
         datasets: [
-        {
-            label: 'Sensor 1',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            fill: false,
-            borderColor: 'red',
-            tension: 0.1
-        },
-        {
-            label: 'Sensor 2',
-            data: [105, 78, 50, 45, 66, 35, 57],
-            fill: false,
-            borderColor: 'blue',
-            tension: 0.1
-        },
-        {
-            label: 'Sensor 3',
-            data: [30, 48, 56, 37, 96, 85, 102],
-            fill: false,
-            borderColor: 'green',
-            tension: 0.1
-        },
-        {
-            label: 'Sensor 4',
-            data: [68, 109, 89, 76, 66, 45, 30],
-            fill: false,
-            borderColor: 'hotpink',
-            tension: 0.1
-        },
-        {
-            label: 'Sensor 5',
-            data: [25, 29, 40, 51, 66, 75, 80],
-            fill: false,
-            borderColor: 'black',
-            tension: 0.1
-        },
-        {
-            label: 'Sensor 6',
-            data: [55, 39, 70, 21, 96, 35, 90],
-            fill: false,
-            borderColor: 'orange',
-            tension: 0.1
-        },
+            {
+                label: 'Sensor 1',
+                data: [65, 59, 60, 61, 56, 55, 40],
+                fill: false,
+                borderColor: 'red',
+                tension: 0.1
+            },
+            {
+                label: 'Sensor 2',
+                data: [65, 58, 50, 45, 66, 35, 57],
+                fill: false,
+                borderColor: 'blue',
+                tension: 0.1
+            },
+            {
+                label: 'Sensor 3',
+                data: [40, 48, 56, 37, 66, 65, 62],
+                fill: false,
+                borderColor: 'green',
+                tension: 0.1
+            },
+            {
+                label: 'Sensor 4',
+                data: [68, 69, 69, 66, 66, 45, 40],
+                fill: false,
+                borderColor: 'hotpink',
+                tension: 0.1
+            },
+            {
+                label: 'Sensor 5',
+                data: [45, 49, 40, 51, 66, 65, 60],
+                fill: false,
+                borderColor: 'black',
+                tension: 0.1
+            },
+            {
+                label: 'Sensor 6',
+                data: [55, 39, 60, 41, 66, 35, 60],
+                fill: false,
+                borderColor: 'orange',
+                tension: 0.5
+            },
         ]
+    };
+    const options3 = {
+        scales: {
+            y: {
+                min: 0,
+                max: 100
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: 'black'
+                }
+            }
+        }
     };
     const config3 = {
         type: 'line',
         data: data3,
+        options: options3,
     };
 </script>
 <script>
     const sensor1Line = new Chart(
         document.getElementById('sensor1Line'),
         config1
+    );
+    const sensor5Line = new Chart(
+        document.getElementById('sensor5Line'),
+        config4
+    );
+    const sensor6Line = new Chart(
+        document.getElementById('sensor6Line'),
+        config5
+    );
+    const sensor4Line = new Chart(
+        document.getElementById('sensor4Line'),
+        config6
+    );
+    const sensor2Line = new Chart(
+        document.getElementById('sensor2Line'),
+        config7
     );
     const conMenBar = new Chart(
         document.getElementById('conMenBar'),
