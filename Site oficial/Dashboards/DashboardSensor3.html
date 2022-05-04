@@ -49,11 +49,9 @@
             <div class="card2">
                 <div class="linha2">
                     <canvas id="linhaa"></canvas>
-                    <button class="btn_add">Adicionar</button>
                 </div>
                 <div class="linha">
                     <canvas id="linha"></canvas>
-                    <button class="btn_add" onclick="addValor1()">Adicionar</button>
                 </div>
 
             </div>
@@ -147,26 +145,26 @@
         '03:00',
         '06:00',
         '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
     ];
     const data = {
         labels: labels,
         datasets: [{
             label: 'Luminosidade',
-            data: [48989, 49949, 42349, 40389],
+            data: [45989, 46949, 47349, 48389, 49362, 66789, 79097, 88946],
             fill: false,
-            borderColor: 'rgb(78 178 101)',
-            backgroundColor: 'rgb(78 178 101)',
+            borderColor: 'red',
+            backgroundColor: 'red',
             tension: 0.2,
             pointRadius: 7
         }]
     };
     const options = {
         scales: {
-            x: {
-                ticks: {
-                    display: false
-                }
-            },
+            
             y: {
                 min: 0,
                 max: 100000
@@ -191,12 +189,16 @@
         '03:00',
         '06:00',
         '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
     ];
     const data2 = {
         labels: labels2,
         datasets: [{
             label: 'Consumo energia (w)',
-            data: [91, 92, 89, 88],
+            data: [85, 86, 87, 88, 89, 106, 119, 128],
             fill: false,
             borderColor: 'rgb(8, 41, 73)',
             backgroundColor: 'rgb(8, 41, 73)',
@@ -206,11 +208,6 @@
     };
     const options2 = {
         scales: {
-            x: {
-                ticks: {
-                    display: false
-                }
-            },
             y: {
                 min: 0,
                 max: 200
