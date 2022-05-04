@@ -156,7 +156,7 @@
       display: flex;
       flex-direction: column;
       width: 35%;
-      background-color: aquamarine;
+      background-color: #3684c4;
   }
   .direita{
     display: flex;
@@ -164,7 +164,7 @@
     align-items: center;
     flex-wrap: wrap;
     width: 75%;
-    background-color: bisque;
+    background-color: #082949;
 }
 .card1{
     border-radius: 10px;
