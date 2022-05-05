@@ -21,7 +21,7 @@
 
             <ul class="navbar">
                 <li><a href="telainicio.html">Início</a></li>
-                <li><a href="SobreNósV2.html">Sobre nós</a></li>
+                <li><a href="SobreNósV2.html">Sobre Nós</a></li>
                 <li><a href="Servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/TRccn0N.png"
@@ -31,7 +31,7 @@
             </ul>
 
             <div class="btn_simulador">
-                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+                <a href="SimuladorODLA.HTML">Simulador Financeiro</a>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
         var senha = input6.value
         var cnpj = input7.value
         if (nome == '' && email == '' && telefone == '' && senha == '' && cnpj == '') {
-            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
         }
         else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
@@ -128,7 +128,7 @@
             p_msg.innerHTML = ``
         }
         else if (nome == '' || email == '' || telefone == '' || senha == '' || cnpj == '') {
-            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
         }
         else {
