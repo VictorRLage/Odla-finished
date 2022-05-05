@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contado || ODLA</title>
+    <title>Contato || ODLA</title>
     <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
 </head>
 
 <body class="corpo">
     <link rel="stylesheet" href="contato.css">
-      <!-- Header -->
-      <div class="header">
+    <!-- Header -->
+    <div class="header">
 
         <div class="container">
 
@@ -20,7 +20,7 @@
 
             <ul class="navbar">
                 <li><a href="telainicio.html">Início</a></li>
-                <li><a href="SobreNósV2.html">Sobre nós</a></li>
+                <li><a href="SobreNósV2.html">Sobre Nós</a></li>
                 <li><a href="Servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
@@ -29,11 +29,11 @@
             </ul>
 
             <div class="btn_simulador">
-                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
+                <a href="SimuladorODLA.HTML">Simulador Financeiro</a>
             </div>
         </div>
     </div>
-  <!-- Fim do Header -->
+    <!-- Fim do Header -->
 
     <div class="main">
         <div class="formulario">
@@ -68,10 +68,13 @@
             Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@gmail.com
         </p>
         <ul class="sociais">
-            <li><a href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
+                        class="fa fa-facebook"></i></a></li>
             <li><a href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
+                        class="fa fa-linkedin-square"></i></a></li>
         </ul>
     </div>
     <div class="footer-bottom">
@@ -79,39 +82,34 @@
     </div>
 
 </footer>
+
 </html>
 <script>
-    function enviar(){
+    function enviar() {
         var nome = input1.value
-        var email = input2.value 
-        var telefone = input3.value 
-        var assunto = input4.value 
+        var email = input2.value
+        var telefone = input3.value
+        var assunto = input4.value
         var msg = input5.value
         if (nome == '' && email == '' && telefone == '' && assunto == '' && msg == '') {
-            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
-        }
-        else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+        } else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             titulo_m.innerHTML = `<br>Email inválido, verifique e tente novamente.`
             p_msg.innerHTML = ``
-        }
-        else if (input3.value.length != 15) {
+        } else if (input3.value.length != 15) {
             titulo_m.innerHTML = `Telefone inválido, verifique e tente novamente.`
             p_msg.innerHTML = `Deve conter ( ) e - <br> Ex: (11) 91111-1111`
-        }
-        else if (assunto == ''){
+        } else if (assunto == '') {
             titulo_m.innerHTML = `<br>Por favor informe o assunto.`
             p_msg.innerHTML = ``
-        }
-        else if (msg == ''){
+        } else if (msg == '') {
             titulo_m.innerHTML = `<br>Por favor informe a mensagem.`
             p_msg.innerHTML = ``
-        }
-        else if (nome == '' || email == '' || telefone == '' || assunto == '' || msg == '') {
-            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
+        } else if (nome == '' || email == '' || telefone == '' || assunto == '' || msg == '') {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
-        }
-        else{
+        } else {
             titulo_m.innerHTML = `<br>Mensagem enviada, agradecemos o contato!`
         }
     }
@@ -128,5 +126,4 @@
     close.addEventListener('click', () => {
         modal_container.classList.remove('show');
     });
-
 </script>
