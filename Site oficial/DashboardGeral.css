@@ -300,6 +300,7 @@
 }
 /* MODAL 0 */
 .modal-container {
+  z-index: 2;
   color: black;
   position: fixed;
   top: 0;
