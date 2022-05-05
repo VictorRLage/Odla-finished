@@ -241,8 +241,8 @@
         const value =  value1 * 100000;
         console.log(value1);
 
-        linha.data.datasets[0].data.push(value);
-        linha.data.labels.push(value);
+        linha.data.datasets[0].data.push(parseInt(value));
+        linha.data.labels.push(parseInt(value));
 
         if (value < 15000 || value > 85000) {
             linha.data.datasets[0].backgroundColor = 'rgb(255, 0, 0)';

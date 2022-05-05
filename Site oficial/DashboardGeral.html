@@ -117,14 +117,14 @@
         <div class="modal">
             <h1 id="titulo_M">Cadastre um usuário</h1>
             <div class="inputgod">
-                <input type="email" name="" class="input1" id="input1" placeholder="Email" required><br>
-                <input type="password" name="" class="input2" id="input2" placeholder="Senha" required> <br>
+                <input type="email" name="email" class="input1" id="input1" placeholder="Email"><br>
+                <input type="password" name="" class="input2" id="input2" placeholder="Senha"> <br>
                 <button class="entrar" onclick="logar()">Entrar</button>
 
             </div>
         </div>
         <button class="button1" onclick="limpar()" id="close">X</button>
-        <div class="div_erro" id="div_erro" style="display: none;"><span id="msg_erro" class="msg_erro"></span></div>
+        <div class="div_erro" id="div_erro" style="display: none;"><span style=" margin-left: 100px" id="msg_erro" class="msg_erro"></span></div>
     </div>
 </footer>
 
@@ -270,7 +270,7 @@
     const data5 = {
         labels: labels5,
         datasets: [{
-            label: 'Sensor 5',
+            label: 'Sensor 6',
             data: [],
             fill: false,
             borderColor: 'rgb(78 178 101)',
@@ -311,7 +311,7 @@
     const data4 = {
         labels: labels4,
         datasets: [{
-            label: 'Sensor 4',
+            label: 'Sensor 5',
             data: [],
             fill: false,
             borderColor: 'rgb(78 178 101)',
@@ -573,13 +573,15 @@
     function logar() {
         var email2 = input1.value
         var senha2 = input2.value
-        if (email2.indexOf("@") == 1 && email2.indexOf(".com") == 1 && senha2 != '') {
+        if (email2.indexOf("@") == -1 || email2.indexOf(".com") == -1 || senha2 == '') {
             div_erro.style.display = 'block'
-            msg_erro.innerHTML = 'Cadastro Realizado com sucesso.'
+            msg_erro.innerHTML = 'Email ou senha invalidos.'
+            msg_erro.style.marginLeft = '100px'
         }
         else{
             div_erro.style.display = 'block'
-            msg_erro.innerHTML = 'Email ou senha invalidos.'
+            msg_erro.innerHTML = 'Cadastro realizado com sucesso.'
+            msg_erro.style.marginLeft = '35px'
         }
 
     }

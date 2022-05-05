@@ -400,10 +400,9 @@
   position: absolute;
   background-color: white;
   height: 50px;
-  width: 500px;
+  width: 600px;
 }
 .msg_erro{
-  margin-left: 50px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 40px;
 }
