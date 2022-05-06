@@ -21,17 +21,17 @@
 
             <ul class="navbar">
                 <li><a href="telainicio.html">Início</a></li>
-                <li><a href="sobrenos.html">Sobre Nós</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="SobreNósV2.html">Sobre nós</a></li>
+                <li><a href="Servicos.html">Serviços</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/TRccn0N.png"
+                <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/dnHe1Jk.png"
                         align="center">
-                    <a class="link_a" href="login.html"> Entrar</a>
+                    <a class="link_a" href="DashboardV2.html"> Dashboard</a>
                 </li>
             </ul>
 
             <div class="btn_simulador">
-                <a href="simulador.html">Simulador Financeiro</a>
+                <a href="SimuladorODLA.HTML">Simulador financeiro</a>
             </div>
         </div>
     </div>
@@ -83,14 +83,14 @@
     <div class="footer-content">
         <h1> <a href="contato.html">CONTATE-NOS</a></h1>
         <p>
-            Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001<br>
+            Avenida Brigadeiro 487 Andar 19, Faria Lima, São Paulo, SP 04538-133 <br>
             Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@gmail.com
         </p>
         <ul class="sociais">
-            <li><a href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
         </ul>
     </div>
     <div class="footer-bottom">
@@ -108,14 +108,14 @@
         var senha = input6.value
         var cnpj = input7.value
         if (nome == '' && email == '' && telefone == '' && senha == '' && cnpj == '') {
-            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
             p_msg.innerHTML = ``
         }
         else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             titulo_m.innerHTML = `<br>Email inválido, verifique e tente novamente.`
             p_msg.innerHTML = ``
         }
-        else if (input5.value.length != 15) {
+        else if (input5.value.length != 14) {
             titulo_m.innerHTML = `Telefone inválido, verifique e tente novamente.`
             p_msg.innerHTML = `Deve conter ( ) e - <br> Ex: (11) 91111-1111`
         }
@@ -128,7 +128,7 @@
             p_msg.innerHTML = ``
         }
         else if (nome == '' || email == '' || telefone == '' || senha == '' || cnpj == '') {
-            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir!`
             p_msg.innerHTML = ``
         }
         else {
@@ -140,8 +140,8 @@
     function logar() {
         var email2 = input1.value
         var senha2 = input2.value
-        if (input2.value == '123' && input1.value == 'victorlage3000@gmail.com' || input2.value == 'urubu10' && input1.value == 'fernando.brandao@sptech.school' || input2.value == 'urubu10' && input1.value == 'rafael.oliveira@sptech.school') {
-            window.location.href = "DashboardGeral.html"
+        if (input2.value == '123' && input1.value == 'victorlage3000@gmail.com') {
+            window.location.href = "DashboardV2.html"
         }
         else{
             titulo_m2.innerHTML = `Email ou senha invalidos.`
