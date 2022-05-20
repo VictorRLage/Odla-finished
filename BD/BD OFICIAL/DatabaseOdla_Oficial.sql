@@ -1,32 +1,29 @@
 CREATE DATABASE Odla;
 USE Odla;
 
-CREATE TABLE Administrador(
-idAdministrador INT PRIMARY KEY AUTO_INCREMENT,
-Nome VARCHAR(60),
-Email VARCHAR(60) UNIQUE,
-Senha VARCHAR(30),
-CNPJ CHAR(14) UNIQUE,
-telefone CHAR(15) UNIQUE
+CREATE TABLE Perfil (
+idPerfil INT PRIMARY KEY AUTO_INCREMENT,
+Permissao INT
 );
 
 CREATE TABLE Fazenda(
 idFazenda INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR(80),
 Area INT,
-Altura INT,
-fkAdministrador INT,
-FOREIGN KEY (fkAdministrador) REFERENCES Administrador(idAdministrador)
+Altura INT
 );
 
 CREATE TABLE Usuario(
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+Nome VARCHAR(60),
 Email VARCHAR(60) UNIQUE,
 Senha VARCHAR(30),
+CNPJ CHAR(14) UNIQUE,
+telefone CHAR(15) UNIQUE,
 fkFazenda INT,
 FOREIGN KEY (fkFazenda) REFERENCES Fazenda (idFazenda),
-fkAdministrador INT,
-FOREIGN KEY (fkAdministrador) REFERENCES Administrador (idAdministrador)
+fkPerfil INT,
+FOREIGN KEY (fkPerfil) REFERENCES Perfil (idPerfil)
 );
 
 CREATE TABLE Sensor(
