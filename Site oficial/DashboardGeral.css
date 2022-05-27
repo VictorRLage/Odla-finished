@@ -318,6 +318,7 @@ a:active {
 }
 
 .desk button:hover {
+  transform: scale(1.1);
   background: #082949;
   color: white;
   border-radius: 40px;
@@ -331,7 +332,7 @@ a:active {
 }
 
 .btn .btn_u {
-  margin-bottom: 715px;
+  margin-bottom: 755px;
   height: 40px;
   width: 150px;
   margin-left: -480px;
@@ -349,7 +350,7 @@ a:active {
   background: #082949;
   color: white;
   border-radius: 40px;
-  box-shadow: 1px 1px 1px #013560;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
