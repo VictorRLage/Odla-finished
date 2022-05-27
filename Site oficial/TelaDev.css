@@ -1,0 +1,527 @@
+.corpo {
+    transition: background-color .8s;
+}
+
+.corpo:hover {
+    background-color: #4eb265;
+}
+
+.corpo::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.corpo::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4eb265;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*header*/
+body {
+    overflow: overlay;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+    background-image: url("https://i.imgur.com/gyPnQLb.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.header {
+    width: 100%;
+    height: 85px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.700);
+}
+
+.logo_header {
+    height: 43px;
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.header .container {
+    height: 100%;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    margin-top: 14px;
+    width: 500px;
+    color: rgb(255, 255, 255);
+    list-style: none;
+    align-items: center;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.entrarheader {
+    color: rgb(78 178 101);
+    margin-top: 5px;
+}
+
+.logo_dashboard {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 7px;
+}
+
+.btn_simulador {
+    color: white;
+    margin-left: 50px;
+    background-color: rgb(78 178 101);
+    height: 40px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 30px;
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.link_a:link {
+    color: rgb(78 178 101);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.link_a:visited {
+    color: rgb(78 178 101);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.link_a:hover {
+    color: rgb(78 178 101);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.link_a:active {
+    color: rgb(78 178 101);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* fim do header */
+/*banner*/
+.pai {
+    background-color: #4eb265;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-radius: 28px;
+    height: 850px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bemvindo {
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.textoh3 {
+    color: white;
+    font-size: 40px;
+    padding-left: 115px;
+    padding-top: 0px;
+}
+
+.logo {
+    margin-left: 20px;
+    padding-right: 20px;
+    width: 300px;
+    padding-left: 35px;
+}
+
+.inputgod {
+    margin-top: 71.5px;
+    margin-left: 65px;
+}
+
+.input1 {
+    color: white;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.input2 {
+    margin-top: 40px;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: white;
+}
+
+.entrar {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4eb265;
+    border-radius: 40px;
+    height: 40px;
+    width: 280px;
+    font-size: 20px;
+    border-style: hidden;
+    box-shadow: 0px 0px 0px rgb(189, 188, 188);
+    cursor: pointer;
+    margin-top: 40px;
+    margin-right: 60px;
+}
+
+.entrar:hover {
+    background: #4eb265;
+    color: rgb(255, 255, 255);
+    border: 0px solid #eee;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px rgb(9, 83, 16);
+    transition-duration: 0.4s;
+}
+
+::placeholder {
+    color: white;
+    font-size: 15px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.inputladodireito {
+    border-left: 2px groove rgba(10, 10, 10, 0.808);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.input3 {
+    margin-top: 40px;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: white;
+    margin-left: 65px;
+}
+
+.input4 {
+    margin-top: 40px;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: white;
+    margin-left: 65px;
+}
+
+.input5 {
+    margin-top: 40px;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: white;
+    margin-left: 65px;
+}
+
+.input6 {
+    margin-top: 40px;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: white;
+    margin-left: 65px;
+}
+
+.input7 {
+    margin-top: 40px;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: white;
+    margin-left: 65px;
+}
+
+.registrar {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4eb265;
+    border-radius: 40px;
+    height: 40px;
+    width: 280px;
+    font-size: 20px;
+    border-style: hidden;
+    box-shadow: 0px 0px 0px rgb(189, 188, 188);
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 65px;
+}
+
+.registrar:hover {
+    background: #4eb265;
+    color: rgb(255, 255, 255);
+    border: 0px solid #eee;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px rgb(9, 83, 16);
+    transition-duration: 0.4s;
+}
+
+/* MODAL 0 */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(78, 178, 101, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background-color: white;
+    width: 600px;
+    height: 150px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.modal h2 {
+    margin: 0;
+}
+
+.button1 {
+    position: absolute;
+    margin-bottom: 250px;
+    margin-left: 595px;
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #7FCC8E;
+    border-radius: 40px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    border-style: hidden;
+    box-shadow: 2px 2px 2px rgb(189, 188, 188);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button1:hover {
+    background: #7FCC8E;
+    color: white;
+    border: 1px solid #7FCC8E;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px rgb(189, 188, 188);
+}
+
+/* MODAL 2 */
+.modal-container2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(78, 178, 101, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container2.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal2 {
+    background-color: white;
+    width: 500px;
+    height: 90px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.modal2 h2 {
+    margin: 0;
+}
+
+.button2 {
+    position: absolute;
+    margin-bottom: 180px;
+    margin-left: 495px;
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #7FCC8E;
+    border-radius: 40px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    border-style: hidden;
+    box-shadow: 2px 2px 2px rgb(189, 188, 188);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    background: #7FCC8E;
+    color: white;
+    border: 1px solid #7FCC8E;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px rgb(189, 188, 188);
+}
+
+/* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #4EB265;
+    height: auto;
+    width: 100vw;
+    padding-top: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content>h1 {
+    font-size: 28px;
+    font-weight: 400x;
+    text-transform: capitalize;
+    line-height: 2rem;
+
+}
+
+.footer-content>p {
+
+    margin: 5px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.sociais {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+}
+
+.sociais>li {
+    margin: 0px 10px;
+}
+
+.sociais>a {
+    text-decoration: none;
+    color: white
+}
+
+.sociais a i {
+    font-size: 18px;
+    transition: color .4s ease;
+}
+
+.sociais a:hover i {
+    color: #7FCC8E;
+}
+
+.footer-bottom {
+    background: #2d8a43;
+    width: 100vw;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
