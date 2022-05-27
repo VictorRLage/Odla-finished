@@ -35,20 +35,39 @@
     </div>
     <!-- Fim do Header -->
 
+
     <div class="main">
-        <div class="formulario">
+
             <h1>FALE CONOSCO</h1>
 
-            <div class="form">
-                <input type="text" id="input1" name="name" placeholder="Nome">
-                <input type="email" id="input2" name="email" placeholder="E-mail">
-                <input type="tel" id="input3" name="telefone" placeholder="Telefone celular (11) 91111-1111">
-                <input type="text" id="input4" name="assunto" placeholder="Assunto">
-                <textarea name="messege" id="input5" placeholder="Escreva aqui"></textarea>
-                <button type="submit" class="btn-enviar" id="open" onclick="enviar()">ENVIAR</button>
+            <form target="_blank"
+                 method="POST" action="https://formsubmit.co/3baca0bd2b4fccaa8c613d0e561f01ac">
+                 <div class="form-group">
+                    <div class="form-row">
+                      <div class="col">
+                        <input type="text" name="Nome" class="input1" placeholder="Nome" required>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input id="in_assunto" type="hidden" name="_subject" value="">
+                        <input type="hidden" name="_template" value="table">
+
+
+            </div>
+
+            <div class="col">
+                        <input type="email" name="E-mail" class="input2" placeholder="Email" required>
             </div>
         </div>
+      </div>
+                        <input id="in_desespero" type="text" name="Assunto" class="input3" placeholder="Assunto" required>
     </div>
+       <div class="form-group">
+         <textarea placeholder="Mensagem" class="input5" name="Mensagem" rows="10" required></textarea>
+     </div>
+                         <button onclick="assunto()" type="submit" class="btn btn-lg btn-dark btn-block">Enviar formulario</button>
+
+    </form>
+  </div>
+  
     <!--MODAL 0-->
     <div class="modal-container" id="modal_container">
         <div class="modal">
@@ -58,6 +77,8 @@
         <button class="button1" id="close">X</button>
     </div>
 </body>
+
+
 
 <footer>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -126,4 +147,12 @@
     close.addEventListener('click', () => {
         modal_container.classList.remove('show');
     });
+</script>
+<script>
+    function assunto() {
+        var texto = in_assunto.value
+        var ass = in_desespero.value
+
+
+    }
 </script>
