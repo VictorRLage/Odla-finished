@@ -19,7 +19,8 @@
   border-radius: 10px;
   background-color: inherit;
 }
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb:hover {
   background-color: #4eb265;
 }
 
@@ -101,6 +102,10 @@ body {
   border-radius: 30px;
 }
 
+a {
+  transition: 0.5s;
+}
+
 a:link {
   color: white;
   background-color: transparent;
@@ -116,13 +121,12 @@ a:visited {
 a:hover {
   color: white;
   background-color: transparent;
-  text-decoration: underline;
+  font-size: 20px;
 }
 
 a:active {
   color: white;
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .link_a:link {
@@ -140,13 +144,11 @@ a:active {
 .link_a:hover {
   color: rgb(78 178 101);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .link_a:active {
   color: rgb(78 178 101);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 /* fim do header */

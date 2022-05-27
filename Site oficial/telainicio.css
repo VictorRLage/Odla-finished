@@ -95,6 +95,9 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-radius: 30px;
 }
+a{
+  transition: 0.5s;
+}
 
 a:link {
   color: white;
@@ -111,13 +114,12 @@ a:visited {
 a:hover {
   color: white;
   background-color: transparent;
-  text-decoration: underline;
+  font-size: 20px;
 }
 
 a:active {
   color: white;
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .link_a:link {
@@ -135,13 +137,11 @@ a:active {
 .link_a:hover {
   color: rgb(78 178 101);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .link_a:active {
   color: rgb(78 178 101);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .textoinicio {

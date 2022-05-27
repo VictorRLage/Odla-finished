@@ -19,9 +19,11 @@
   border-radius: 10px;
   background-color: inherit;
 }
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb:hover {
   background-color: #4eb265;
 }
+
 * {
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -40,6 +42,7 @@ body {
   background-size: cover;
 
 }
+
 .header {
   width: 100%;
   height: 85px;
@@ -102,6 +105,10 @@ body {
   border-radius: 30px;
 }
 
+a {
+  transition: 0.5s;
+}
+
 a:link {
   color: white;
   background-color: transparent;
@@ -117,13 +124,12 @@ a:visited {
 a:hover {
   color: white;
   background-color: transparent;
-  text-decoration: underline;
+  font-size: 20px;
 }
 
 a:active {
   color: white;
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .link_a:link {
@@ -141,13 +147,11 @@ a:active {
 .link_a:hover {
   color: rgb(78 178 101);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 .link_a:active {
   color: rgb(78 178 101);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 /* fim do header */
@@ -236,7 +240,8 @@ a:active {
   flex-direction: column;
   width: 100%;
   background-color: #e7e7e7;
-  position: relative;;
+  position: relative;
+  ;
   flex-direction: row;
   height: 691px;
   padding: 0 0 750px;
@@ -316,6 +321,7 @@ a:active {
   font-size: 24px;
   padding: 0px 10px 0px 10px;
 }
+
 .selo {
   margin-top: 100px;
   margin-left: 1180px;
@@ -323,7 +329,8 @@ a:active {
   height: 250px;
   width: 250px;
 }
-.placa{
+
+.placa {
   margin-top: 100px;
   margin-left: 80px;
   position: absolute;
