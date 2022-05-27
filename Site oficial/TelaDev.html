@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Fazenda || ODLA</title>
+    <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
+    <link rel="stylesheet" href="TelaDev.css">
+</head>
+<!--4eb265-->
+
+<body class="corpo">
+    <!-- Header -->
+    <div class="header">
+
+        <div class="container">
+
+            <a href="telainicio.html"><img src="https://i.imgur.com/d1sFhNj.png" class="logo_header"></a>
+
+            <ul class="navbar">
+                <li><a href="telainicio.html">Início</a></li>
+                <li><a href="SobreNósV2.html">Sobre Nós</a></li>
+                <li><a href="Servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li class="entrarheader"><img class="logo_dashboard" src="https://i.imgur.com/TRccn0N.png"
+                        align="center">
+                    <a class="link_a" href="login.html"> Entrar</a>
+                </li>
+            </ul>
+
+            <div class="btn_simulador">
+                <a href="SimuladorODLA.HTML">Simulador Financeiro</a>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do Header -->
+    <div class="pai">
+        <div class="inputladodireito">
+            <input type="text" name="nome" class="input3" id="input3" placeholder="Seu nome completo"><br>
+            <input type="email" name="email" class="input4" id="input4" placeholder="Seu email"><br>
+            <input type="tel" name="telefone" class="input5" id="input5"
+                placeholder="Telefone celular (11) 91111-1111"><br>
+            <input type="text" class="input7" id="input7" placeholder="CNPJ 99999999/999999"><br>
+            <input type="password" class="input6" id="input6" placeholder="Sua Senha"><br>
+            <button class="registrar" id="open" onclick="registrar()">Registrar</button>
+        </div>
+    </div>
+    <!--MODAL 0-->
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+            <h2 id="titulo_m"></h2>
+            <p id="p_msg"></p>
+        </div>
+        <button class="button1" id="close">X</button>
+    </div>
+    <!--MODAL 1-->
+    <div class="modal-container" id="modal_container2">
+        <div class="modal2">
+            <h2 id="titulo_m2"></h2>
+            <p id="p_msg2"></p>
+        </div>
+        <button class="button2" id="close2">X</button>
+    </div>
+
+
+</body>
+<footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <div class="footer-content">
+        <h1> <a href="contato.html">CONTATE-NOS</a></h1>
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001<br>
+            Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@gmail.com
+        </p>
+        <ul class="sociais">
+            <li><a href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
+                        class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
+                        class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 ODLA</p>
+    </div>
+
+</footer>
+
+</html>
+<script>
+    function registrar() {
+        var nome = input3.value
+        var email = input4.value
+        var telefone = input5.value
+        var senha = input6.value
+        var cnpj = input7.value
+        if (nome == '' && email == '' && telefone == '' && senha == '' && cnpj == '') {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+            p_msg.innerHTML = ``
+        }
+        else if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            titulo_m.innerHTML = `<br>Email inválido, verifique e tente novamente.`
+            p_msg.innerHTML = ``
+        }
+        else if (input5.value.length != 15) {
+            titulo_m.innerHTML = `Telefone inválido, verifique e tente novamente.`
+            p_msg.innerHTML = `Deve conter ( ) e - <br> Ex: (11) 91111-1111`
+        }
+        else if (input7.value.length != 15 || input7.value.indexOf("/") == -1) {
+            titulo_m.innerHTML = `CNPJ inválido, verifique e tente novamente.`
+            p_msg.innerHTML = `Deve conter 8 digitos / 6 digitos <br> Ex: 99999999/999999`
+        }
+        else if (senha == '') {
+            titulo_m.innerHTML = `<br>Senha inválida, verifique e tente novamente.`
+            p_msg.innerHTML = ``
+        }
+        else if (nome == '' || email == '' || telefone == '' || senha == '' || cnpj == '') {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+            p_msg.innerHTML = ``
+        }
+        else {
+            titulo_m.innerHTML = `<br>Cadastro realizado com sucesso!`
+            p_msg.innerHTML = ``
+        }
+
+    }
+    function logar() {
+        var email2 = input1.value
+        var senha2 = input2.value
+        if (input2.value == '123' && input1.value == 'victorlage3000@gmail.com') {
+            window.location.href = "DashboardGeral.html"
+        }
+        else {
+            titulo_m2.innerHTML = `Email ou senha invalidos.`
+        }
+
+    }
+</script>
+<script>
+    const open = document.getElementById('open');
+    const modal_container = document.getElementById('modal_container');
+    const close = document.getElementById('close');
+
+    open.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+
+</script>
+<script>
+    const open2 = document.getElementById('open2');
+    const modal_container2 = document.getElementById('modal_container2');
+    const close2 = document.getElementById('close2');
+
+    open2.addEventListener('click', () => {
+        modal_container2.classList.add('show');
+    });
+
+    close2.addEventListener('click', () => {
+        modal_container2.classList.remove('show');
+    });
+
+</script>

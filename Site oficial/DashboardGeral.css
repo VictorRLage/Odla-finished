@@ -1,245 +1,261 @@
-*{
+* {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .corpo {
-    transition: background-color .8s;
-  }
-  
-  .corpo:hover {
-    background-color: #082949;
-  }
-  
-  .corpo::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .corpo::-webkit-scrollbar-track {
-    display: none;
-  }
-  
-  .corpo::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: inherit;
-  }
-  ::-webkit-scrollbar-thumb:hover{
-    background-color: rgb(8, 41, 73);
-  }
+  transition: background-color .8s;
+}
 
-  /* header */
-  
-  .corpo {
-    overflow: overlay;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0px;
-    overflow-x: hidden;
-    background-image: url("");
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .header {
-    width: 100%;
-    height: 85px;
-    align-items: center;
-    background-color: rgba(0, 0, 0);
-  }
-  
-  .logo_header {
-    height: 43px;
-    width: 150px;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-bottom: 20px;
-  }
-  
-  .container {
-    width: 100%;
-    display: flex;
-  }
-  
-  .header .container {
-    height: 100%;
-    width: 95%;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .navbar {
-    margin-top: 14px;
-    width: 500px;
-    color: rgb(255, 255, 255);
-    list-style: none;
-    align-items: center;
-    display: flex;
-    padding: 0;
-    justify-content: space-between;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .entrarheader {
-    color: #4eb265;
-    margin-top: 5px;
-  }
-  
-  .logo_entar {
-    height: 30px;
-    width: 30px;
-  }
-  
-  .btn_simulador {
-    color: white;
-    margin-left: 50px;
-    background-color: rgb(78 178 101);
-    height: 40px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 30px;
-  }
-  
-  a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .link_a:link {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  .link_a:visited {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  .link_a:hover {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  .link_a:active {
-    color: rgb(78 178 101);
-    background-color: transparent;
-    text-decoration: underline;
-  }
+.corpo:hover {
+  background-color: #082949;
+}
 
-  /* fim do header */
-  /* Banner */
-  .banner{
-      display: flex;
-      height: 100vh;
-  }
-  .esquerda{
-      display: flex;
-      flex-direction: column;
-      width: 35%;
-      background-color: rgb(8, 41, 73);
-  }
-  .direita{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 75%;
-    background-color: #3684c4;
+.corpo::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-.card1{
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 25px;
-    width: 90%;
-    height: 450px;
-    background-color: aliceblue;
+
+.corpo::-webkit-scrollbar-track {
+  display: none;
 }
-.card2{
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 25px;
-    height: 160px;
-    width: 90%;
-    background-color: aliceblue;
+
+.corpo::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: inherit;
 }
-.card3{
-    border-radius: 10px;
-    margin-top: 36px;
-    margin-right: 30px;
-    width: 450px;
-    height: 200px;
-    background-color: aliceblue;
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(8, 41, 73);
 }
-.card4{
-    border-radius: 10px;
-    margin-top: 36px;
-    margin-right: 30px;
-    width: 450px;
-    height: 200px;
-    background-color: aliceblue;
+
+/* header */
+
+.corpo {
+  overflow: overlay;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0px;
+  overflow-x: hidden;
+  background-image: url("");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.card5{
-    border-radius: 10px;
-    margin-right: 30px;
-    width: 450px;
-    height: 200px;
-    background-color: aliceblue;
+
+.header {
+  width: 100%;
+  height: 85px;
+  align-items: center;
+  background-color: rgba(0, 0, 0);
 }
-.card6{
-    border-radius: 10px;
-    margin-right: 30px;
-    width: 450px;
-    height: 200px;
-    background-color: aliceblue;
+
+.logo_header {
+  height: 43px;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
 }
-.card7{
-    margin-right: 30px;
-    border-radius: 10px;
-    width: 450px;
-    height: 200px;
-    background-color: aliceblue;
+
+.container {
+  width: 100%;
+  display: flex;
 }
-.card8{
-    position: relative;
-    margin-right: 30px;
-    width: 450px;
-    border-radius: 10px;
-    height: 200px;
-    background-color: aliceblue;
+
+.header .container {
+  height: 100%;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
 }
-.sensor6Line{
+
+.navbar {
+  margin-top: 14px;
+  width: 500px;
+  color: rgb(255, 255, 255);
+  list-style: none;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.entrarheader {
+  color: #4eb265;
+  margin-top: 5px;
+}
+
+.logo_entar {
+  height: 30px;
+  width: 30px;
+}
+
+.btn_simulador {
+  color: white;
+  margin-left: 50px;
+  background-color: rgb(78 178 101);
+  height: 40px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 30px;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:link {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:visited {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.link_a:hover {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link_a:active {
+  color: rgb(78 178 101);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* fim do header */
+/* Banner */
+.banner {
+  display: flex;
+  height: 100vh;
+}
+
+.esquerda {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 820px;
+  background-color: rgb(8, 41, 73);
+}
+
+.direita {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 75%;
+  height: 820px;
+  background-color: #3684c4;
+}
+
+.card1 {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 25px;
+  width: 90%;
+  height: 450px;
+  background-color: aliceblue;
+}
+
+.card2 {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 25px;
+  height: 160px;
+  width: 90%;
+  background-color: aliceblue;
+}
+
+.card3 {
+  border-radius: 10px;
+  margin-top: 36px;
+  margin-right: 30px;
+  width: 450px;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.card4 {
+  border-radius: 10px;
+  margin-top: 36px;
+  margin-right: 30px;
+  width: 450px;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.card5 {
+  border-radius: 10px;
+  margin-right: 30px;
+  width: 450px;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.card6 {
+  border-radius: 10px;
+  margin-right: 30px;
+  width: 450px;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.card7 {
+  margin-right: 30px;
+  border-radius: 10px;
+  width: 450px;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.card8 {
+  position: relative;
+  margin-right: 30px;
+  width: 450px;
+  border-radius: 10px;
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.sensor6Line {
   z-index: 0;
   position: absolute;
 }
-.sensor5Line{
+
+.sensor5Line {
   z-index: 0;
   position: absolute;
 }
 
-.manutencao{
+.manutencao {
   border-radius: 10px;
   padding: 0 125px;
   background-color: rgb(8, 41, 73, 0.7);
@@ -248,7 +264,8 @@
   height: 200px;
   width: 200px;
 }
-.indisponivel{
+
+.indisponivel {
   border-radius: 10px;
   padding: 0 125px;
   background-color: rgb(8, 41, 73, 0.7);
@@ -257,28 +274,38 @@
   height: 200px;
   width: 200px;
 }
-.Titulo{
+
+.Titulo {
   margin-top: 10px;
   margin-left: 150px;
   color: white;
   font-size: 20px;
   padding: 0 0 0 0;
 }
-.Titulo2{
+
+.Titulo2 {
   margin-top: 10px;
   margin-left: 90px;
   color: white;
   font-size: 20px;
   padding: 0 0 0 0;
 }
-.a_sensor{
+
+.a_sensor {
   margin: 0;
 }
 .desk{
-  z-index: 1000;
-  height: 40px;
-  width: 150px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.desk h3{
+  color: white;
+}
+.desk button{
+  height: 45px;
+  width: 300px;
+  border-radius: 25px;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   border: none;
@@ -286,23 +313,25 @@
   transition-duration: 0.4s;
   cursor: pointer;
   align-items: center;
-  margin-left: 200px;
-  margin-top: 20px;
+  margin-left: 100px;
 
 }
-.desk:hover {
+
+.desk button:hover {
   background: #082949;
   color: white;
   border-radius: 40px;
   box-shadow: 1px 1px 1px #013560;
   cursor: pointer;
 }
-.btn{
+
+.btn {
   position: absolute;
 
 }
-.btn .btn_u{
-  margin-bottom: 680px;
+
+.btn .btn_u {
+  margin-bottom: 715px;
   height: 40px;
   width: 150px;
   margin-left: -480px;
@@ -315,6 +344,7 @@
   cursor: pointer;
 
 }
+
 .btn_u:hover {
   background: #082949;
   color: white;
@@ -322,6 +352,7 @@
   box-shadow: 1px 1px 1px #013560;
   cursor: pointer;
 }
+
 /* MODAL 0 */
 .modal-container {
   z-index: 2;
@@ -378,6 +409,7 @@
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
+
 .input1 {
   width: 280px;
   padding: 12px 20px;
@@ -396,6 +428,7 @@
   border: none;
   border-bottom: 2px solid rgb(0, 0, 0);
 }
+
 .entrar {
   margin-top: 50px;
   background-color: rgb(78 178 101);
@@ -418,7 +451,8 @@
   border-radius: 40px;
   box-shadow: 2px 2px 2px rgb(189, 188, 188);
 }
-.div_erro{
+
+.div_erro {
   border-radius: 40px;
   margin-bottom: 450px;
   position: absolute;
@@ -426,11 +460,13 @@
   height: 50px;
   width: 600px;
 }
-.msg_erro{
+
+.msg_erro {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 40px;
 }
-footer{
+
+footer {
   position: relative;
   bottom: 0;
   left: 0;
@@ -441,9 +477,10 @@ footer{
   padding-top: 5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
+  margin-top: 95px;
 }
 
-.footer-content{
+.footer-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -451,36 +488,35 @@ footer{
   text-align: center;
 }
 
-.footer-content > h1{
+.footer-content>h1 {
   font-size: 28px;
-  font-weight: 400x   ;
+  font-weight: 400px;
   text-transform: capitalize;
   line-height: 2rem;
 
 }
 
-.footer-content > p{
-  
+.footer-content>p {
   margin: 5px auto;
   line-height: 28px;
   font-size: 14px;
 }
 
-.sociais{
+.sociais {
   list-style: none;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 0 10px 0;
 }
 
-.sociais > li{
+.sociais>li {
   margin: 0px 10px;
 }
 
-.sociais > a{
+.sociais>a {
   text-decoration: none;
-  color:white
+  color: white
 }
 
 .sociais a i {
@@ -488,20 +524,19 @@ footer{
   transition: color .4s ease;
 }
 
-.sociais a:hover i{
-  color:#7FCC8E;
+.sociais a:hover i {
+  color: #7FCC8E;
 }
 
-.footer-bottom{
+.footer-bottom {
   background: #2d8a43;
   width: 100vw;
   padding: 5px 0;
   text-align: center;
 }
 
-.footer-bottom p{
+.footer-bottom p {
   font-size: 14px;
   word-spacing: 2px;
   text-transform: capitalize;
 }
-
