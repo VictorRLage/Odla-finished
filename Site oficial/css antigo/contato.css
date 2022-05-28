@@ -1,25 +1,25 @@
-.corpo {
+.corpoC {
   transition: background-color .8s;
 }
 
-.corpo:hover {
+.corpoC:hover {
   background-color: #4eb265;
 }
 
-.corpo::-webkit-scrollbar {
+.corpoC::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-.corpo::-webkit-scrollbar-track {
+.corpoC::-webkit-scrollbar-track {
   display: none;
 }
 
-.corpo::-webkit-scrollbar-thumb {
+.corpoC::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: inherit;
 }
-::-webkit-scrollbar-thumb:hover{
+.corpoC::-webkit-scrollbar-thumb:hover{
   background-color: #4eb265;
 }
 * {
@@ -211,9 +211,9 @@ a:active {
 .main {
   background-color: #7FCC8E;
   background-image: url("https://i.imgur.com/tjubsLG.png");
-  margin: 0;
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0;
 }
 /* MODAL 0 */
 .modal-container {
@@ -298,14 +298,13 @@ footer{
 
 .footer-content > h1{
   font-size: 28px;
-  font-weight: 400x   ;
+  font-weight: 400px;
   text-transform: capitalize;
   line-height: 2rem;
 
 }
 
 .footer-content > p{
-  
   margin: 5px auto;
   line-height: 28px;
   font-size: 14px;
@@ -348,4 +347,7 @@ footer{
   font-size: 14px;
   word-spacing: 2px;
   text-transform: capitalize;
+}
+.a_contato:hover{
+  font-size: 30px;
 }
