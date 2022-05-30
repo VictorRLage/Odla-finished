@@ -4,9 +4,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     
     instrucaoSql = ''
     
-    if (process.env.AMBIENTE_PROCESSO == "Desenvolvimento")
-       //process.env.AMBIENTE_PROCESSO == "Produção"
-       {
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `select top ${limite_linhas}
                         temperatura, 
                         umidade, 

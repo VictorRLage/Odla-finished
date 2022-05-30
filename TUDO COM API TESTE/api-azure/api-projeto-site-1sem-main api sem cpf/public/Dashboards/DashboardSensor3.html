@@ -5,109 +5,108 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Sensor 4 || ODLA</title>
-    <link rel="stylesheet" href="DashboardSensor4.css">
+    <title>Dashboard | Sensor 3 || ODLA</title>
+    <link rel="stylesheet" href="../TUDO.css">
     <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="corpo">
+<body class="corpoDS">
     <!-- Header -->
     <div class="header">
 
         <div class="container">
 
-            <a href="../telainicio.html"><img src="https://i.imgur.com/d1sFhNj.png" class="logo_header"></a>
+            <a href="telainicio.html"><img src="https://i.imgur.com/d1sFhNj.png" class="logo_header"></a>
 
             <ul class="navbar">
-                <li><a href="../telainicio.html">Início</a></li>
-                <li><a href="../SobreNósV2.html">Sobre nós</a></li>
-                <li><a href="../Servicos.html">Serviços</a></li>
-                <li><a href="../contato.html">Contato</a></li>
+                <li><a class="aH" href="telainicio.html"> Início</a></li>
+                <li><a class="aH" href="SobreNósV2.html"> Sobre Nós</a></li>
+                <li><a class="aH" href="Servicos.html">Serviços</a></li>
+                <li><a class="aH" href="contato.html">Contato</a></li>
                 <li class="entrarheader"><img class="logo_entar" src="https://i.imgur.com/TRccn0N.png" align="center">
-                    <a class="link_a" href="../login.html"> Entrar</a>
+                    <a class="link_a" href="login.html"> Entrar</a>
                 </li>
             </ul>
 
-            <div class="btn_simulador">
-                <a href="../SimuladorODLA.HTML">Simulador financeiro</a>
-            </div>
+            <button class="btn_simulador" onclick="window.location.href='SimuladorODLA.HTML';">Simulador
+                Financeiro</button>
+
         </div>
     </div>
     <!-- Fim do Header -->
     <!-- Banner -->
-    <div class="container1">
-        <div class="cardsH">
-            <div class="container2">
-                <h1 class="nome">Sensor 4 Coluna 4</h1>
-                <div class="DT">
+    <div class="container1DS">
+        <div class="cardsHDS">
+            <div class="container2DS">
+                <h1 class="nomeDS">Sensor 3 Coluna 3</h1>
+                <div class="DTDS">
                     <p>Ultima atualização:<br>
                         <span>2022-05-08-12:00</span>
                     </p>
                 </div>
             </div>
-            <div class="card2">
-                <div class="linha2">
+            <div class="card2DS">
+                <div class="linha2DS">
                     <canvas id="linhaa"></canvas>
                 </div>
-                <div class="linha">
+                <div class="linhaDS">
                     <canvas id="linha"></canvas>
-                    <button class="btn_add" onclick="addValor1()">Adicionar</button>
                 </div>
 
             </div>
-            <div class="cardsV">
-                <div class="card3">
+            <div class="cardsVDS">
+                <div class="card3DS">
                     <h2>Consumo de energia do sensor</h2>
-                    <div class="blocos">
-                        <div class="bloco1">Medio por hora:<br> <span class="med_hr">90</span> w</div>
-                        <div class="bloco2">Diário:<br> <span class="med_hr">1.6</span> Kw</div>
-                        <div class="bloco3">Mensal:<br> <span class="med_hr">50.2</span> Kw</div>
+                    <div class="blocosDS">
+                        <div class="bloco1DS">Medio por hora:<br> <span class="med_hrDS">90</span> w</div>
+                        <div class="bloco2DS">Diário:<br> <span class="med_hrDS">1.6</span> Kw</div>
+                        <div class="bloco3DS">Mensal:<br> <span class="med_hrDS">50.2</span> Kw</div>
                     </div>
                 </div>
-                <div class="card4">
+                <div class="card4DS">
                     <h2>Sensores</h2>
-                    <img class="img_sensor" src="https://i.imgur.com/00X2Fp3.png">
-                    <div class="uls2">
-                        <ul class="total">
+                    <img class="img_sensorDS" src="https://i.imgur.com/00X2Fp3.png">
+                    <div class="uls2DS">
+                        <ul class="totalDS">
                             <li>Total</li>
                         </ul>
-                        <ul class="qtd">
+                        <ul class="qtdDS">
                             <li>6</li>
                         </ul>
                     </div>
-                    <div class="uls3">
-                        <ul class="li">
-                            <li><img class="funcionando" align="center" src="https://i.imgur.com/aKQCcmW.png" alt="">
+                    <div class="uls3DS">
+                        <ul class="liDS">
+                            <li><img class="funcionandoDS" align="center" src="https://i.imgur.com/aKQCcmW.png" alt="">
                                 Funcionando</li>
-                            <li><img class="manutençao" align="center" src="https://i.imgur.com/frbLIG3.png" alt=""> Em
+                            <li><img class="manutençaoDS" align="center" src="https://i.imgur.com/frbLIG3.png" alt=""> Em
                                 manutenção</li>
-                            <li><img class="indisponivel" align="center" src="https://i.imgur.com/tk0UfYf.png" alt="">
+                            <li><img class="indisponivelDS" align="center" src="https://i.imgur.com/tk0UfYf.png" alt="">
                                 Indisponível</li>
                         </ul>
-                        <ul class="li2">
+                        <ul class="li2DS">
                             <li>4</li>
                             <li>1</li>
                             <li>1</li>
                         </ul>
                     </div>
                 </div>
-                <div class="div6">
-                    <div class="tituloL">
+                <div class="div6DS">
+                    <div class="tituloLDS">
                         <h2>Métricas luminosidade</h2>
                         <b>Critico</b>
-                        <b class="ba1">Alerta</b>
-                        <b class="bi">Ideal</b>
-                        <b class="ba1">Alerta</b>
-                        <b class="bc1">Critico</b>
+                        <b class="ba1DS">Alerta</b>
+                        <b class="biDS">Ideal</b>
+                        <b class="ba1DS">Alerta</b>
+                        <b class="bc1DS">Critico</b>
                     </div>
-                    <div class="card5">
-                        <div class="metricas">
-                            <div class="bolaRed">Abaixo 15.000 <br>Lux</div>
-                            <div class="bolaAma">Abaixo 40.000 <br>Lux</div>
-                            <div class="bolaVer">Entre 40.000 50.000 <br>Lux</div>
-                            <div class="bolaAma">Acima 50.000 <br>Lux</div>
-                            <div class="bolaRed">Acima 85.000 <br>Lux</div>
+                    <div class="card5DS">
+                        <div class="metricasDS">
+                            <div class="bolaRedDS">Abaixo 15.000 <br>Lux</div>
+                            <div class="bolaAmaDS">Abaixo 40.000 <br>Lux</div>
+                            <div class="bolaVerDS">Entre 40.000 50.000 <br>Lux</div>
+                            <div class="bolaAmaDS">Acima 50.000 <br>Lux</div>
+                            <div class="bolaRedDS">Acima 85.000 <br>Lux</div>
                         </div>
                     </div>
                 </div>
@@ -117,49 +116,59 @@
     <!-- Fim do Banner -->
 </body>
 
+<!--Footer -->
 <footer>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <div class="footer-content">
-        <h1> <a href="contato.html">CONTATE-NOS</a></h1>
-        <p>
-            Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001<br>
+        <h1> <a class="a_contato" href="contato.html">CONTATE-NOS</a></h1>
+        <span>
+            Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001 <br>
             Whatsapp:(11) 93238-5592 || Telefone:(11) 4782-2076 || Email:odlacontato@gmail.com
-        </p>
+        </span>
         <ul class="sociais">
-            <li><a href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a class="a_f" href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
+                        class="fa fa-facebook"></i></a></li>
+            <li><a class="a_f" href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            </li>
+            <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
+                        class="fa fa-linkedin-square"></i></a></li>
         </ul>
     </div>
     <div class="footer-bottom">
-        <p>copyright &copy;2022 ODLA</p>
+        <p>Copyright &copy;2022 ODLA</p>
     </div>
-
+    
 </footer>
+<!--Fim Footer -->
 
 </html>
 <script>
-    const labels = [];
+    const labels = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
+    ];
     const data = {
         labels: labels,
         datasets: [{
             label: 'Luminosidade',
-            data: [],
+            data: [45989, 46949, 47349, 48389, 49362, 66789, 79097, 88946],
             fill: false,
-            borderColor: 'rgb(78 178 101)',
-            backgroundColor: 'rgb(78 178 101)',
+            borderColor: 'red',
+            backgroundColor: 'red',
             tension: 0.2,
             pointRadius: 7
         }]
     };
     const options = {
         scales: {
-            x: {
-                ticks: {
-                    display: false
-                }
-            },
+            
             y: {
                 min: 0,
                 max: 100000
@@ -179,12 +188,21 @@
         data: data,
         options: options,
     };
-    const labels2 = [];
+    const labels2 = [
+        '00:00',
+        '03:00',
+        '06:00',
+        '09:00',
+        '12:00',
+        '15:00',
+        '18:00',
+        '21:00',
+    ];
     const data2 = {
         labels: labels2,
         datasets: [{
             label: 'Consumo energia (w)',
-            data: [],
+            data: [85, 86, 87, 88, 89, 106, 119, 128],
             fill: false,
             borderColor: 'rgb(8, 41, 73)',
             backgroundColor: 'rgb(8, 41, 73)',
@@ -194,11 +212,6 @@
     };
     const options2 = {
         scales: {
-            x: {
-                ticks: {
-                    display: false
-                }
-            },
             y: {
                 min: 0,
                 max: 200
