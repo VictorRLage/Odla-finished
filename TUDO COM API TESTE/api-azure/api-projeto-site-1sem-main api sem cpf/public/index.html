@@ -9,7 +9,9 @@
     <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
     <link rel="stylesheet" href="TUDO.css">
 </head>
-<body class="corpoL" style="background-image: url(https://i.imgur.com/gyPnQLb.jpg); background-repeat: no-repeat; background-size: contain;">
+
+<body class="corpoL"
+    style="background-image: url(https://i.imgur.com/gyPnQLb.jpg); background-repeat: no-repeat; background-size: contain;">
     <!-- Header -->
     <div class="headerL">
 
@@ -37,10 +39,11 @@
         <div class="inputladodireitoL">
             <input type="text" name="nome" class="inputL" id="nome_input" placeholder="Seu nome completo"><br>
             <input type="email" name="email" class="inputL" id="email_input" placeholder="Seu email"><br>
-            <input type="tel" name="telefone" class="inputL" id="telefone_input" placeholder="Telefone celular (11) 91111-1111"><br>
+            <input type="tel" name="telefone" class="inputL" id="telefone_input"
+                placeholder="Telefone celular (11) 91111-1111"><br>
             <input type="text" class="inputL" id="cnpj_input" placeholder="CNPJ 99999999/999999"><br>
             <input type="password" class="inputL" id="senha_input" placeholder="Sua Senha"><br>
-            <button class="cadastrarL" id="open" onclick="cadastrar()">Cadastrar</button>
+            <button class="cadastrarL" id="open2" onclick="cadastrar()">Cadastrar</button>
         </div>
 
         <div class="bemvindoL">
@@ -49,9 +52,9 @@
 
 
             <div class="inputgodL">
-                <input type="email" name="email" class="input1L" id="email_login" placeholder="Seu Email"><br>
-                <input type="password" name="" class="input2L" id="senha_login" placeholder="Sua Senha"> <br>
-                <button class="entrarL" id="open2" onclick="entrar()">Entrar</button>
+                <input type="email" name="email" class="input1L" id="email_input2" placeholder="Seu Email"><br>
+                <input type="password" name="" class="input2L" id="senha_input2" placeholder="Sua Senha"> <br>
+                <button class="entrarL" id="open" onclick="entrar()">Entrar</button>
             </div>
         </div>
     </div>
@@ -87,7 +90,8 @@
             <li><a class="a_f" href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
                         class="fa fa-facebook"></i></a></li>
             <li><a class="a_f" href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i
+                        class="fa fa-youtube"></i></a>
             </li>
             <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
                         class="fa fa-linkedin-square"></i></a></li>
@@ -96,121 +100,129 @@
     <div class="footer-bottom">
         <p>Copyright &copy;2022 ODLA</p>
     </div>
-    
+
 </footer>
 <!--Fim Footer -->
 
 </html>
 <script>
-function cadastrar() {
+    function cadastrar() {
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var telefoneVar = telefone_input.value;
-    var cnpjVar = cnpj_input.value;
-    var senhaVar = senha_input.value;
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var telefoneVar = telefone_input.value;
+        var cnpjVar = cnpj_input.value;
+        var senhaVar = senha_input.value;
 
-    if (nomeVar == "" || emailVar == "" || telefoneVar == "" || cnpjVar == "" || senhaVar == "") {
-        titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
-        p_msg.innerHTML = ``
-    } else {
-        titulo_m.innerHTML = `<br>Cadastro realizado com sucesso!`
-        p_msg.innerHTML = ``
-    }
+        if (nomeVar == "" || emailVar == "" || telefoneVar == "" || cnpjVar == "" || senhaVar == "") {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
 
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: nomeVar,
-            emailServer: emailVar,
-            telefoneServer: telefoneVar,
-            cnpjServer: cnpjVar,
-            senhaServer: senhaVar
-        })
-    })
-}
-
-
-
-
-
-
-
-function entrar() {
-
-    var emailVar = email_input2.value;
-    var senhaVar = senha_input2.value;
-
-    if (emailVar == "" || senhaVar == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar();
-        return false;
-    }
-    else {
-        setInterval(sumirMensagem, 5000)
-    }
-
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
-
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-
-                setTimeout(function () {
-                    window.location = "./dashboard/cards.html";
-                }, 1000); // apenas para exibir o loading
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar(texto);
-            });
+            return
         }
 
-    }).catch(function (erro) {
-        console.log(erro);
-    })
 
-    return false;
-}
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                telefoneServer: telefoneVar,
+                cnpjServer: cnpjVar,
+                senhaServer: senhaVar
+            })
+        }).then(function () {
+            alert()
+            titulo_m.innerHTML = `<br>Cadastro realizado com sucesso!`
+            p_msg.innerHTML = ``
+        })
+            .catch(function (errinho) {
+                console.error(errinho)
+            })
 
-function sumirMensagem() {
-    cardErro.style.display = "none"
-}
+        console.log()
+    }
+
+
+
+    function entrar() {
+
+        var emailVar = email_input2.value;
+        var senhaVar = senha_input2.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+            p_msg.innerHTML = ``
+            const open = document.getElementById('open');
+            const modal_container = document.getElementById('modal_container');
+            const close = document.getElementById('close');
+
+                modal_container.classList.add('show');
+
+
+            close.addEventListener('click', () => {
+                modal_container.classList.remove('show');
+            });
+        }
+        else {
+            titulo_m.innerHTML = `<br>Login realizado com sucesso!`
+            p_msg.innerHTML = ``
+
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    window.location.href = "DashboardGeral.html"
+
+                });
+
+
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
 
 </script>
