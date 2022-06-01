@@ -94,6 +94,6 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
+    editar, 
     deletar
 }
