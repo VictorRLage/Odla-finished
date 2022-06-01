@@ -8,7 +8,7 @@ S no final da class = tela de Serviços
 SO no final da class = tela de SimuladorODLA
 SN no final da class = tela de SobreNósV2
 TD no final da class = tela de TelaDev
-TI no final da class = tela de Telainicio
+TI no final da class = tela de index
 DS no final da class = tela de DashboardSensor
 */
 
@@ -2191,8 +2191,8 @@ footer {
 }
 
 /*FIM TELA TELADEV*/
-/*TELA DE TELAINICIO*/
-/*Header TelaInicio*/
+/*TELA DE index*/
+/*Header index*/
 .headerTI {
     width: 100%;
     height: 85px;
@@ -2207,8 +2207,8 @@ footer {
     justify-content: space-between;
 }
 
-/*Fim Header TelaInicio*/
-/*Scrool-Bar TelaInicio*/
+/*Fim Header index*/
+/*Scrool-Bar index*/
 .corpoTI {
     transition: 0.8s;
 }
@@ -2235,7 +2235,7 @@ footer {
     background-color: #4eb265;
 }
 
-/*Fim Scrool-Bar TelaInicio*/
+/*Fim Scrool-Bar index*/
 .textoinicioTI {
     align-items: center;
     display: flex;
@@ -2405,7 +2405,7 @@ footer {
 
 }
 
-/*FIM TELA DE TELAINICIO*/
+/*FIM TELA DE index*/
 /*TELA DE DASHBOARDSENSOR*/
 /*Scrool-Bar DashboardSensor*/
 .corpoDS {

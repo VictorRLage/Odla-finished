@@ -18,7 +18,7 @@ idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 Nome VARCHAR(60),
 Email VARCHAR(60) UNIQUE,
 Senha VARCHAR(30),
-CNPJ CHAR(14) UNIQUE,
+CNPJ CHAR(15) UNIQUE,
 telefone CHAR(15) UNIQUE,
 fkFazenda INT,
 FOREIGN KEY (fkFazenda) REFERENCES Fazenda (idFazenda),
@@ -40,3 +40,5 @@ Lux INT,
 fkSensor INT,
 FOREIGN KEY (fkSensor) REFERENCES Sensor (idSensor)
 );
+
+SELECT * FROM Usuario;
