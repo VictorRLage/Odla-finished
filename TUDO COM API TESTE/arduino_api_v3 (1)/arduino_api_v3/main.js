@@ -19,8 +19,8 @@ const serial = async (
     const poolBancoDados = mysql.createPool(
         {
             host: 'localhost',
-            port: 3000,
-            user: 'Aluno',
+            port: 3306,
+            user: 'aluno',
             password: 'sptech',
             database: 'Odla'
         }
@@ -47,17 +47,13 @@ const serial = async (
         const luminosidade = parseFloat(valores[2]);
         const lm35Temperatura = parseFloat(valores[3]);
         const chave = parseInt(valores[4]);
-
-        valoresDht11Umidade.push(dht11Umidade);
-        valoresDht11Temperatura.push(dht11Temperatura);
+        
         valoresLuminosidade.push(luminosidade);
-        valoresLm35Temperatura.push(lm35Temperatura);
-        valoresChave.push(chave);
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO sensores (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave) VALUES (?, ?, ?, ?, ?)',
-                [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
+                'INSERT INTO Sensor (luminosidade) VALUES (?)',
+                [luminosidade]
             );
         }
 
