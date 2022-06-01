@@ -159,6 +159,25 @@ body {
 }
 
 /*Fim Header*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Footer*/
 footer {
     display: flex;
@@ -272,6 +291,26 @@ footer {
 }
 
 /*Fim Footer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA DE CONTATO*/
 /*Scrool-Bar Contato*/
 .corpoC {
@@ -301,12 +340,31 @@ footer {
 }
 
 /*Fim Scrool-Bar Contato*/
-/*FIM TELA DE CONTATO*/
 .mainC {
     background-image: url("https://i.imgur.com/tjubsLG.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/*FIM TELA DE CONTATO*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*TELA DASHBOARD GERAL*/
 /*Scrool-Bar Dashboard Geral*/
@@ -656,6 +714,25 @@ footer {
 }
 
 /*FIM TELA DASHBOARD GERAL*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA LOGIN*/
 /*Header Login*/
 .headerL {
@@ -964,6 +1041,25 @@ footer {
 }
 
 /*FIM TELA LOGIN*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA SERVIÇOS*/
 /*Scrool-Bar Serviços*/
 .corpoS {
@@ -1177,6 +1273,25 @@ footer {
 }
 
 /*FIM TELA SERVIÇOS*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA SIMULADOR*/
 /*Scrool-Bar Simulador*/
 .corpoSO {
@@ -1856,8 +1971,26 @@ footer {
 }
 
 /*FIM TELA SIMULADOR*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA SOBRENÓS*/
-/*Header Login*/
 /*Header Sobre Nós*/
 .headerSN {
     width: 100%;
@@ -1901,7 +2034,7 @@ footer {
     background-color: #4eb265;
 }
 
-/*FimScrool-Bar Sobre Nós*/
+/*Fim Scrool-Bar Sobre Nós*/
 .banner1SN {
     background-image: url("https://i.imgur.com/mXpmDdC.png");
     display: flex;
@@ -2083,6 +2216,26 @@ footer {
 }
 
 /*FIM TELA SOBRENÓS*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA TELADEV*/
 /*Header TelaDev*/
 .corpoTD {
@@ -2191,6 +2344,25 @@ footer {
 }
 
 /*FIM TELA TELADEV*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA DE index*/
 /*Header index*/
 .headerTI {
@@ -2406,6 +2578,25 @@ footer {
 }
 
 /*FIM TELA DE index*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*TELA DE DASHBOARDSENSOR*/
 /*Scrool-Bar DashboardSensor*/
 .corpoDS {
