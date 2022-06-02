@@ -753,6 +753,37 @@ footer {
     font-size: 40px;
 }
 
+.modal-containerDG2 {
+    z-index: 2;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(78, 178, 101, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-containerDG2.show2 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDG2{
+    background-color: white;
+    width: 500px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+
 /*FIM TELA DASHBOARD GERAL*/
 
 
@@ -957,7 +988,24 @@ footer {
     box-shadow: 2px 2px 2px rgb(9, 83, 16);
     transition-duration: 0.4s;
 }
+.perfilL{
+    position: absolute;
+    display: flex;
+    color: #fff;
+    margin-top: -60px;
 
+}
+.perfilL select {
+    margin-left: 10px;
+    margin-top: 18px;
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    border: rgb(78 178 101) solid 2px;
+    border-radius: 10px;
+    color: rgb(47, 119, 40);
+    height: 25px;
+}
 /* MODAL 0 */
 .modal-containerL {
     position: fixed;
@@ -2332,7 +2380,7 @@ footer {
     align-items: center;
     background-color: #4EB265;
     border-radius: 40px;
-    height: 500px;
+    height: 600px;
     width: 500px;
 }
 
@@ -2358,7 +2406,7 @@ footer {
     color: #4eb265;
     border-radius: 40px;
     height: 40px;
-    width: 280px;
+    width: 150px;
     font-size: 20px;
     border-style: hidden;
     box-shadow: 0px 0px 0px rgb(189, 188, 188);
@@ -2382,7 +2430,29 @@ footer {
     color: white;
     font-size: 20px;
 }
-
+.inpTDN{
+    color: white;
+    width: 280px;
+    padding: 12px 20px;
+    background: transparent;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.inpTDN::placeholder {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+.botoesTD{
+ display: flex;
+ flex-direction: row;
+}
+.btnAtualizar{
+    margin-left: 50px;
+}
 /*FIM TELA TELADEV*/
 
 

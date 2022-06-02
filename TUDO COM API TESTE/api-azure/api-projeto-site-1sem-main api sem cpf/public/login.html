@@ -52,6 +52,14 @@
 
 
             <div class="inputgodL">
+                <div class="perfilL">
+                    <h3>Selecionar perfil:</h3>
+                    <select id="perfil">
+                        <option value="1">Adiminastro</option>
+                        <option value="2">Usuário</option>
+                        <option value="3">Desesenvolvedor</option>
+                    </select>
+                </div>
                 <input type="email" name="email" class="input1L" id="email_input2" placeholder="Seu Email"><br>
                 <input type="password" name="" class="input2L" id="senha_input2" placeholder="Sua Senha"> <br>
                 <button class="entrarL" id="open" onclick="entrar()">Entrar</button>
@@ -118,6 +126,7 @@
         var telefoneVar = telefone_input.value;
         var cnpjVar = cnpj_input.value;
         var senhaVar = senha_input.value;
+        var perfilVar = 1
 
         if (nomeVar == "" || emailVar == "" || telefoneVar == "" || cnpjVar == "" || senhaVar == "") {
             titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
@@ -143,7 +152,7 @@
             return
         }
 
-        if (telefoneVar.indexOf("(") == -1 || telefoneVar.indexOf(")") == -1 || telefoneVar.indexOf("-") == -1 || telefoneVar.length < 15){
+        if (telefoneVar.indexOf("(") == -1 || telefoneVar.indexOf(")") == -1 || telefoneVar.indexOf("-") == -1 || telefoneVar.length < 15) {
             titulo_m.innerHTML = `<br>Telefone inválido.`
             p_msg.innerHTML = `<br> Ele deve conter 15 caracteres, incluindo (&nbsp;) e -`
 
@@ -156,7 +165,7 @@
             return
         }
 
-        if (cnpjVar.length < 14 || cnpjVar.indexOf("/") == -1){
+        if (cnpjVar.length != 15 || cnpjVar.indexOf("/") == -1) {
             titulo_m.innerHTML = `<br>CNPJ Inválido.`
             p_msg.innerHTML = `<br> Ele deve conter 15 caracteres, incluindo /`
 
@@ -183,7 +192,8 @@
                 emailServer: emailVar,
                 telefoneServer: telefoneVar,
                 cnpjServer: cnpjVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                perfilServer: perfilVar
             })
         }).then(function () {
 
@@ -214,8 +224,10 @@
 
         var emailVar = email_input2.value;
         var senhaVar = senha_input2.value;
+        var perfilVar = Number(perfil.value);
 
-        if (emailVar == "" || senhaVar == "") {
+        if(perfilVar == 1 || perfilVar == 2){
+            if (emailVar == "" || senhaVar == "") {
             titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
 
@@ -243,7 +255,8 @@
             },
             body: JSON.stringify({
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                perfilServer: perfilVar
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
@@ -255,9 +268,10 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json.Email;
+                    sessionStorage.NOME_USUARIO = json.Nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.FK_FAZENDA = json.fkFazenda;
                     window.location.href = "DashboardGeral.html"
 
                 });
@@ -266,6 +280,27 @@
 
             } else {
                 titulo_m.innerHTML = `<br>Email ou senha inválidos.`
+                p_msg.innerHTML = ``
+
+
+                modal_container.classList.add('show');
+
+
+                close.addEventListener('click', () => {
+                    modal_container.classList.remove('show');
+                });
+
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+        }
+        if(perfilVar == 3){
+            if (emailVar == "" || senhaVar == "") {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
 
 
@@ -275,7 +310,58 @@
             close.addEventListener('click', () => {
                 modal_container.classList.remove('show');
             });
-                
+        }
+        else {
+            titulo_m.innerHTML = `<br>Login realizado com sucesso!`
+            p_msg.innerHTML = ``
+
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                perfilServer: perfilVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.Email;
+                    sessionStorage.NOME_USUARIO = json.Nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.ID_USUARIO = json.fkFazenda;
+                    window.location.href = "TelaDev.html"
+
+                });
+
+
+
+            } else {
+                titulo_m.innerHTML = `<br>Email ou senha inválidos.`
+                p_msg.innerHTML = ``
+
+
+                modal_container.classList.add('show');
+
+
+                close.addEventListener('click', () => {
+                    modal_container.classList.remove('show');
+                });
+
             }
 
         }).catch(function (erro) {
@@ -283,6 +369,7 @@
         })
 
         return false;
+        }
     }
 
 </script>

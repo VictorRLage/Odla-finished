@@ -115,7 +115,8 @@
             <li><a class="a_f" href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
                         class="fa fa-facebook"></i></a></li>
             <li><a class="a_f" href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i
+                        class="fa fa-youtube"></i></a>
             </li>
             <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
                         class="fa fa-linkedin-square"></i></a></li>
@@ -124,17 +125,17 @@
     <div class="footer-bottom">
         <p>Copyright &copy;2022 ODLA</p>
     </div>
-    
+
 </footer>
 <!--Fim Footer -->
-<!--MODAL 0-->
+<!--Modal-->
 <div class="modal-containerDG" id="modal_container">
     <div class="modalDG">
         <h1 id="titulo_M">Cadastre um usuário</h1>
         <div class="inputgodDG">
-            <input type="email" name="email" class="input1DG" id="input1" placeholder="Email"><br>
-            <input type="password" name="" class="input2DG" id="input2" placeholder="Senha"> <br>
-            <button class="entrarDG" onclick="logar()">Entrar</button>
+            <input type="email" name="email" class="input1DG" id="email_input" placeholder="Email"><br>
+            <input type="password" name="" class="input2DG" id="senha_input" placeholder="Senha"> <br>
+            <button class="entrarDG" onclick="cadastrarU()">Entrar</button>
 
         </div>
     </div>
@@ -142,6 +143,13 @@
     <div class="div_erroDG" id="div_erro" style="display: none;"><span style=" margin-left: 100px" id="msg_erro"
             class="msg_erroDG"></span></div>
 </div>
+<!--Modal-->
+<div class="modal-containerDG2" id="modal_container2">
+    <div class="modalDG2">
+        <h1 id="titulo_M2"></h1>
+    </div>
+</div>
+
 
 </html>
 <script>
@@ -585,27 +593,64 @@
 
 </script>
 <script>
-    function logar() {
-        var email2 = input1.value
-        var senha2 = input2.value
-        if (email2.indexOf("@") == -1 || email2.indexOf(".com") == -1 || senha2 == '') {
-            div_erro.style.display = 'block'
-            msg_erro.innerHTML = 'Email ou senha invalidos.'
-            msg_erro.style.marginLeft = '100px'
-        }
-        else {
-            div_erro.style.display = 'block'
-            msg_erro.innerHTML = 'Cadastro realizado com sucesso.'
-            msg_erro.style.marginLeft = '35px'
+    function cadastrarU() {
+        titulo_M2.innerHTML = ``
+        const modal_container2 = document.getElementById('modal_container2');
+        let emailVar = email_input.value;
+        let senhaVar = senha_input.value;
+        let fkFazendaVar = sessionStorage.FK_FAZENDA
+        let perfilVar = 2
+
+
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || senhaVar == '') {
+            titulo_M2.innerHTML = `Email ou senha invalidos`
+            modal_container2.classList.add('show2');
+            modal_container2.addEventListener('click', () => {
+                modal_container2.classList.remove('show2');
+            });
+
+            return;
         }
 
-    }
-    function limpar() {
-        div_erro.style.display = 'none'
-        msg_erro.innerHTML = ''
-    }
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarU", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                perfilServer: perfilVar,
+                fkFazendaServer: fkFazendaVar
+            })
+        }).then(function (resposta) {
 
-    function ShowGrafico() {
-        
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                titulo_M2.innerHTML = `Usuário cadastrado com sucesso`
+                modal_container2.classList.add('show2');
+                modal_container2.addEventListener('click', () => {
+                    modal_container2.classList.remove('show2');
+                });
+
+            } else {
+                titulo_M2.innerHTML = `Email ou senha invalidos`
+                modal_container2.classList.add('show2');
+                modal_container2.addEventListener('click', () => {
+                    modal_container2.classList.remove('show2');
+                });
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
     }
 </script>

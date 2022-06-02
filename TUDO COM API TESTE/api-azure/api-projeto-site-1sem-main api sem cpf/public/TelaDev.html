@@ -11,7 +11,8 @@
 </head>
 <!--4eb265-->
 
-<body class="corpoTD" style="background-image: url(https://i.imgur.com/gyPnQLb.jpg); background-repeat: no-repeat; background-size: cover;">
+<body class="corpoTD"
+    style="background-image: url(https://i.imgur.com/gyPnQLb.jpg); background-repeat: no-repeat; background-size: cover;">
     <!-- Header -->
     <div class="headerTD">
 
@@ -39,14 +40,25 @@
     <div class="containerBTD">
         <div class="card1TD">
             <h3>Cadastrar fazenda</h3>
-            <input placeholder="Nome da fazenda vertical" id="nomeF" class="inpTD">
-            <input placeholder="Área da fazenda vertical" id="areaF" class="inpTD">
-            <input placeholder="Altura da fazenda vertical" id="alturaF" class="inpTD">
-            <button onclick="cadastrarF()">Cadastrar</button>
-        </div>        
+            <input placeholder="ID da fazenda vertical" id="iDF_input" class="inpTD">
+            <input placeholder="Nome da fazenda vertical" id="nomeF_input" class="inpTD">
+            <input placeholder="Área da fazenda vertical" id="areaF_input" class="inpTD">
+            <input placeholder="Altura da fazenda vertical" id="alturaF_input" class="inpTD">
+            <input placeholder="Email administrador da fazenda vertical" id="emailADMF_input" class="inpTDN">
+            <div class="botoesTD">
+                <button onclick="cadastrarF()">Cadastrar</button> <button class="btnAtualizar" onclick="autualizarFKF()">Atualizar</button>
+            </div>
+        </div>
     </div>
     <!-- Banner -->
     <!--MODAL 0-->
+    <div class="modal-containerL" id="modal_container">
+        <div class="modalL">
+            <h2 id="titulo_m"></h2>
+            <p id="p_msg"></p>
+        </div>
+        <button class="button1L" id="close">X</button>
+    </div>
 </body>
 <!--Footer -->
 <footer>
@@ -61,7 +73,8 @@
             <li><a class="a_f" href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
                         class="fa fa-facebook"></i></a></li>
             <li><a class="a_f" href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i
+                        class="fa fa-youtube"></i></a>
             </li>
             <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
                         class="fa fa-linkedin-square"></i></a></li>
@@ -70,7 +83,123 @@
     <div class="footer-bottom">
         <p>Copyright &copy;2022 ODLA</p>
     </div>
-    
+
 </footer>
 <!--Fim Footer -->
+
 </html>
+<script>
+    function cadastrarF() {
+
+        const open = document.getElementById('open');
+        const modal_container = document.getElementById('modal_container');
+        const close = document.getElementById('close');
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var iDFVar = iDF_input.value;
+        var nomeFVar = nomeF_input.value;
+        var areaFVar = areaF_input.value;
+        var alturaFVar = alturaF_input.value;
+
+        if (iDFVar == "" || nomeFVar == "" || areaFVar == "" || alturaFVar == "") {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+
+            modal_container.classList.add('show');
+
+
+            close.addEventListener('click', () => {
+                modal_container.classList.remove('show');
+            });
+            return
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarF", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                iDFServer: iDFVar,
+                nomeFServer: nomeFVar,
+                areaFServer: areaFVar,
+                alturaFServer: alturaFVar,
+
+            })
+        }).then(function () {
+
+            titulo_m.innerHTML = `<br>Cadastro realizado com sucesso!`
+            p_msg.innerHTML = `Por favor atualize nossa base de dados no botão Atualizar`
+
+
+            modal_container.classList.add('show');
+
+
+            close.addEventListener('click', () => {
+                modal_container.classList.remove('show');
+            });
+        })
+            .catch(function (errinho) {
+                console.error(errinho)
+            })
+
+        console.log()
+    }
+    function autualizarFKF() {
+
+        const open = document.getElementById('open');
+        const modal_container = document.getElementById('modal_container');
+        const close = document.getElementById('close');
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var iDFVar = iDF_input.value;
+        var emailADMFVar = emailADMF_input.value;
+
+        if (iDFVar == "" || emailADMFVar == "") {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+
+            modal_container.classList.add('show');
+
+
+            close.addEventListener('click', () => {
+                modal_container.classList.remove('show');
+            });
+            return
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/autualizarFKF", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                iDFServer: iDFVar,
+                emailADMFServer: emailADMFVar
+            })
+        }).then(function () {
+
+            titulo_m.innerHTML = `<br>Atualização realizada com sucesso!`
+            p_msg.innerHTML = ``
+
+
+            modal_container.classList.add('show');
+
+
+            close.addEventListener('click', () => {
+                modal_container.classList.remove('show');
+            });
+        })
+            .catch(function (errinho) {
+                console.error(errinho)
+            })
+
+        console.log()
+    }
+</script>

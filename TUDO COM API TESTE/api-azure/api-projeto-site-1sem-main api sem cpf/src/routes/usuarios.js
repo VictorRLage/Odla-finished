@@ -20,4 +20,15 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/cadastrarU", function (req, res) {
+    usuarioController.cadastrarU(req, res);
+})
+
+router.post("/cadastrarF", function (req, res) {
+    usuarioController.cadastrarF(req, res);
+})
+
+router.post("/autualizarFKF", function (req, res) {
+    usuarioController.autualizarFKF(req, res);
+})
 module.exports = router;
