@@ -36,42 +36,40 @@
     </div>
     <!-- Fim do Header -->
 
-
+<div class="containerC">
     <div class="mainC">
 
-            <h1>FALE CONOSCO</h1>
+        <h1>FALE CONOSCO</h1>
 
-            <form target="_blank"
-                 method="POST" action="https://formsubmit.co/3baca0bd2b4fccaa8c613d0e561f01ac">
-                 <div class="form-group">
-                    <div class="form-row">
-                      <div class="col">
+        <form target="_blank" method="POST" action="https://formsubmit.co/3baca0bd2b4fccaa8c613d0e561f01ac">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
                         <input type="text" name="Nome" class="input1" placeholder="Nome" required>
                         <input type="hidden" name="_captcha" value="false">
                         <input id="in_assunto" type="hidden" name="_subject" value="">
                         <input type="hidden" name="_template" value="table">
 
 
-            </div>
+                    </div>
 
-            <div class="col">
+                    <div class="col">
                         <input type="email" name="E-mail" class="input2" placeholder="Email" required>
+                    </div>
+                </div>
             </div>
-        </div>
-      </div>
-                        <input id="in_desespero" type="text" name="Assunto" class="input3" placeholder="Assunto" required>
+            <input id="in_desespero" type="text" name="Assunto" class="input3" placeholder="Assunto" required>
+
+            <div class="form-group">
+                <h2>Mensagem</h2>
+                <textarea placeholder="Mensagem" class="input5" name="Mensagem" rows="10" required></textarea>
+            </div>
+            <button onclick="assunto()" type="submit" class="btn btn-lg btn-dark btn-block">Enviar</button>
+
+        </form>
     </div>
-       <div class="form-group">
-         <textarea placeholder="Mensagem" class="input5" name="Mensagem" rows="10" required></textarea>
-     </div>
-                         <button onclick="assunto()" type="submit" class="btn btn-lg btn-dark btn-block">Enviar formulario</button>
-
-    </form>
-  </div>
-  
-
-
-
+</div>
+</body>
 <!--Footer -->
 <footer>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -85,7 +83,8 @@
             <li><a class="a_f" href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
                         class="fa fa-facebook"></i></a></li>
             <li><a class="a_f" href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i
+                        class="fa fa-youtube"></i></a>
             </li>
             <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
                         class="fa fa-linkedin-square"></i></a></li>
@@ -94,7 +93,9 @@
     <div class="footer-bottom">
         <p>Copyright &copy;2022 ODLA</p>
     </div>
-    
+
 </footer>
 <!--Fim Footer -->
+
+
 </html>
