@@ -8,7 +8,9 @@
     <title>Dashboard || ODLA</title>
     <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
     <link rel="stylesheet" href="TUDO.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    
 </head>
 
 <body class="corpoDG">
@@ -62,7 +64,7 @@
             </div>
             <div class="card3DG">
                 <a href="Dashboards\DashboardSensor1.html">
-                    <canvas id="sensor1Line" style="width: 450px; height: 200px;"></canvas>
+                    <canvas id="grafico_linha" style="width: 450px; height: 200px;"></canvas>
                 </a>
             </div>
 
@@ -152,6 +154,7 @@
 
 
 </html>
+
 <script>
     const labels8 = [
         '00:00',
@@ -365,46 +368,152 @@
         options: options4,
     };
 </script>
-<script>
-    const labels1 = [
-        '00:00',
-        '03:00',
-        '06:00',
-        '09:00',
-    ];
-    const data1 = {
-        labels: labels1,
-        datasets: [{
-            label: 'Sensor 1',
-            data: [48989, 49949, 42349, 40389],
-            fill: false,
-            borderColor: 'rgb(78 178 101)',
-            backgroundColor: 'rgb(78 178 101)',
-            tension: 0.2,
-            pointRadius: 7
-        }]
-    };
-    const options1 = {
-        scales: {
-            y: {
-                min: 0,
-                max: 100000
+<script >
+
+    
+//     let proximaAtualizacao;
+
+window.onload = obterDadosGrafico(1);
+
+// b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+// verificar_autenticacao();
+
+// function alterarTitulo(idAquario) {
+//     var tituloAquario = document.getElementById("tituloAquario")
+//     tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
+// }
+    // SENSOR UTILIZADO
+    function obterDadosGrafico(idAquario) {
+        // alterarTitulo(idAquario)
+
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
             }
-        },
-        plugins: {
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idAquario) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-luminosidade',
+                    label: 'Luminosidade',
+                    borderColor: '#32B9CD',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.momento);
+            dados.datasets[0].data.push(registro.luminosidade);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = grafico_linha.getContext('2d');
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                plugins: {
             legend: {
                 display: true,
                 labels: {
                     color: 'black'
                 }
             }
-        }
-    };
-    const config1 = {
-        type: 'line',
-        data: data1,
-        options: options1,
-    };
+        },
+                
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-luminosidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100000,
+                            min: 0,
+                        }
+                    }],
+                }
+            }
+        });
+
+        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    }
+
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function atualizarGrafico(idAquario, dados) {
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    // tirando e colocando valores no gráfico
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro[0].momento); // incluir um novo momento
+                    
+                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
+
+                    window.grafico_linha.update();
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
 </script>
 <script>
     const labels2 = [
@@ -544,10 +653,10 @@
     };
 </script>
 <script>
-    const sensor1Line = new Chart(
-        document.getElementById('sensor1Line'),
-        config1
-    );
+    // const sensor1Line = new Chart(
+    //     document.getElementById('sensor1Line'),
+        
+    // );
     const sensor5Line = new Chart(
         document.getElementById('sensor5Line'),
         config4

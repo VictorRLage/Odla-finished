@@ -52,7 +52,7 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO Sensor (luminosidade) VALUES (?)',
+                'INSERT INTO Sensor (luminosidade, fkFazenda) VALUES (?, 1)',
                 [luminosidade]
             );
         }
