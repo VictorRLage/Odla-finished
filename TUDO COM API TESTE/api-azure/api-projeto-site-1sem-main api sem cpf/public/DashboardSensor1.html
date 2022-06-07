@@ -8,7 +8,8 @@
     <title>Dashboard || ODLA</title>
     <link rel="stylesheet" href="../TUDO.css">
     <link rel="icon" href="https://i.imgur.com/RYeRxVL.png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
 </head>
 
 <body class="corpoDS">
@@ -145,13 +146,13 @@
 
 </html>
 <script>
-    const labels = [
+    let labels = [
         '00:00',
         '03:00',
         '06:00',
         '09:00',
     ];
-    const data = {
+    let data = {
         labels: labels,
         datasets: [{
             label: 'Luminosidade',
@@ -163,7 +164,7 @@
             pointRadius: 7
         }]
     };
-    const options = {
+    let options = {
         scales: {
             x: {
                 ticks: {
@@ -184,18 +185,18 @@
             }
         }
     };
-    const config = {
+    let config = {
         type: 'line',
         data: data,
         options: options,
     };
-    const labels2 = [
+    let labels2 = [
         '00:00',
         '03:00',
         '06:00',
         '09:00',
     ];
-    const data2 = {
+    let data2 = {
         labels: labels2,
         datasets: [{
             label: 'Consumo energia (w)',
@@ -207,7 +208,7 @@
             pointRadius: 7
         }]
     };
-    const options2 = {
+    let options2 = {
         scales: {
             x: {
                 ticks: {
@@ -228,17 +229,17 @@
             }
         }
     };
-    const config2 = {
+    let config2 = {
         type: 'line',
         data: data2,
         options: options2,
     };
 
-    const linha = new Chart(
+    let linha = new Chart(
         document.getElementById('linha'),
         config
     );
-    const linhaa = new Chart(
+    let linhaa = new Chart(
         document.getElementById('linhaa'),
         config2
     );

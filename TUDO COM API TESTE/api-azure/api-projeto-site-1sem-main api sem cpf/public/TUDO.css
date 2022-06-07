@@ -483,6 +483,7 @@ footer {
     width: 450px;
     height: 200px;
     background-color: aliceblue;
+    cursor: pointer;
 }
 
 .card4DG {
@@ -492,6 +493,7 @@ footer {
     width: 450px;
     height: 200px;
     background-color: aliceblue;
+    cursor: pointer;
 }
 
 .card5DG {
@@ -500,6 +502,7 @@ footer {
     width: 450px;
     height: 200px;
     background-color: aliceblue;
+    cursor: pointer;
 }
 
 .card6DG {
@@ -508,6 +511,7 @@ footer {
     width: 450px;
     height: 200px;
     background-color: aliceblue;
+    cursor: pointer;
 }
 
 .card7DG {
@@ -516,6 +520,7 @@ footer {
     width: 450px;
     height: 200px;
     background-color: aliceblue;
+    cursor: pointer;
 }
 
 .card8DG {
@@ -525,6 +530,7 @@ footer {
     border-radius: 10px;
     height: 200px;
     background-color: aliceblue;
+    cursor: pointer;
 }
 
 .sensor6LineDG {

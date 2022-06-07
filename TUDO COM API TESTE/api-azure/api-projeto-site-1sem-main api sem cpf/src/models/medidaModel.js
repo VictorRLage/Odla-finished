@@ -13,13 +13,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     where fkFazenda = ${idAquario}
                     order by idSensor desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select
-                        luminosidade,
-                        momento,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento
-                    from Sensor
-                    where fkFazenda = ${idAquario}
-                    order by idSensor desc limit ${limite_linhas}`;
+        instrucaoSql = `select Lux, DATE_FORMAT(dataHora,'%H:%i:%s') as momento, fkSensor from VerificacaoHora where fkSensor = 1 order by idVerificacaoHora desc limit ${limite_linhas}`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -42,12 +36,7 @@ function buscarMedidasEmTempoReal(idAquario) {
                     order by idSensor desc`;
         
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-                        luminosidade, 
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento, 
-                        fkFazenda
-                        from Sensor where fkFazenda = ${idAquario} 
-                    order by idSensor desc limit 1`;
+        instrucaoSql = `select Lux, DATE_FORMAT(dataHora,'%H:%i') as momento, fkSensor from VerificacaoHora where fkSensor = 1 order by idVerificacaoHora  desc limit 1;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
