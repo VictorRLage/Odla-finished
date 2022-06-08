@@ -279,7 +279,7 @@
                 }
             }
         });
-        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+        setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
     }
     function atualizarGrafico(idAquario, dados) {
         msgALERTAamarelo.innerHTML = ``
@@ -322,11 +322,11 @@
                     }
                     window.grafico_linha.update();
 
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 5000);
             }
         })
             .catch(function (error) {

@@ -20,8 +20,8 @@ const serial = async (
         {
             host: 'localhost',
             port: 3306,
-            user: 'aluno',
-            password: 'sptech',
+            user: 'root',
+            password: '#Gf15533155708',
             database: 'Odla'
         }
     ).promise();
@@ -52,7 +52,7 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO Sensor (luminosidade, fkFazenda) VALUES (?, 1)',
+                'INSERT INTO VerificacaoHora (dataHora, Lux, fkSensor) VALUES (now(), ?, 1)',
                 [luminosidade]
             );
         }
