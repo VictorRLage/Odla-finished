@@ -74,6 +74,7 @@
 
             <div onclick="window.location.href='DashboardSensor3.html'" class="card5DG">
                 <canvas id="sensor3Line" style="width: 450px; height: 200px;"></canvas>
+                <!-- <button class="btn_addDS" onclick="addValor1()">Adicionar</button>   -->
             </div>
 
 
@@ -113,6 +114,12 @@
             <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
                         class="fa fa-linkedin-square"></i></a></li>
         </ul>
+    </div>
+
+    <div class="modal-containerALERTAamarelo" id="modal_containerALERTAamarelo">
+        <div class="modalALERTAamarelo">
+            <h1 id="msgALERTAamarelo"></h1>
+        </div>
     </div>
     <div class="footer-bottom">
         <p>Copyright &copy;2022 ODLA</p>
@@ -207,15 +214,28 @@
             dados.labels.push(registro.momento);
             dados.datasets[0].data.push(registro.Lux);
             if (registro.Lux < 15000 || registro.Lux > 85000) {
-                dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
-                dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
-            } else if (registro.Lux < 40000 || registro.Lux > 50000) {
-                dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
-                dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
-            } else if (registro.Lux > 40000 || registro.Lux < 50000) {
-                dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
-                dados.datasets[0].borderColor = 'rgb(78 178 101)';
-            }
+                        msgALERTAamarelo.innerHTML = `SENSOR 1 EM ESTADO CRÍTICO`
+                        modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                     });
+                        dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
+                        dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
+                    } else if (registro.Lux < 40000 || registro.Lux > 50000) {
+                        dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
+                        dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
+                        msgALERTAamarelo.innerHTML = `SENSOR 1 EM ESTADO DE ALERTA`
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                     });
+                    } else if (registro.Lux > 40000 || registro.Lux < 50000) {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                        dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
+                        dados.datasets[0].borderColor = 'rgb(78 178 101)';
+                    }
         }
 
 
@@ -265,6 +285,8 @@
         setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
     }
     function atualizarGrafico(idAquario, dados) {
+        msgALERTAamarelo.innerHTML = ``
+        const modal_containerALERTAamarelo = document.getElementById('modal_containerALERTAamarelo');
 
         fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -279,12 +301,25 @@
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].Lux); // incluir uma nova medida de umidade
                     if (novoRegistro[0].Lux < 15000 || novoRegistro[0].Lux > 85000) {
+                        msgALERTAamarelo.innerHTML = `SENSOR 1 EM ESTADO CRÍTICO`
+                        modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                     });
                         dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
                         dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
                     } else if (novoRegistro[0].Lux < 40000 || novoRegistro[0].Lux > 50000) {
                         dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
                         dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
+                        msgALERTAamarelo.innerHTML = `SENSOR 1 EM ESTADO DE ALERTA`
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                     });
                     } else if (novoRegistro[0].Lux > 40000 || novoRegistro[0].Lux < 50000) {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
                         dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
                         dados.datasets[0].borderColor = 'rgb(78 178 101)';
                     }
@@ -369,6 +404,37 @@
         data: data8,
         options: options8,
     };
+
+    // function addValor1() {
+    //     let value1 = Math.random();
+    //     let value =  value1 * 100000;
+    //     console.log(value1);
+
+    //     sensor3Line.data.datasets[0].data.push(parseInt(value));
+    //     sensor3Line.data.labels.push(parseInt(value));
+
+    //     if (value < 15000 || value > 85000) {
+    //         sensor3Line.data.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
+    //         sensor3Line.data.datasets[0].borderColor = 'rgb(255, 0, 0)';
+    //     } else if (value < 30000 || value > 60000) {
+    //         sensor3Line.data.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
+    //         sensor3Line.data.datasets[0].borderColor = 'rgb(255, 226, 41)';
+    //     }else if (value > 40000 || value < 50000) {
+    //         sensor3Line.data.datasets[0].backgroundColor = 'rgb(78 178 101)';
+    //         sensor3Line.data.datasets[0].borderColor = 'rgb(78 178 101)';
+    //     }
+
+    //     sensor3Line.update();
+
+    //     let value2 = Number(parseInt(value1 *100)) +40;
+
+    //     sensor3Line.data.datasets[0].data.push(value2);
+    //     sensor3Line.data.labels.push(value2);
+    //     sensor3Line.update();
+
+        
+
+    // }
 </script>
 <!-- Sensor 2 Config 7 -->
 <script>

@@ -533,6 +533,48 @@ footer {
     cursor: pointer;
 }
 
+.modal-containerALERTAamarelo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transition: opacity 0.3s ease;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .modal-containerALERTAamarelo.showALERTAamarelo {
+    background-color: rgb(246, 254, 3, 0.95);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-containerALERTAamarelo.showALERTAvermelho{
+    background-color: rgba(254, 3, 3, 0.95);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .modalALERTAamarelo {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 400px;
+    max-width: 100%;
+    padding: 30px 10px;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .modalALERTAamarelo h1 {
+    letter-spacing: 2px;
+  }
+
 .sensor6LineDG {
     z-index: 0;
     position: absolute;

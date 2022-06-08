@@ -40,10 +40,10 @@
     <div class="container1DS">
         <div class="cardsHDS">
             <div class="container2DS">
-                <h1 class="nomeDS">Sensor 1 Coluna 1</h1>
+                <h1 class="nomeDS">Prateleira 1 Coluna 1</h1>
                 <div class="DTDS">
                     <p>Ultima atualização:<br>
-                        <span>2022-05-08-12:00</span>
+                        <span>2022-06-09</span>
                     </p>
                 </div>
             </div>
@@ -52,8 +52,7 @@
                     <canvas id="linhaa"></canvas>
                 </div>
                 <div class="linhaDS">
-                    <canvas id="linha"></canvas>
-                    <button class="btn_addDS" onclick="addValor1()">Adicionar</button>
+                    <canvas id="canvas_grafico"></canvas>
                 </div>
 
             </div>
@@ -115,6 +114,11 @@
             </div>
         </div>
     </div>
+    <div class="modal-containerALERTAamarelo" id="modal_containerALERTAamarelo">
+        <div class="modalALERTAamarelo">
+            <h1 id="msgALERTAamarelo"></h1>
+        </div>
+    </div>
     <!-- Fim do Banner -->
 </body>
 
@@ -145,51 +149,193 @@
 <!--Fim Footer -->
 
 </html>
-<script>
-    let labels = [
-        '00:00',
-        '03:00',
-        '06:00',
-        '09:00',
-    ];
-    let data = {
-        labels: labels,
-        datasets: [{
-            label: 'Luminosidade',
-            data: [48989, 49949, 42349, 40389],
-            fill: false,
-            borderColor: 'rgb(78 178 101)',
-            backgroundColor: 'rgb(78 178 101)',
-            tension: 0.2,
-            pointRadius: 7
-        }]
-    };
-    let options = {
-        scales: {
-            x: {
-                ticks: {
-                    display: false
-                }
-            },
-            y: {
-                min: 0,
-                max: 100000
+<script>  // grafico luz
+    let idAquario = 1
+
+    window.onload = obterDadosGrafico(1);
+
+
+    function obterDadosGrafico(idAquario) {
+
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
             }
-        },
-        plugins: {
-            legend: {
-                display: true,
-                labels: {
-                    color: 'black'
-                }
-            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGrafico(resposta, i) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    borderSkipped: 'bottom',
+                    yAxisID: 'y-umidade',
+                    label: 'Prateleira 1',
+                    borderColor: 'rgb(78 178 101)',
+                    backgroundColor: 'rgb(78 178 101)',
+                    borderWidth: '3',
+                    pointRadius: '6',
+                    tension: '0.2',
+                    fill: false,
+                    data: []
+                },
+                // {
+                //     yAxisID: 'y-temperatura',
+                //     label: 'Temperatura',
+                //     borderColor: 'white',
+                //     backgroundColor: 'white',
+                //     fill: true,
+                //     data: []
+                // }
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.momento);
+            dados.datasets[0].data.push(registro.Lux);
+            if (registro.Lux < 15000 || registro.Lux > 85000) {
+                        msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO CRÍTICO`
+                        modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                     });
+                        dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
+                        dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
+                    } else if (registro.Lux < 40000 || registro.Lux > 50000) {
+                        dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
+                        dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
+                        msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO DE ALERTA`
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                     });
+                    } else if (registro.Lux > 40000 || registro.Lux < 50000) {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                        dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
+                        dados.datasets[0].borderColor = 'rgb(78 178 101)';
+                    }
         }
-    };
-    let config = {
-        type: 'line',
-        data: data,
-        options: options,
-    };
+
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = canvas_grafico.getContext('2d');
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100000,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-umidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100000,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    }
+    function atualizarGrafico(idAquario, dados) {
+        msgALERTAamarelo.innerHTML = ``
+        const modal_containerALERTAamarelo = document.getElementById('modal_containerALERTAamarelo');
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    // tirando e colocando valores no gráfico
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro[0].momento); // incluir um novo momento
+                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[0].data.push(novoRegistro[0].Lux); // incluir uma nova medida de umidade
+                    if (novoRegistro[0].Lux < 15000 || novoRegistro[0].Lux > 85000) {
+                        msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO CRÍTICO`
+                        modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                     });
+                        dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
+                        dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
+                    } else if (novoRegistro[0].Lux < 40000 || novoRegistro[0].Lux > 50000) {
+                        dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
+                        dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
+                        msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO DE ALERTA`
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
+                        modal_containerALERTAamarelo.addEventListener('click', () => {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                     });
+                    } else if (novoRegistro[0].Lux > 40000 || novoRegistro[0].Lux < 50000) {
+                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                        dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
+                        dados.datasets[0].borderColor = 'rgb(78 178 101)';
+                    }
+                    window.grafico_linha.update();
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+</script>
+<script> // grafico consumo
     let labels2 = [
         '00:00',
         '03:00',
@@ -235,10 +381,6 @@
         options: options2,
     };
 
-    let linha = new Chart(
-        document.getElementById('linha'),
-        config
-    );
     let linhaa = new Chart(
         document.getElementById('linhaa'),
         config2
@@ -249,17 +391,17 @@
         const value =  value1 * 100000;
         console.log(value1);
 
-        linha.data.datasets[0].data.push(parseInt(value));
+        // linha.data.datasets[0].data.push(parseInt(value));
         linha.data.labels.push(parseInt(value));
 
         if (value < 15000 || value > 85000) {
-            linha.data.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
+            // linha.data.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
             linha.data.datasets[0].borderColor = 'rgb(255, 0, 0)';
         } else if (value < 30000 || value > 60000) {
-            linha.data.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
+            // linha.data.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
             linha.data.datasets[0].borderColor = 'rgb(255, 226, 41)';
         }else if (value > 40000 || value < 50000) {
-            linha.data.datasets[0].backgroundColor = 'rgb(78 178 101)';
+            // linha.data.datasets[0].backgroundColor = 'rgb(78 178 101)';
             linha.data.datasets[0].borderColor = 'rgb(78 178 101)';
         }
 
@@ -273,3 +415,4 @@
 
     }
 </script>
+
