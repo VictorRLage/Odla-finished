@@ -135,7 +135,8 @@
             <li><a class="a_f" href="https://www.facebook.com/Odla-Vertical-Farm-112135644819539/"><i
                         class="fa fa-facebook"></i></a></li>
             <li><a class="a_f" href="https://twitter.com/OdlaOficial"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i class="fa fa-youtube"></i></a>
+            <li><a class="a_f" href="https://www.youtube.com/channel/UC2dvFbEdU46ZBE8hmi7pEAA"><i
+                        class="fa fa-youtube"></i></a>
             </li>
             <li><a class="a_f" href="https://www.linkedin.com/in/odla-vertical-farm-5aa654239/"><i
                         class="fa fa-linkedin-square"></i></a></li>
@@ -144,13 +145,17 @@
     <div class="footer-bottom">
         <p>Copyright &copy;2022 ODLA</p>
     </div>
-    
+
 </footer>
 <!--Fim Footer -->
 
 </html>
 <script>  // grafico luz
     let idAquario = 1
+    let consumo = []
+    let consumoATUAL = []
+    let momentoC = []
+    let momentoC_ATUAL = []
 
     window.onload = obterDadosGrafico(1);
 
@@ -210,30 +215,41 @@
             var registro = resposta[i];
             dados.labels.push(registro.momento);
             dados.datasets[0].data.push(registro.Lux);
+            consumo.push(registro.Lux)
+            momentoC.push(registro.momento)
             if (registro.Lux < 15000 || registro.Lux > 85000) {
-                        msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO CRÍTICO`
-                        modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
-                        modal_containerALERTAamarelo.addEventListener('click', () => {
-                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
-                     });
-                        dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
-                        dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
-                    } else if (registro.Lux < 40000 || registro.Lux > 50000) {
-                        dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
-                        dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
-                        msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO DE ALERTA`
-                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
-                        modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
-                        modal_containerALERTAamarelo.addEventListener('click', () => {
-                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
-                     });
-                    } else if (registro.Lux > 40000 || registro.Lux < 50000) {
-                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
-                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
-                        dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
-                        dados.datasets[0].borderColor = 'rgb(78 178 101)';
-                    }
+                msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO CRÍTICO`
+                modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
+                modal_containerALERTAamarelo.addEventListener('click', () => {
+                    modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                });
+                dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
+                dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
+            } else if (registro.Lux < 40000 || registro.Lux > 50000) {
+                dados.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
+                dados.datasets[0].borderColor = 'rgb(255, 226, 41)';
+                msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO DE ALERTA`
+                modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
+                modal_containerALERTAamarelo.addEventListener('click', () => {
+                    modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                });
+            } else if (registro.Lux > 40000 || registro.Lux < 50000) {
+                modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
+                dados.datasets[0].borderColor = 'rgb(78 178 101)';
+            }
         }
+        for (let a = 0; a < consumo.length; a++) {
+            let consumoX = consumo[a]
+            let conta = Number((parseInt(consumoX) / 1000) + 40)
+
+            linhaa.data.datasets[0].data.push(conta);
+            linhaa.data.labels.push(momentoC[a]);
+            linhaa.update();
+        }
+
 
 
         console.log(JSON.stringify(dados));
@@ -295,14 +311,16 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[0].data.shift()  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].Lux); // incluir uma nova medida de umidade
+                    consumoATUAL.push(novoRegistro[0].Lux)
+                    momentoC_ATUAL.push(novoRegistro[0].momento)
                     if (novoRegistro[0].Lux < 15000 || novoRegistro[0].Lux > 85000) {
                         msgALERTAamarelo.innerHTML = `SENSOR EM ESTADO CRÍTICO`
                         modal_containerALERTAamarelo.classList.add('showALERTAvermelho');
                         modal_containerALERTAamarelo.addEventListener('click', () => {
-                        modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
-                     });
+                            modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
+                        });
                         dados.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
                         dados.datasets[0].borderColor = 'rgb(255, 0, 0)';
                     } else if (novoRegistro[0].Lux < 40000 || novoRegistro[0].Lux > 50000) {
@@ -312,14 +330,21 @@
                         modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
                         modal_containerALERTAamarelo.classList.add('showALERTAamarelo');
                         modal_containerALERTAamarelo.addEventListener('click', () => {
-                        modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
-                     });
+                            modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
+                        });
                     } else if (novoRegistro[0].Lux > 40000 || novoRegistro[0].Lux < 50000) {
                         modal_containerALERTAamarelo.classList.remove('showALERTAvermelho');
                         modal_containerALERTAamarelo.classList.remove('showALERTAamarelo');
                         dados.datasets[0].backgroundColor = 'rgb(78 178 101)';
                         dados.datasets[0].borderColor = 'rgb(78 178 101)';
                     }
+                    let contaATUAL = (consumoATUAL[consumoATUAL.length - 1] / 1000) +40
+                    linhaa.data.labels.shift();
+                    linhaa.data.labels.push(momentoC_ATUAL[momentoC_ATUAL.length -1]);
+                    linhaa.data.datasets[0].data.shift()
+                    linhaa.data.datasets[0].data.push((consumoATUAL[consumoATUAL.length - 1] / 1000) +40);
+
+                    linhaa.update();
                     window.grafico_linha.update();
 
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
@@ -334,19 +359,14 @@
             });
 
     }
-</script>
-<script> // grafico consumo
-    let labels2 = [
-        '00:00',
-        '03:00',
-        '06:00',
-        '09:00',
-    ];
+    // grafico consumo
+
+
     let data2 = {
-        labels: labels2,
+        labels: [],
         datasets: [{
             label: 'Consumo energia (w)',
-            data: [91, 92, 89, 88],
+            data: [],
             fill: false,
             borderColor: 'rgb(8, 41, 73)',
             backgroundColor: 'rgb(8, 41, 73)',
@@ -356,15 +376,29 @@
     };
     let options2 = {
         scales: {
-            x: {
+            yAxes: [{
+                type: 'linear',
+                display: true,
+                position: 'left',
                 ticks: {
-                    display: false
+                    beginAtZero: true,
+                    max: 200,
+                    min: 0
                 }
-            },
-            y: {
-                min: 0,
-                max: 200
-            }
+            }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                ticks: {
+                    beginAtZero: true,
+                    max: 200,
+                    min: 0
+                },
+
+                gridLines: {
+                    drawOnChartArea: false,
+                },
+            }],
         },
         plugins: {
             legend: {
@@ -386,33 +420,5 @@
         config2
     );
 
-    function addValor1() {
-        const value1 = Math.random();
-        const value =  value1 * 100000;
-        console.log(value1);
 
-        // linha.data.datasets[0].data.push(parseInt(value));
-        linha.data.labels.push(parseInt(value));
-
-        if (value < 15000 || value > 85000) {
-            // linha.data.datasets[0].backgroundColor = 'rgb(255, 0, 0)';
-            linha.data.datasets[0].borderColor = 'rgb(255, 0, 0)';
-        } else if (value < 30000 || value > 60000) {
-            // linha.data.datasets[0].backgroundColor = 'rgb(255, 226, 41)';
-            linha.data.datasets[0].borderColor = 'rgb(255, 226, 41)';
-        }else if (value > 40000 || value < 50000) {
-            // linha.data.datasets[0].backgroundColor = 'rgb(78 178 101)';
-            linha.data.datasets[0].borderColor = 'rgb(78 178 101)';
-        }
-
-        linha.update();
-
-        const value2 = Number(parseInt(value1 *100)) +40;
-
-        linhaa.data.datasets[0].data.push(value2);
-        linhaa.data.labels.push(value2);
-        linhaa.update();
-
-    }
 </script>
-

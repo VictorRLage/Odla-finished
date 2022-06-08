@@ -226,7 +226,7 @@
         var senhaVar = senha_input2.value;
         var perfilVar = Number(perfil.value);
 
-        if(perfilVar == 1 || perfilVar == 2){
+        if(perfilVar == 1){
             if (emailVar == "" || senhaVar == "") {
             titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
             p_msg.innerHTML = ``
@@ -272,7 +272,12 @@
                     sessionStorage.NOME_USUARIO = json.Nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
                     sessionStorage.FK_FAZENDA = json.fkFazenda;
-                    window.location.href = "DashboardGeral.html"
+                    if(sessionStorage.FK_FAZENDA == 'null'){
+                        window.location.href = "DashboardGeral3.html"
+                    }
+                    else{
+                        window.location.href = "DashboardGeral.html"
+                    }
 
                 });
 
@@ -298,6 +303,12 @@
 
         return false;
         }
+
+
+
+
+
+
         if(perfilVar == 3){
             if (emailVar == "" || senhaVar == "") {
             titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
@@ -343,7 +354,7 @@
                     sessionStorage.EMAIL_USUARIO = json.Email;
                     sessionStorage.NOME_USUARIO = json.Nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
-                    sessionStorage.ID_USUARIO = json.fkFazenda;
+                    sessionStorage.FK_FAZENDA = json.fkFazenda;
                     window.location.href = "TelaDev.html"
 
                 });
@@ -370,6 +381,84 @@
 
         return false;
         }
+
+
+
+
+
+        if(perfilVar == 2){
+            if (emailVar == "" || senhaVar == "") {
+            titulo_m.innerHTML = `<br>Preencha todos os campos para prosseguir.`
+            p_msg.innerHTML = ``
+
+
+            modal_container.classList.add('show');
+
+
+            close.addEventListener('click', () => {
+                modal_container.classList.remove('show');
+            });
+        }
+        else {
+            titulo_m.innerHTML = `<br>Login realizado com sucesso!`
+            p_msg.innerHTML = ``
+
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                perfilServer: perfilVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.Email;
+                    sessionStorage.NOME_USUARIO = json.Nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.FK_FAZENDA = json.fkFazenda;
+                    window.location.href = "DashboardGeral2.html"
+
+                });
+
+
+
+            } else {
+                titulo_m.innerHTML = `<br>Email ou senha inválidos.`
+                p_msg.innerHTML = ``
+
+
+                modal_container.classList.add('show');
+
+
+                close.addEventListener('click', () => {
+                    modal_container.classList.remove('show');
+                });
+
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+        }
     }
+    
 
 </script>

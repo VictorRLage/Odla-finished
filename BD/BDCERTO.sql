@@ -35,7 +35,7 @@ FOREIGN KEY (fkFazenda) REFERENCES Fazenda (idFazenda)
 
 CREATE TABLE VerificacaoHora(
 idVerificacaoHora INT PRIMARY KEY AUTO_INCREMENT,
-dataHora DATETIME,
+dataHora DATETIME default current_timestamp,
 Lux INT,
 fkSensor INT,
 FOREIGN KEY (fkSensor) REFERENCES Sensor (idSensor)
@@ -64,6 +64,8 @@ insert into VerificacaoHora values (null, '2022-07-06 00:42', 48800, 1),
 								   (null, '2022-07-06 01:42', 42884, 1);
                                    
 insert into VerificacaoHora values (null, '2022-07-06 02:02', 43800, 1); 
+
+insert into VerificacaoHora (dataHora, Lux, fkSensor)values (now(),48800, 1); 
 
 
 
